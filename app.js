@@ -1,8 +1,8 @@
 // app.js
 import config from './config';
-import Mock from './mock/index';
+import Mock from './data/index';
 import createBus from './utils/eventBus';
-import { connectSocket, fetchUnreadNum } from './mock/chat';
+import { connectSocket, fetchUnreadNum } from './data/chat';
 
 if (config.isMock) {
   Mock();

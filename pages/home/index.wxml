@@ -9,12 +9,6 @@
           loadingTexts="{{['下拉刷新', '松手刷新', '正在刷新', '刷新完成']}}"
         >
           <view class="home-card-list">
-            <t-swiper
-              list="{{swiperList}}"
-              navigation="{{ { type: 'dots-bar' } }}"
-              height="488rpx"
-              style="width: 340rpx"
-            />
             <card
               wx:for="{{cardInfo}}"
               wx:key="index"

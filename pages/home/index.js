@@ -7,27 +7,23 @@ import request from '~/api/request';
 Page({
   data: {
     enable: false,
-    swiperList: [],
     cardInfo: [],
-    // 发布
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
+    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'),
+    cards: [],
+    loading: true
   },
   // 生命周期
   async onReady() {
-    const [cardRes, swiperRes] = await Promise.all([
-      request('/home/cards').then((res) => res.data),
-      request('/home/swipers').then((res) => res.data),
-    ]);
+    const cardRes = await request('/home/cards').then((res) => res.data);
 
     this.setData({
       cardInfo: cardRes.data,
       focusCardInfo: cardRes.data.slice(0, 3),
-      swiperList: swiperRes.data,
     });
   },
   onLoad(option) {
@@ -45,6 +41,7 @@ Page({
       }
       this.showOperMsg(content);
     }
+    this.getCards();
   },
   onRefresh() {
     this.refresh();
@@ -53,16 +50,13 @@ Page({
     this.setData({
       enable: true,
     });
-    const [cardRes, swiperRes] = await Promise.all([
-      request('/home/cards').then((res) => res.data),
-      request('/home/swipers').then((res) => res.data),
-    ]);
+    
+    const cardRes = await request('/home/cards').then((res) => res.data);
 
     setTimeout(() => {
       this.setData({
         enable: false,
         cardInfo: cardRes.data,
-        swiperList: swiperRes.data,
       });
     }, 1500);
   },
@@ -79,4 +73,15 @@ Page({
       url: '/pages/release/index',
     });
   },
+  getCards() {
+    wx.request({
+      url: '/home/cards',
+      success: ({ data }) => {
+        this.setData({
+          cards: data.data,
+          loading: false
+        });
+      }
+    });
+  }
 });

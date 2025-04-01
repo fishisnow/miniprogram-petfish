@@ -1,6 +1,6 @@
 /* eslint-disable */
 var __request = wx.request;
-var Mock = require('./mock.js');
+var Mock = require('./data.js');
 Object.defineProperty(wx, 'request', { writable: true });
 wx.request = function (config) {
   if (typeof Mock._mocked[config.url] == 'undefined') {
