@@ -1,7 +1,7 @@
 export default {
   id: 'yidianhong',
   card: {
-    url: '/images/fish/一点红.jpg',
+    url: '/images/fish/巴西一点红.jpg',
     desc: '巴西一点红',
     info: {
       habitat: '原产巴西玛瑙斯，适宜水温24-28℃，弱酸性软水', 

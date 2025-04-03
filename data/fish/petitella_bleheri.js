@@ -1,7 +1,7 @@
 export default {
   id: 'hongtoujiandaoyu',
   card: {
-    url: '/images/fish/红头剪刀.jpg',
+    url: '/images/fish/红头剪刀鱼.jpg',
     desc: '红头剪刀鱼',
     info: {
       habitat: '南美洲尼格罗河与 Meta 河流域 → 水温23-26°C，弱酸性软水(pH5-6)', 

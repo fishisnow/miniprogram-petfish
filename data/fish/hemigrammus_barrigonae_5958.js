@@ -1,0 +1,46 @@
+export default {
+  id:'boligongzhudeng',
+  card:{
+    url:'/images/fish/玻璃公主灯.jpg',
+    desc:'玻璃公主灯',
+    info:{
+      habitat:'潘塔纳尔湿地 → 水温25-29℃/中性偏酸水质',
+      tips:'建议10只以上群养/60L水体'
+    },
+    tags:[]
+  },
+  detail:{
+    name:"玻璃公主灯",
+    scientificName:"Hemigrammus lunatus",
+    description:[
+      "透明状体型泛青黄色光泽",
+      "明显深色眼斑特征",
+      "体型较同类更高"
+    ],
+    careGuide:{
+      waterParameters:{
+        temperature:"25-29℃",
+        pH:"6.0-7.0",
+        hardness:"5-12°dH"
+      },
+      tankSize:"80L以上",
+      diet:[
+        "微型颗粒饲料",
+        "丰年虾无节幼体"
+      ],
+      commonDiseases:[
+        {
+          name:"黑斑病",
+          symptoms:"体表出现黑色霉斑",
+          prevention:"维持硝酸盐<20ppm+添加榄仁叶"
+        }
+      ]
+    },
+    breedingInfo:{
+      difficulty:"中等",
+      spawningTemp:"28℃",
+      eggHatchTime:"48小时",
+      specialRequirements:"需要模拟雨季的水流变化"
+    }
+  }
+}

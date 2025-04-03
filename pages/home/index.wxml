@@ -33,6 +33,15 @@
         </view>
       </t-tab-panel>
     </t-tabs>
+
+    <view class="fish-grid">
+      <view class="fish-item" wx:for="{{fishList}}" wx:key="id">
+        <fish-card fish="{{item}}" />
+      </view>
+    </view>
+
+    <!-- 底部提示 -->
+    <view class="bottom-tip">到底部了，没有更多啦~</view>
   </view>
 </view>
 
@@ -41,4 +50,5 @@
     发布
   </t-button>
 </view>
+
 <t-message id="t-message" />
