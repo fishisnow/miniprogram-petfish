@@ -7,11 +7,7 @@ export default {
       habitat: '热带鱼，适宜水温20-26℃',
       tips: '性情温和，适合新手入门'
     },
-    tags: [
-      { text: '新手友好', theme: 'primary' },
-      { text: '群养', theme: 'success' },
-      { text: '胎生鱼', theme: 'info' }
-    ]
+    tags: ['新手友好', '群养', '胎生鱼'],
   },
   detail: {
     name: '米奇鱼',

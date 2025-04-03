@@ -1,0 +1,110 @@
+<t-navbar title="{{detail.name}}" left-arrow bind:click-left="onBack" />
+
+<view class="fish-detail" wx:if="{{!loading}}">
+  <!-- 鱼类图片 -->
+  <view class="fish-images">
+    <swiper indicator-dots autoplay circular>
+      <swiper-item wx:for="{{detail.images}}" wx:key="index">
+        <image src="{{item.startsWith('http') ? item : '../../..'+item}}" mode="aspectFill" bindtap="previewImage" data-url="{{item}}" />
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 基本信息 -->
+  <view class="info-section">
+    <view class="info-header">
+      <view class="info-title">{{detail.name}}</view>
+      <view class="scientific-name">{{detail.scientificName}}</view>
+    </view>
+
+    <!-- 描述信息 -->
+    <view class="description-section">
+      <view class="section-title">鱼类描述</view>
+      <block wx:if="{{detail.description && Array.isArray(detail.description) && detail.description.length > 0}}">
+        <view class="description-list">
+          <view class="description-item" wx:for="{{detail.description}}" wx:key="index">• {{item}}</view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="description-text">{{detail.description}}</view>
+      </block>
+    </view>
+
+    <!-- 养护指南 -->
+    <view class="care-guide-section">
+      <view class="section-title">养护指南</view>
+      
+      <view class="parameter-grid">
+        <view class="parameter-item">
+          <view class="parameter-label">水温</view>
+          <view class="parameter-value">{{detail.careGuide.waterParameters.temperature}}</view>
+        </view>
+        <view class="parameter-item">
+          <view class="parameter-label">pH值</view>
+          <view class="parameter-value">{{detail.careGuide.waterParameters.pH}}</view>
+        </view>
+        <view class="parameter-item">
+          <view class="parameter-label">硬度</view>
+          <view class="parameter-value">{{detail.careGuide.waterParameters.hardness}}</view>
+        </view>
+      </view>
+      
+      <view class="info-item">
+        <view class="info-label">建议缸体</view>
+        <view class="info-value">{{detail.careGuide.tankSize}}</view>
+      </view>
+      
+      <view class="info-item">
+        <view class="info-label">饮食</view>
+        <view class="info-value diet-list">
+          <text wx:for="{{detail.careGuide.diet}}" wx:key="index" class="diet-item">{{item}}</text>
+        </view>
+      </view>
+      
+      <!-- 常见疾病 -->
+      <view class="disease-section" wx:if="{{detail.careGuide.commonDiseases.length > 0}}">
+        <view class="section-subtitle">常见疾病</view>
+        <view class="disease-list">
+          <view class="disease-item" wx:for="{{detail.careGuide.commonDiseases}}" wx:key="index">
+            <view class="disease-name">{{item.name}}</view>
+            <view class="disease-info">
+              <text class="disease-label">症状：</text>
+              <text>{{item.symptoms}}</text>
+            </view>
+            <view class="disease-info">
+              <text class="disease-label">预防：</text>
+              <text>{{item.prevention}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 繁殖信息 -->
+    <view class="breeding-section">
+      <view class="section-title">繁殖信息</view>
+      <view class="breeding-grid">
+        <view class="breeding-item">
+          <view class="breeding-label">难度</view>
+          <view class="breeding-value">{{detail.breedingInfo.difficulty}}</view>
+        </view>
+        <view class="breeding-item">
+          <view class="breeding-label">产卵温度</view>
+          <view class="breeding-value">{{detail.breedingInfo.spawningTemp}}</view>
+        </view>
+        <view class="breeding-item">
+          <view class="breeding-label">孵化时间</view>
+          <view class="breeding-value">{{detail.breedingInfo.eggHatchTime}}</view>
+        </view>
+      </view>
+      <view class="info-item" wx:if="{{detail.breedingInfo.specialRequirements}}">
+        <view class="info-label">特殊要求</view>
+        <view class="info-value">{{detail.breedingInfo.specialRequirements}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="loading-container" wx:else>
+  <t-loading theme="circular" size="40rpx" text="加载中..." />
+</view> 

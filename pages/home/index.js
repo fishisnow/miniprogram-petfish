@@ -19,12 +19,32 @@ Page({
   },
   // 生命周期
   async onReady() {
-    const cardRes = await request('/home/cards').then((res) => res.data);
-
-    this.setData({
-      cardInfo: cardRes.data,
-      focusCardInfo: cardRes.data.slice(0, 3),
-    });
+    try {
+      const cardRes = await request('/home/cards');
+      
+      if (cardRes && cardRes.code === 200) {
+        const cardInfo = cardRes.data.map(card => ({
+          ...card,
+          fishId: card.id
+        }));
+        
+        this.setData({
+          cardInfo,
+          focusCardInfo: cardInfo.slice(0, 3),
+          loading: false
+        });
+      } else {
+        wx.showToast({
+          title: '获取数据失败',
+          icon: 'none'
+        });
+      }
+    } catch (error) {
+      wx.showToast({
+        title: '获取数据失败',
+        icon: 'none'
+      });
+    }
   },
   onLoad(option) {
     if (wx.getUserProfile) {
@@ -41,7 +61,6 @@ Page({
       }
       this.showOperMsg(content);
     }
-    this.getCards();
   },
   onRefresh() {
     this.refresh();
@@ -51,14 +70,37 @@ Page({
       enable: true,
     });
     
-    const cardRes = await request('/home/cards').then((res) => res.data);
-
-    setTimeout(() => {
+    try {
+      const cardRes = await request('/home/cards');
+      
+      if (cardRes && cardRes.code === 200) {
+        const cardInfo = cardRes.data.map(card => ({
+          ...card,
+          fishId: card.id
+        }));
+        
+        this.setData({
+          cardInfo,
+          enable: false
+        });
+      } else {
+        this.setData({
+          enable: false
+        });
+        wx.showToast({
+          title: '刷新失败',
+          icon: 'none'
+        });
+      }
+    } catch (error) {
       this.setData({
-        enable: false,
-        cardInfo: cardRes.data,
+        enable: false
       });
-    }, 1500);
+      wx.showToast({
+        title: '刷新失败',
+        icon: 'none'
+      });
+    }
   },
   showOperMsg(content) {
     Message.success({
@@ -71,17 +113,6 @@ Page({
   goRelease() {
     wx.navigateTo({
       url: '/pages/release/index',
-    });
-  },
-  getCards() {
-    wx.request({
-      url: '/home/cards',
-      success: ({ data }) => {
-        this.setData({
-          cards: data.data,
-          loading: false
-        });
-      }
     });
   }
 });

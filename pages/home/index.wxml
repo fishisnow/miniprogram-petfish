@@ -15,6 +15,7 @@
               desc="{{item.desc}}"
               url="{{item.url}}"
               tags="{{item.tags}}"
+              fish-id="{{item.fishId}}"
             />
           </view>
         </t-pull-down-refresh>
@@ -27,6 +28,7 @@
             desc="{{item.desc}}"
             url="{{item.url}}"
             tags="{{item.tags}}"
+            fish-id="{{item.fishId}}"
           />
         </view>
       </t-tab-panel>

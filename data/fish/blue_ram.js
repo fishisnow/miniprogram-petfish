@@ -7,11 +7,7 @@ export default {
       habitat: '热带鱼，适宜水温26-30℃',
       tips: '对水质敏感，需要稳定的水参数'
     },
-    tags: [
-      { text: '进阶饲养', theme: 'warning' },
-      { text: '对水质敏感', theme: 'danger' },
-      { text: '领地性', theme: 'info' }
-    ]
+    tags: ['进阶饲养', '对水质敏感', '领地性']
   },
   detail: {
     name: '皇冠青魔鬼鱼',

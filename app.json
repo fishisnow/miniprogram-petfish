@@ -43,6 +43,11 @@
       "root": "pages/release",
       "name": "release",
       "pages": ["index"]
+    },
+    {
+      "root": "pages/fish",
+      "name": "fish",
+      "pages": ["detail/index"]
     }
   ],
   "window": {

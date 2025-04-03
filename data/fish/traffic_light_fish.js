@@ -7,11 +7,7 @@ export default {
       habitat: '热带鱼，适宜水温22-28℃',
       tips: '对水质要求不高，适合新手饲养'
     },
-    tags: [
-      { text: '新手友好', theme: 'primary' },
-      { text: '群养', theme: 'success' },
-      { text: '小型鱼', theme: 'info' }
-    ]
+    tags: ['新手友好', '群养', '小型鱼'],
   },
   detail: {
     name: '红绿灯鱼',

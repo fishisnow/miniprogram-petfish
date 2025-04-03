@@ -7,11 +7,7 @@ export default {
       habitat: '冷水鱼，适宜水温18-24℃',
       tips: '活泼好动，需要足够的游动空间'
     },
-    tags: [
-      { text: '新手友好', theme: 'primary' },
-      { text: '群养', theme: 'success' },
-      { text: '耐寒', theme: 'info' }
-    ]
+    tags: ['新手友好', '群养', '耐寒'],
   },
   detail: {
     name: '斑马鱼',
