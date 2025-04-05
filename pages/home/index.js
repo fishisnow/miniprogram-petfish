@@ -8,6 +8,7 @@ Page({
   data: {
     enable: false,
     cardInfo: [],
+    focusCardInfo: [], // 最受欢迎的鱼类列表
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
@@ -20,7 +21,11 @@ Page({
   // 生命周期
   async onReady() {
     try {
+      // 获取所有鱼类数据
       const cardRes = await request('/home/cards');
+      
+      // 获取最受欢迎的鱼类数据
+      const popularRes = await request('/home/popular');
       
       if (cardRes && cardRes.code === 200) {
         const cardInfo = cardRes.data.map(card => ({
@@ -28,11 +33,26 @@ Page({
           fishId: card.id
         }));
         
-        this.setData({
-          cardInfo,
-          focusCardInfo: cardInfo.slice(0, 3),
-          loading: false
-        });
+        // 如果获取到了最受欢迎的鱼类数据
+        if (popularRes && popularRes.code === 200) {
+          const popularCardInfo = popularRes.data.map(card => ({
+            ...card,
+            fishId: card.id
+          }));
+          
+          this.setData({
+            cardInfo,
+            focusCardInfo: popularCardInfo,
+            loading: false
+          });
+        } else {
+          // 如果没有获取到最受欢迎的鱼类数据，就显示全部中的前几个
+          this.setData({
+            cardInfo,
+            focusCardInfo: cardInfo.slice(0, 3),
+            loading: false
+          });
+        }
       } else {
         wx.showToast({
           title: '获取数据失败',
@@ -71,7 +91,11 @@ Page({
     });
     
     try {
+      // 获取所有鱼类数据
       const cardRes = await request('/home/cards');
+      
+      // 获取最受欢迎的鱼类数据
+      const popularRes = await request('/home/popular');
       
       if (cardRes && cardRes.code === 200) {
         const cardInfo = cardRes.data.map(card => ({
@@ -79,10 +103,24 @@ Page({
           fishId: card.id
         }));
         
-        this.setData({
-          cardInfo,
-          enable: false
-        });
+        // 更新最受欢迎鱼类数据
+        if (popularRes && popularRes.code === 200) {
+          const popularCardInfo = popularRes.data.map(card => ({
+            ...card,
+            fishId: card.id
+          }));
+          
+          this.setData({
+            cardInfo,
+            focusCardInfo: popularCardInfo,
+            enable: false
+          });
+        } else {
+          this.setData({
+            cardInfo,
+            enable: false
+          });
+        }
       } else {
         this.setData({
           enable: false

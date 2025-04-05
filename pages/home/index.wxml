@@ -2,7 +2,7 @@
 <view class="home-container">
   <view class="home-content">
     <t-tabs defaultValue="recommend">
-      <t-tab-panel label="推荐" value="recommend">
+      <t-tab-panel label="全部" value="recommend">
         <t-pull-down-refresh
           value="{{enable}}"
           bind:refresh="onRefresh"
@@ -18,9 +18,12 @@
               fish-id="{{item.fishId}}"
             />
           </view>
+          <view class="home-bottom-tip">
+            <text>到底部了，没有更多啦~</text>
+          </view>
         </t-pull-down-refresh>
       </t-tab-panel>
-      <t-tab-panel label="我的关注" value="follow">
+      <t-tab-panel label="最受欢迎" value="follow">
         <view class="home-card-list">
           <card
             wx:for="{{focusCardInfo}}"
@@ -31,17 +34,11 @@
             fish-id="{{item.fishId}}"
           />
         </view>
+        <view class="home-bottom-tip">
+          <text>到底部了，没有更多啦~</text>
+        </view>
       </t-tab-panel>
     </t-tabs>
-
-    <view class="fish-grid">
-      <view class="fish-item" wx:for="{{fishList}}" wx:key="id">
-        <fish-card fish="{{item}}" />
-      </view>
-    </view>
-
-    <!-- 底部提示 -->
-    <view class="bottom-tip">到底部了，没有更多啦~</view>
   </view>
 </view>
 
@@ -50,5 +47,4 @@
     发布
   </t-button>
 </view>
-
 <t-message id="t-message" />

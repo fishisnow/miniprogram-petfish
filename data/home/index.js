@@ -1,3 +1,3 @@
-import { homeCards } from '../fish/index.js';
+import { homeCards, popularCards } from '../fish/index.js';
 
-export default [homeCards];
+export default [homeCards, popularCards];

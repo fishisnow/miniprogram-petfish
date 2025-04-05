@@ -1,4 +1,5 @@
 import { getAllFish, getFishById } from './fish-registry';
+import { popularFishIds } from './popular-fish';
 
 // 获取所有鱼类数据
 export const fishList = getAllFish();
@@ -7,6 +8,16 @@ export const fishList = getAllFish();
 export const getRandomFish = (count = 1) => {
   const shuffled = [...fishList].sort(() => 0.5 - Math.random());
   return count === 1 ? shuffled[0] : shuffled.slice(0, count);
+};
+
+// 获取最受欢迎的鱼类数据
+export const getPopularFish = () => {
+  // 根据popularFishIds中的ID顺序获取鱼类数据
+  const popularFish = popularFishIds
+    .map(id => getFishById(id))
+    .filter(fish => fish !== undefined); // 过滤掉不存在的鱼类
+  
+  return popularFish;
 };
 
 // 首页卡片列表接口
@@ -19,6 +30,21 @@ export const homeCards = {
       return {
         ...fish.card,
         id: fish.id // 确保每个卡片数据都包含鱼的ID
+      };
+    })
+  }
+};
+
+// 首页最受欢迎鱼类列表接口
+export const popularCards = {
+  path: '/home/popular',
+  data: {
+    code: 200,
+    message: '请求成功',
+    data: getPopularFish().map(fish => {
+      return {
+        ...fish.card,
+        id: fish.id
       };
     })
   }
@@ -77,4 +103,4 @@ export const fishDetail = {
   }
 };
 
-export default [homeCards, fishDetail]; 
+export default [homeCards, popularCards, fishDetail]; 
