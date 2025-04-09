@@ -14,8 +14,40 @@
       focus
     ></t-search>
   </view>
-  <view class="search-wrap">
-    <view class="history-wrap">
+
+  <!-- 搜索结果展示 -->
+  <view class="search-results" wx:if="{{searchResults.length > 0}}">
+    <view 
+      class="search-result-item" 
+      wx:for="{{searchResults}}" 
+      wx:key="id"
+      bind:tap="handleSearchResultTap"
+      data-id="{{item.id}}"
+    >
+      <image class="fish-image" src="{{item.card.url}}" mode="aspectFill"></image>
+      <view class="fish-info">
+        <view class="fish-name">{{item.detail.name}}</view>
+        <view class="fish-habitat">{{item.card.info.habitat}}</view>
+        <view class="fish-tips">{{item.card.info.tips}}</view>
+        <view class="fish-tags">
+          <t-tag 
+            class="tag" 
+            wx:for="{{item.card.tags}}" 
+            wx:for-item="tag" 
+            wx:key="*this"
+            variant="light"
+            size="small"
+          >
+            {{tag}}
+          </t-tag>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 历史记录和搜索发现 -->
+  <view class="search-wrap" wx:else>
+    <view class="history-wrap" wx:if="{{historyWords.length > 0}}">
       <view class="search-header">
         <text class="search-title">历史记录</text>
         <t-icon name="delete" size="large" class="search-clear" bind:click="handleClearHistory" />
@@ -34,7 +66,7 @@
         </view>
       </view>
     </view>
-    <view class="popular-wrap">
+    <view class="popular-wrap" wx:if="{{popularWords.length > 0}}">
       <view class="search-header">
         <text class="search-title">搜索发现</text>
       </view>
@@ -52,6 +84,7 @@
       </view>
     </view>
   </view>
+
   <t-dialog
     visible="{{dialogShow}}"
     content="{{dialog.message}}"

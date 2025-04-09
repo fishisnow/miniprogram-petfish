@@ -517,7 +517,15 @@ export const fishRegistry = {
 };
 
 // 获取所有鱼类列表
-export const getAllFish = () => Object.values(fishRegistry);
+export const getAllFish = () => {
+  console.log('getAllFish被调用');
+  const fishList = Object.values(fishRegistry);
+  console.log('鱼类列表数量:', fishList.length);
+  if (fishList.length > 0) {
+    console.log('第一条鱼类数据:', fishList[0]);
+  }
+  return fishList;
+};
 
 // 根据ID获取鱼类
 export const getFishById = (id) => {

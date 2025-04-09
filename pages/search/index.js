@@ -1,10 +1,13 @@
 import request from '~/api/request';
+import { searchFish, initSearchIndex } from '~/utils/search-index';
+import { getFishById } from '~/data/fish/fish-registry';
 
 Page({
   data: {
     historyWords: [],
     popularWords: [],
     searchValue: '',
+    searchResults: [],
     dialog: {
       title: '确认删除当前历史记录',
       showCancelButton: true,
@@ -15,6 +18,12 @@ Page({
 
   deleteType: 0,
   deleteIndex: '',
+
+  onLoad() {
+    // 初始化搜索索引
+    console.log('页面加载，初始化搜索索引');
+    initSearchIndex();
+  },
 
   onShow() {
     this.queryHistory();
@@ -70,11 +79,34 @@ Page({
       searchValue,
       historyWords,
     });
-    // if (searchValue) {
-    //     wx.navigateTo({
-    //         url: `/pages/goods/result/index?searchValue=${searchValue}`,
-    //     });
-    // }
+    
+    // 执行搜索
+    this.doSearch(searchValue);
+  },
+  
+  /**
+   * 执行搜索
+   * @param {string} keyword 搜索关键词
+   */
+  doSearch(keyword) {
+    console.log('执行搜索，关键词:', keyword);
+    if (!keyword) return;
+    
+    // 执行本地搜索
+    const searchResults = searchFish(keyword);
+    console.log('搜索结果ID列表:', searchResults);
+    
+    const fishDetails = searchResults.map(id => {
+      const fish = getFishById(id);
+      console.log('获取到鱼类详情:', fish ? fish.detail.name : '未找到');
+      return fish;
+    }).filter(Boolean); // 过滤掉未找到的鱼类
+    
+    console.log('搜索结果详情数量:', fishDetails.length);
+    
+    this.setData({
+      searchResults: fishDetails
+    });
   },
 
   /**
@@ -158,14 +190,24 @@ Page({
 
   /**
    * 提交搜索框内容
-   * 后期需要增加跳转和后端请求接口
    * @returns {Promise<void>}
    */
   handleSubmit(e) {
     const { value } = e.detail;
+    console.log('搜索框提交，值:', value);
     if (value.length === 0) return;
 
     this.setHistoryWords(value);
+  },
+
+  /**
+   * 点击搜索结果项
+   */
+  handleSearchResultTap(e) {
+    const { id } = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: `/pages/fish/detail/index?id=${id}`
+    });
   },
 
   /**
@@ -175,6 +217,7 @@ Page({
   actionHandle() {
     this.setData({
       searchValue: '',
+      searchResults: []
     });
     wx.switchTab({ url: '/pages/home/index' });
   },
