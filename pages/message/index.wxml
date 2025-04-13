@@ -1,25 +1,79 @@
-<wxs src="./index.wxs" module="utils" />
-
-<nav nav-type="title" title-text="全部消息"></nav>
-<scroll-view
-  class="message-list"
-  scroll-y
-  refresher-enabled
-  refresher-triggered="{{ loading }}"
-  bindrefresherrefresh="getMessageList"
->
-  <t-cell
-    wx:for="{{ messageList }}"
-    wx:key="index"
-    t-class-image="avatar"
-    t-class-description="content {{ utils.isRead(item.messages) ? '' : 'unread' }}"
-    image="{{ item.avatar }}"
-    title="{{ item.name }}"
-    description="{{ item.messages[item.messages.length - 1].content }}"
-    hover
-    bind:tap="toChat"
-    data-user-id="{{ item.userId }}"
-  >
-    <t-badge slot="right-icon" count="{{ utils.computeUnreadNum(item.messages) }}" class="wrapper" />
-  </t-cell>
-</scroll-view>
+<view class="test-list-container">
+  <image class="nav-bg" src="/static/bg_navbar.png" />
+  <nav title-text="快乐养鱼" />
+  
+  <!-- 轮播Banner -->
+  <view class="banner-container">
+    <swiper class="top-banner" 
+          indicator-dots="{{true}}" 
+          autoplay="{{true}}" 
+          interval="3000" 
+          duration="500" 
+          circular="{{true}}"
+          previous-margin="15rpx"
+          next-margin="15rpx"
+          bindchange="swiperChange">
+      <swiper-item wx:for="{{banners}}" wx:key="id" bindtap="startTest" data-test-id="{{item.testId}}">
+        <view class="swiper-item-wrap {{currentSwiperIndex === index ? 'active' : ''}}">
+          <image class="banner-image" src="{{item.image}}" mode="aspectFill"></image>
+        </view>
+      </swiper-item>
+    </swiper>
+    
+    <!-- 箭头按钮 -->
+    <view class="swiper-nav-btn swiper-nav-prev" bindtap="prevImage">
+      <view class="arrow-left"></view>
+    </view>
+    <view class="swiper-nav-btn swiper-nav-next" bindtap="nextImage">
+      <view class="arrow-right"></view>
+    </view>
+  </view>
+  
+  <view class="test-list">
+    <!-- 六维养鱼性格测试卡片 -->
+    <view class="feature-card" bindtap="startTest" data-test-id="fish-personality">
+      <view class="feature-content">
+        <view class="feature-header">
+          <view class="feature-title">六维养鱼性格测试</view>
+          <view class="feature-subtitle">猜猜你适合养什么鱼？</view>
+        </view>
+        <view class="feature-footer">
+          <view class="feature-stats">
+            <text class="feature-count">{{tests[0].count}}人已测</text>
+          </view>
+          <view class="feature-btn">开始测试 <text class="feature-arrow">></text></view>
+        </view>
+      </view>
+      <view class="feature-decoration">
+        <view class="feature-circle"></view>
+      </view>
+    </view>
+    
+    <!-- 鱼缸造景打分卡片 -->
+    <view class="feature-card landscaping-card" bindtap="startTest" data-test-id="landscaping-score">
+      <view class="feature-content">
+        <view class="feature-header">
+          <view class="feature-title">为你的鱼缸造景打分</view>
+          <view class="feature-subtitle">专业水族师帮你评估鱼缸造景</view>
+        </view>
+        <view class="feature-footer">
+          <view class="feature-stats">
+            <text class="feature-count">{{tests[1].count}}人已测</text>
+          </view>
+          <view class="feature-btn">立即评分 <text class="feature-arrow">></text></view>
+        </view>
+      </view>
+      <view class="feature-decoration">
+        <view class="feature-circle"></view>
+      </view>
+    </view>
+    
+    <!-- 即将上线测试卡片 -->
+    <view class="test-card coming-soon">
+      <view class="coming-soon-content">
+        <text class="coming-soon-text">即将上线</text>
+        <text class="coming-soon-desc">更多有趣内容正在赶来</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "养鱼性格测试",
+  "usingComponents": {
+    "nav": "/components/nav",
+    "personality-test": "/components/personality-test/index"
+  },
+  "navigationStyle": "custom"
+} 

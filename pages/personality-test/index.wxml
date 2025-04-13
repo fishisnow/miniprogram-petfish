@@ -1,0 +1,4 @@
+<view class="personality-test-container">
+  <nav nav-type="normal" title-text="养鱼性格测试"></nav>
+  <personality-test bind:testComplete="onTestComplete" />
+</view> 

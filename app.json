@@ -1,5 +1,10 @@
 {
-  "pages": ["pages/home/index", "pages/message/index", "pages/my/index"],
+  "pages": [
+    "pages/home/index",
+    "pages/message/index",
+    "pages/my/index",
+    "pages/personality-test/index"
+  ],
   "usingComponents": {
     "t-toast": "tdesign-miniprogram/toast/toast"
   },
@@ -53,11 +58,14 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "宠物鱼",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
     "list": [
       {
         "pagePath": "pages/home/index",
@@ -65,7 +73,7 @@
       },
       {
         "pagePath": "pages/message/index",
-        "text": "消息"
+        "text": "测测"
       },
       {
         "pagePath": "pages/my/index",

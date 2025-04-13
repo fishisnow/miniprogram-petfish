@@ -5,6 +5,7 @@ page {
   box-sizing: border-box;
   height: 100vh;
   padding-bottom: calc(env(safe-area-inset-bottom) + 112rpx);
+  background: #f5f7fa;
 }
 .nav-bar {
   border-bottom: 1rpx solid #e7e7e7;
@@ -24,4 +25,332 @@ page {
 }
 .content.unread > view {
   width: 510rpx;
+}
+
+.message-container {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.header {
+  padding: 40rpx 30rpx;
+  background: #ffffff;
+  text-align: center;
+}
+
+.title {
+  display: block;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.subtitle {
+  display: block;
+  font-size: 28rpx;
+  color: #666;
+}
+
+/* 测试列表页面样式 */
+.test-list-container {
+  min-height: 100vh;
+  background: #f5f7fa;
+  padding-top: 180rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* 顶部Banner样式 */
+.top-banner {
+  width: 100vw;
+  height: 340rpx;
+  overflow: hidden;
+  margin-bottom: 0;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* 分类容器 */
+.category-container {
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.03);
+  margin-bottom: 20rpx;
+}
+
+/* 分类标签样式 */
+.category-scroll {
+  width: 100%;
+  white-space: nowrap;
+  padding: 20rpx 0;
+}
+
+.category-list {
+  display: inline-flex;
+  padding: 10rpx 0 10rpx 30rpx;
+}
+
+.category-item {
+  padding: 14rpx 32rpx;
+  margin-right: 20rpx;
+  background: #f5f7fa;
+  border-radius: 32rpx;
+  font-size: 28rpx;
+  color: #666666;
+  transition: all 0.3s;
+}
+
+.category-item.active {
+  background: #3a7cff;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.test-list {
+  padding: 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 六维养鱼性格测试特色卡片 */
+.feature-card {
+  background: linear-gradient(135deg, #3a7cff 0%, #6f9fff 100%);
+  border-radius: 20rpx;
+  padding: 40rpx 30rpx;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30rpx;
+  box-shadow: 0 8rpx 30rpx rgba(58, 124, 255, 0.2);
+  color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.feature-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200rpx;
+}
+
+.feature-header {
+  margin-bottom: 40rpx;
+}
+
+.feature-title {
+  font-size: 40rpx;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+}
+
+.feature-subtitle {
+  font-size: 28rpx;
+  opacity: 0.9;
+}
+
+.feature-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feature-stats {
+  margin-right: 20rpx;
+}
+
+.feature-count {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8rpx 20rpx;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+}
+
+.feature-btn {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  color: #3a7cff;
+  padding: 16rpx 30rpx;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+
+.feature-arrow {
+  margin-left: 6rpx;
+}
+
+.feature-decoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 200rpx;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.feature-circle {
+  position: absolute;
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  top: -100rpx;
+  right: -100rpx;
+}
+
+.feature-circle:before {
+  content: "";
+  position: absolute;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  top: 120rpx;
+  left: -60rpx;
+}
+
+/* 卡片样式 */
+.test-card {
+  background: #ffffff;
+  overflow: hidden;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+  margin-bottom: 30rpx;
+  transition: all 0.3s ease;
+}
+
+.test-card:active {
+  transform: scale(0.98);
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.03);
+}
+
+.test-image {
+  width: 100%;
+  height: 360rpx;
+  display: block;
+}
+
+.test-info {
+  padding: 28rpx 24rpx;
+}
+
+.test-title {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333333;
+  line-height: 1.4;
+  margin-bottom: 12rpx;
+}
+
+.test-subtitle {
+  font-size: 28rpx;
+  color: #666666;
+  line-height: 1.4;
+  margin-bottom: 24rpx;
+}
+
+.test-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6rpx;
+}
+
+.test-count {
+  font-size: 26rpx;
+  color: #999999;
+}
+
+.start-btn {
+  font-size: 28rpx;
+  color: #3a7cff;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  margin-left: 4rpx;
+}
+
+/* 即将上线卡片样式 */
+.test-card.coming-soon {
+  height: 180rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border: 2rpx dashed #e0e0e0;
+  box-shadow: none;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 16rpx;
+}
+
+.test-card.coming-soon:active {
+  transform: none;
+}
+
+.coming-soon-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.coming-soon-text {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #3a7cff;
+  margin-bottom: 12rpx;
+}
+
+.coming-soon-desc {
+  font-size: 28rpx;
+  color: #999999;
+}
+
+/* Banner样式 */
+.banner {
+  width: 100%;
+  height: 360rpx;
+  margin-top: 180rpx;
+}
+
+.banner-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+/* 标题样式 */
+.section-title {
+  padding: 30rpx;
+  display: flex;
+  align-items: baseline;
+}
+
+.title-text {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-right: 16rpx;
+}
+
+.title-desc {
+  font-size: 24rpx;
+  color: #999;
 }

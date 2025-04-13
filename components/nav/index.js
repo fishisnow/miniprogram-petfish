@@ -17,16 +17,16 @@ Component({
         url: 'pages/home/index',
         isSidebar: true,
       },
-      // {
-      //   title: '鱼缸计算器',
-      //   url: 'pages/search/index',
-      //   isSidebar: false,
-      // },
-      // {
-      //   title: '常见鱼病治疗',
-      //   url: 'pages/release/index',
-      //   isSidebar: false,
-      // }
+      {
+        title: '快乐养鱼',
+        url: 'pages/message/index',
+        isSidebar: true,
+      },
+      {
+        title: '我的',
+        url: 'pages/my/index',
+        isSidebar: true,
+      }
     ],
     statusHeight: 0,
   },
