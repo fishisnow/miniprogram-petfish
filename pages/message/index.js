@@ -152,7 +152,7 @@ Page({
   /** 用户点击右上角分享 */
   onShareAppMessage() {
     return {
-      title: '趣味测试：养鱼性格测试',
+      title: '趣味测试：六维养鱼性格测试',
       path: '/pages/message/index',
       imageUrl: this.data.banners[0].image
     }
