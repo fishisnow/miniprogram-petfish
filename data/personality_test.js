@@ -269,7 +269,7 @@ const personalityTest = {
     },
     {
       id: "tech",
-      name: "技术控",
+      name: "技术流",
       maxScore: 20
     },
     {
@@ -279,12 +279,12 @@ const personalityTest = {
     },
     {
       id: "aquascape",
-      name: "造景控",
+      name: "造景",
       maxScore: 20
     },
     {
       id: "diversity",
-      name: "品种多样化",
+      name: "多品种",
       maxScore: 20
     },
     {

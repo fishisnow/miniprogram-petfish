@@ -126,46 +126,207 @@
   margin-left: 20rpx;
 }
 
+/* 修改结果页面样式，添加吉卜力风格 */
 .test-result {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #ffffff;
+  background: #f0f5e9; /* 淡绿色背景，营造自然感 */
   z-index: 2000;
-  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
-  padding-top: calc(40rpx + env(safe-area-inset-top));
+}
+
+.result-header {
+  width: 100%;
+  padding: 30rpx;
+  padding-top: calc(30rpx + env(safe-area-inset-top));
+  background: #7aab98; /* 宫崎骏动画中常见的绿色调 */
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.result-title {
+  font-size: 42rpx;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin: 20rpx 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2rpx;
+}
+
+.result-scroll {
+  flex: 1;
+  padding: 30rpx;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .result-card {
   background: #ffffff;
-  border-radius: 20rpx;
+  border-radius: 24rpx;
   padding: 40rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
-}
-
-.result-title {
-  font-size: 40rpx;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 20rpx;
-  text-align: center;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.06);
+  margin-bottom: 30rpx;
+  border: 1px solid rgba(122, 171, 152, 0.3);
 }
 
 .result-description {
   font-size: 32rpx;
-  color: #666;
+  color: #5a6268;
   margin-bottom: 40rpx;
   text-align: center;
+  line-height: 1.6;
+  padding: 20rpx;
+  background: #f9fbf7;
+  border-radius: 16rpx;
+  border-left: 6rpx solid #7aab98;
+}
+
+/* 雷达图样式 */
+.radar-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20rpx 0;
+  position: relative;
+  background: #f2f7f4;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.radar-chart canvas {
+  width: 250px;
+  height: 250px;
+}
+
+/* 维度评分条形图 */
+.dimensions-chart {
+  margin: 30rpx 0;
+  background: #f9fbf7;
+  padding: 30rpx;
+  border-radius: 16rpx;
+  box-shadow: inset 0 0 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.dimension-item {
+  margin-bottom: 24rpx;
+}
+
+.dimension-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8rpx;
+}
+
+.dimension-name {
+  font-size: 28rpx;
+  color: #5d6b75;
+  font-weight: 500;
+}
+
+.dimension-score {
+  font-size: 28rpx;
+  color: #7aab98;
+  font-weight: bold;
+}
+
+/* 为不同维度设置不同颜色的条形图 */
+.dimension-bar-bg {
+  height: 16rpx;
+  background: #e8eee9;
+  border-radius: 8rpx;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 默认颜色 */
+.dimension-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #7aab98, #a5c6b1);
+  border-radius: 8rpx;
+  transition: width 1s ease;
+}
+
+/* 各个性格类型的不同颜色 */
+.dimension-item:nth-child(1) .dimension-bar {
+  background: linear-gradient(90deg, #7aab98, #a5c6b1); /* 佛系 - 龙猫绿 */
+}
+
+.dimension-item:nth-child(2) .dimension-bar {
+  background: linear-gradient(90deg, #5388a0, #7ba7bd); /* 技术控 - 千与千寻蓝 */
+}
+
+.dimension-item:nth-child(3) .dimension-bar {
+  background: linear-gradient(90deg, #e9879b, #f1a9b8); /* 颜值控 - 哈尔的红色 */
+}
+
+.dimension-item:nth-child(4) .dimension-bar {
+  background: linear-gradient(90deg, #a4b556, #c1cf85); /* 造景控 - 天空之城绿 */
+}
+
+.dimension-item:nth-child(5) .dimension-bar {
+  background: linear-gradient(90deg, #f8b650, #fac77d); /* 多样化 - 崖上的金黄 */
+}
+
+.dimension-item:nth-child(6) .dimension-bar {
+  background: linear-gradient(90deg, #a78fc2, #c1aedb); /* 社交型 - 魔女宅急便紫 */
+}
+
+/* 让不同维度的分数显示对应的颜色 */
+.dimension-item:nth-child(1) .dimension-score {
+  color: #7aab98; /* 佛系 */
+}
+
+.dimension-item:nth-child(2) .dimension-score {
+  color: #5388a0; /* 技术控 */
+}
+
+.dimension-item:nth-child(3) .dimension-score {
+  color: #e9879b; /* 颜值控 */
+}
+
+.dimension-item:nth-child(4) .dimension-score {
+  color: #a4b556; /* 造景控 */
+}
+
+.dimension-item:nth-child(5) .dimension-score {
+  color: #f8b650; /* 多样化 */
+}
+
+.dimension-item:nth-child(6) .dimension-score {
+  color: #a78fc2; /* 社交型 */
+}
+
+/* 推荐鱼种部分 */
+.recommended-section {
+  margin: 30rpx 0 10rpx;
 }
 
 .section-title {
   font-size: 36rpx;
   font-weight: bold;
-  color: #333;
-  margin: 30rpx 0 20rpx;
+  color: #5d6b75;
+  margin-bottom: 20rpx;
+  position: relative;
+  padding-left: 20rpx;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8rpx;
+  height: 32rpx;
+  width: 8rpx;
+  background: #7aab98;
+  border-radius: 4rpx;
 }
 
 .fish-list {
@@ -176,16 +337,38 @@
 
 .fish-item {
   padding: 16rpx 30rpx;
-  background: #f5f5f5;
+  background: #e8f0eb;
   border-radius: 30rpx;
   font-size: 28rpx;
-  color: #666;
+  color: #5d6b75;
+  border: 1px solid rgba(122, 171, 152, 0.3);
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.05);
+}
+
+/* 按钮区域 */
+.action-area {
+  padding: 30rpx;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 -4rpx 12rpx rgba(0, 0, 0, 0.06);
+  background: #ffffff;
 }
 
 .restart-btn {
-  margin-top: 40rpx;
-  background: #4CAF50;
+  width: 80%;
+  background: #7aab98;
   color: #ffffff;
   border-radius: 40rpx;
   font-size: 32rpx;
+  font-weight: 500;
+  padding: 20rpx 0;
+  box-shadow: 0 6rpx 12rpx rgba(122, 171, 152, 0.3);
+  transition: all 0.3s ease;
+  letter-spacing: 2rpx;
+  border: none;
+}
+
+.restart-btn:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 4rpx 8rpx rgba(122, 171, 152, 0.3);
 } 

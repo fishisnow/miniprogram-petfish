@@ -42,24 +42,45 @@
 
   <!-- 测试结果 -->
   <view class="test-result" wx:if="{{showResult}}">
-    <view class="result-card">
+    <view class="result-header">
       <view class="result-title">{{testResult.title}}</view>
-      <view class="result-description">{{testResult.description}}</view>
-      
-      <!-- 雷达图 -->
-      <view class="radar-chart">
-        <!-- 这里需要集成雷达图组件 -->
-      </view>
+    </view>
+    
+    <scroll-view scroll-y class="result-scroll">
+      <view class="result-card">
+        <view class="result-description">{{testResult.description}}</view>
+        
+        <!-- 雷达图 -->
+        <view class="radar-chart">
+          <canvas wx:if="{{!radarImage}}" canvas-id="radarCanvas" style="width: 250px; height: 250px;"></canvas>
+          <image wx:else src="{{radarImage}}" mode="widthFix" style="width: 250px; height: auto;"></image>
+        </view>
 
-      <!-- 推荐鱼种 -->
-      <view class="recommended-fishes">
-        <view class="section-title">推荐鱼种</view>
-        <view class="fish-list">
-          <text wx:for="{{testResult.fishes}}" wx:key="*this" class="fish-item">{{item}}</text>
+        <!-- 维度评分条形图 -->
+        <view class="dimensions-chart">
+          <view class="dimension-item" wx:for="{{radarDimensionNames}}" wx:key="index">
+            <view class="dimension-info">
+              <text class="dimension-name">{{item}}</text>
+              <text class="dimension-score">{{radarScores[index]}}</text>
+            </view>
+            <view class="dimension-bar-bg">
+              <view class="dimension-bar" style="width: {{radarScores[index] * 100 / 20}}%;"></view>
+            </view>
+          </view>
+        </view>
+
+        <!-- 推荐鱼种 -->
+        <view class="recommended-section">
+          <view class="section-title">推荐鱼种</view>
+          <view class="fish-list">
+            <text wx:for="{{testResult.fishes}}" wx:key="*this" class="fish-item">{{item}}</text>
+          </view>
         </view>
       </view>
-
-      <!-- 重新测试按钮 -->
+    </scroll-view>
+    
+    <!-- 重新测试按钮 -->
+    <view class="action-area">
       <button class="restart-btn" bindtap="restartTest">重新测试</button>
     </view>
   </view>
