@@ -126,14 +126,14 @@
   margin-left: 20rpx;
 }
 
-/* 修改结果页面样式，添加吉卜力风格 */
+/* 修改结果页面样式，优化吉卜力风格 */
 .test-result {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #f0f5e9; /* 淡绿色背景，营造自然感 */
+  background: #f3f8ee; /* 更明亮的淡绿色背景 */
   z-index: 2000;
   display: flex;
   flex-direction: column;
@@ -142,27 +142,48 @@
 
 .result-header {
   width: 100%;
-  padding: 30rpx;
-  padding-top: calc(30rpx + env(safe-area-inset-top));
-  background: #7aab98; /* 宫崎骏动画中常见的绿色调 */
-  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  padding: 20rpx;
+  padding-top: calc(40rpx + env(safe-area-inset-top));
+  background: #88c0a8; /* 更明亮的绿色调，参考龙猫中的色调 */
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
   position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90rpx;
+}
+
+.result-header .back-button {
+  position: absolute;
+  left: 30rpx;
+  top: calc(40rpx + env(safe-area-inset-top));
+  transform: translateY(-50%);
+  width: 70rpx;
+  height: 70rpx;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 10;
 }
 
 .result-title {
-  font-size: 42rpx;
+  font-size: 38rpx;
   font-weight: bold;
   color: #ffffff;
   text-align: center;
-  margin: 20rpx 0;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  margin: 10rpx 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   letter-spacing: 2rpx;
+  max-width: 80%;
 }
 
 .result-scroll {
   flex: 1;
-  padding: 30rpx;
+  padding: 20rpx;
+  padding-top: 30rpx;
   box-sizing: border-box;
   overflow-y: auto;
 }
@@ -170,22 +191,39 @@
 .result-card {
   background: #ffffff;
   border-radius: 24rpx;
-  padding: 40rpx;
-  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.06);
+  padding: 30rpx;
+  box-shadow: 0 8rpx 20rpx rgba(109, 168, 135, 0.12);
   margin-bottom: 30rpx;
-  border: 1px solid rgba(122, 171, 152, 0.3);
+  border: 1px solid rgba(136, 192, 168, 0.2);
+  position: relative;
+}
+
+/* 长按保存提示 */
+.save-tip {
+  position: absolute;
+  top: 10rpx;
+  right: 20rpx;
+  font-size: 22rpx;
+  color: #88c0a8;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6rpx 12rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.06);
 }
 
 .result-description {
-  font-size: 32rpx;
+  font-size: 28rpx;
   color: #5a6268;
-  margin-bottom: 40rpx;
-  text-align: center;
-  line-height: 1.6;
+  margin-bottom: 20rpx;
+  text-align: justify;
+  line-height: 1.8;
   padding: 20rpx;
-  background: #f9fbf7;
+  background: #f9fdf5; /* 更明亮的背景 */
   border-radius: 16rpx;
-  border-left: 6rpx solid #7aab98;
+  border-left: 6rpx solid #88c0a8;
+  max-width: 100%;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 /* 雷达图样式 */
@@ -193,127 +231,142 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20rpx 0;
+  width: 100%;
   position: relative;
-  background: #f2f7f4;
-  padding: 20rpx;
+  padding: 10rpx;
   border-radius: 20rpx;
-  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
 }
 
 .radar-chart canvas {
-  width: 250px;
-  height: 250px;
+  width: 220px !important;
+  height: 220px !important;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 110px;
+}
+
+.radar-chart image {
+  width: 220px !important;
+  height: auto;
+  border-radius: 110px;
+  background: rgba(255, 255, 255, 0.7);
 }
 
 /* 维度评分条形图 */
 .dimensions-chart {
-  margin: 30rpx 0;
-  background: #f9fbf7;
-  padding: 30rpx;
+  width: 100%;
+  margin: 10rpx 0;
+  padding: 20rpx 10rpx;
   border-radius: 16rpx;
-  box-shadow: inset 0 0 10rpx rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .dimension-item {
-  margin-bottom: 24rpx;
+  margin-bottom: 16rpx;
+}
+
+/* 最后一个维度项目不需要底部间距 */
+.dimension-item:last-child {
+  margin-bottom: 0;
 }
 
 .dimension-info {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8rpx;
+  margin-bottom: 6rpx;
 }
 
 .dimension-name {
-  font-size: 28rpx;
-  color: #5d6b75;
+  font-size: 26rpx;
+  color: #4b6c5d; /* 更深的绿色，提高对比度 */
   font-weight: 500;
 }
 
 .dimension-score {
-  font-size: 28rpx;
-  color: #7aab98;
+  font-size: 26rpx;
   font-weight: bold;
+}
+
+/* 各个性格类型的不同颜色 - 优化为更明亮的吉卜力色调 */
+.dimension-item:nth-child(1) .dimension-bar {
+  background: linear-gradient(90deg, #88c0a8, #b5e0cc); /* 佛系 - 明亮的龙猫绿 */
+}
+
+.dimension-item:nth-child(2) .dimension-bar {
+  background: linear-gradient(90deg, #5e9eb8, #8ac7e0); /* 技术控 - 明亮的千与千寻蓝 */
+}
+
+.dimension-item:nth-child(3) .dimension-bar {
+  background: linear-gradient(90deg, #f197a3, #f7bbc4); /* 颜值控 - 明亮的哈尔的红色 */
+}
+
+.dimension-item:nth-child(4) .dimension-bar {
+  background: linear-gradient(90deg, #b2c75f, #d4e590); /* 造景控 - 明亮的天空之城绿 */
+}
+
+.dimension-item:nth-child(5) .dimension-bar {
+  background: linear-gradient(90deg, #ffc266, #ffd699); /* 多样化 - 明亮的崖上的金黄 */
+}
+
+.dimension-item:nth-child(6) .dimension-bar {
+  background: linear-gradient(90deg, #b699cc, #d7c2e3); /* 社交型 - 明亮的魔女宅急便紫 */
+}
+
+/* 让不同维度的分数显示对应的颜色 */
+.dimension-item:nth-child(1) .dimension-score {
+  color: #88c0a8; /* 佛系 */
+}
+
+.dimension-item:nth-child(2) .dimension-score {
+  color: #5e9eb8; /* 技术控 */
+}
+
+.dimension-item:nth-child(3) .dimension-score {
+  color: #f197a3; /* 颜值控 */
+}
+
+.dimension-item:nth-child(4) .dimension-score {
+  color: #b2c75f; /* 造景控 */
+}
+
+.dimension-item:nth-child(5) .dimension-score {
+  color: #ffc266; /* 多样化 */
+}
+
+.dimension-item:nth-child(6) .dimension-score {
+  color: #b699cc; /* 社交型 */
 }
 
 /* 为不同维度设置不同颜色的条形图 */
 .dimension-bar-bg {
-  height: 16rpx;
-  background: #e8eee9;
-  border-radius: 8rpx;
+  height: 14rpx;
+  background: #edf5f0; /* 更明亮的背景 */
+  border-radius: 7rpx;
   overflow: hidden;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 /* 默认颜色 */
 .dimension-bar {
   height: 100%;
-  background: linear-gradient(90deg, #7aab98, #a5c6b1);
-  border-radius: 8rpx;
+  background: linear-gradient(90deg, #88c0a8, #b5e0cc);
+  border-radius: 7rpx;
   transition: width 1s ease;
-}
-
-/* 各个性格类型的不同颜色 */
-.dimension-item:nth-child(1) .dimension-bar {
-  background: linear-gradient(90deg, #7aab98, #a5c6b1); /* 佛系 - 龙猫绿 */
-}
-
-.dimension-item:nth-child(2) .dimension-bar {
-  background: linear-gradient(90deg, #5388a0, #7ba7bd); /* 技术控 - 千与千寻蓝 */
-}
-
-.dimension-item:nth-child(3) .dimension-bar {
-  background: linear-gradient(90deg, #e9879b, #f1a9b8); /* 颜值控 - 哈尔的红色 */
-}
-
-.dimension-item:nth-child(4) .dimension-bar {
-  background: linear-gradient(90deg, #a4b556, #c1cf85); /* 造景控 - 天空之城绿 */
-}
-
-.dimension-item:nth-child(5) .dimension-bar {
-  background: linear-gradient(90deg, #f8b650, #fac77d); /* 多样化 - 崖上的金黄 */
-}
-
-.dimension-item:nth-child(6) .dimension-bar {
-  background: linear-gradient(90deg, #a78fc2, #c1aedb); /* 社交型 - 魔女宅急便紫 */
-}
-
-/* 让不同维度的分数显示对应的颜色 */
-.dimension-item:nth-child(1) .dimension-score {
-  color: #7aab98; /* 佛系 */
-}
-
-.dimension-item:nth-child(2) .dimension-score {
-  color: #5388a0; /* 技术控 */
-}
-
-.dimension-item:nth-child(3) .dimension-score {
-  color: #e9879b; /* 颜值控 */
-}
-
-.dimension-item:nth-child(4) .dimension-score {
-  color: #a4b556; /* 造景控 */
-}
-
-.dimension-item:nth-child(5) .dimension-score {
-  color: #f8b650; /* 多样化 */
-}
-
-.dimension-item:nth-child(6) .dimension-score {
-  color: #a78fc2; /* 社交型 */
 }
 
 /* 推荐鱼种部分 */
 .recommended-section {
-  margin: 30rpx 0 10rpx;
+  margin: 20rpx 0 0;
+  background: #f9fdf5;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.04);
 }
 
 .section-title {
-  font-size: 36rpx;
+  font-size: 32rpx;
   font-weight: bold;
-  color: #5d6b75;
-  margin-bottom: 20rpx;
+  color: #4b6c5d; /* 更深的绿色，提高对比度 */
+  margin-bottom: 16rpx;
   position: relative;
   padding-left: 20rpx;
 }
@@ -323,52 +376,125 @@
   position: absolute;
   left: 0;
   top: 8rpx;
-  height: 32rpx;
-  width: 8rpx;
-  background: #7aab98;
-  border-radius: 4rpx;
+  height: 28rpx;
+  width: 6rpx;
+  background: #88c0a8;
+  border-radius: 3rpx;
 }
 
 .fish-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20rpx;
+  gap: 16rpx;
+  margin-top: 16rpx;
 }
 
 .fish-item {
-  padding: 16rpx 30rpx;
-  background: #e8f0eb;
-  border-radius: 30rpx;
-  font-size: 28rpx;
-  color: #5d6b75;
-  border: 1px solid rgba(122, 171, 152, 0.3);
-  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.05);
+  padding: 12rpx 24rpx;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 24rpx;
+  font-size: 26rpx;
+  color: #4b6c5d;
+  border: 1px solid rgba(136, 192, 168, 0.3);
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.03);
+  position: relative;
+  padding-left: 30rpx;
+}
+
+.fish-item::before {
+  content: "";
+  position: absolute;
+  left: 12rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background: #88c0a8;
 }
 
 /* 按钮区域 */
 .action-area {
-  padding: 30rpx;
+  padding: 20rpx;
   display: flex;
-  justify-content: center;
-  box-shadow: 0 -4rpx 12rpx rgba(0, 0, 0, 0.06);
+  justify-content: space-between;
+  box-shadow: 0 -4rpx 12rpx rgba(0, 0, 0, 0.04);
   background: #ffffff;
 }
 
 .restart-btn {
-  width: 80%;
-  background: #7aab98;
+  flex: 1;
+  background: #88c0a8; /* 更明亮的绿色 */
   color: #ffffff;
   border-radius: 40rpx;
-  font-size: 32rpx;
+  font-size: 30rpx;
   font-weight: 500;
-  padding: 20rpx 0;
-  box-shadow: 0 6rpx 12rpx rgba(122, 171, 152, 0.3);
+  padding: 16rpx 0;
+  box-shadow: 0 6rpx 12rpx rgba(136, 192, 168, 0.3);
   transition: all 0.3s ease;
   letter-spacing: 2rpx;
   border: none;
+  margin-left: 16rpx;
 }
 
-.restart-btn:active {
+.share-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #5e9eb8; /* 更明亮的蓝色 */
+  color: #ffffff;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  padding: 16rpx 0;
+  box-shadow: 0 6rpx 12rpx rgba(94, 158, 184, 0.3);
+  transition: all 0.3s ease;
+  letter-spacing: 2rpx;
+  border: none;
+  margin-right: 16rpx;
+}
+
+.restart-btn:active,
+.share-btn:active {
   transform: translateY(2rpx);
-  box-shadow: 0 4rpx 8rpx rgba(122, 171, 152, 0.3);
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #4b6c5d;
+  text-align: center;
+  margin: 10rpx 0 30rpx;
+  padding-bottom: 16rpx;
+  position: relative;
+}
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80rpx;
+  height: 4rpx;
+  background: #88c0a8;
+  border-radius: 2rpx;
+}
+
+.analysis-section {
+  margin: 20rpx 0 30rpx;
+  background: #f9fdf5;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.04);
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30rpx;
+  margin-top: 10rpx;
 } 

@@ -43,28 +43,43 @@
   <!-- 测试结果 -->
   <view class="test-result" wx:if="{{showResult}}">
     <view class="result-header">
-      <view class="result-title">{{testResult.title}}</view>
+      <view class="back-button" bindtap="handleBack">
+        <view class="back-icon"></view>
+      </view>
+      <view class="result-title">{{testResult.title || '养鱼性格测试结果'}}</view>
     </view>
     
     <scroll-view scroll-y class="result-scroll">
-      <view class="result-card">
+      <view class="result-card" bindlongpress="saveResultImage">
+        <view class="save-tip">长按保存图片</view>
+        
+        <view class="card-title">{{testResult.title || '养鱼性格测试结果'}}</view>
+        
         <view class="result-description">{{testResult.description}}</view>
         
-        <!-- 雷达图 -->
-        <view class="radar-chart">
-          <canvas wx:if="{{!radarImage}}" canvas-id="radarCanvas" style="width: 250px; height: 250px;"></canvas>
-          <image wx:else src="{{radarImage}}" mode="widthFix" style="width: 250px; height: auto;"></image>
-        </view>
-
-        <!-- 维度评分条形图 -->
-        <view class="dimensions-chart">
-          <view class="dimension-item" wx:for="{{radarDimensionNames}}" wx:key="index">
-            <view class="dimension-info">
-              <text class="dimension-name">{{item}}</text>
-              <text class="dimension-score">{{radarScores[index]}}</text>
+        <!-- 性格分析板块 -->
+        <view class="analysis-section">
+          <view class="section-title">性格分析</view>
+          
+          <!-- 修改为垂直排列布局，避免重叠 -->
+          <view class="chart-container">
+            <!-- 雷达图 -->
+            <view class="radar-chart">
+              <canvas wx:if="{{!radarImage}}" canvas-id="radarCanvas" style="width: 220px; height: 220px;"></canvas>
+              <image wx:else src="{{radarImage}}" mode="widthFix" style="width: 220px; height: auto;"></image>
             </view>
-            <view class="dimension-bar-bg">
-              <view class="dimension-bar" style="width: {{radarScores[index] * 100 / 20}}%;"></view>
+
+            <!-- 维度评分条形图 - 只在页面上展示，保存图片时不使用 -->
+            <view class="dimensions-chart">
+              <view class="dimension-item" wx:for="{{radarDimensionNames}}" wx:key="index">
+                <view class="dimension-info">
+                  <text class="dimension-name">{{item}}</text>
+                  <text class="dimension-score">{{radarScores[index]}}</text>
+                </view>
+                <view class="dimension-bar-bg">
+                  <view class="dimension-bar" style="width: {{radarScores[index] * 100 / 20}}%;"></view>
+                </view>
+              </view>
             </view>
           </view>
         </view>
@@ -79,8 +94,15 @@
       </view>
     </scroll-view>
     
-    <!-- 重新测试按钮 -->
+    <!-- 结果页面用于生成分享图的隐藏画布 -->
+    <canvas canvas-id="resultCanvas" class="result-canvas" style="width: 750px; height: 1600px; position: absolute; left: -9999px;"></canvas>
+    
+    <!-- 底部按钮区域 -->
     <view class="action-area">
+      <button class="share-btn" open-type="share">
+        <view class="share-icon"></view>
+        分享结果
+      </button>
       <button class="restart-btn" bindtap="restartTest">重新测试</button>
     </view>
   </view>
