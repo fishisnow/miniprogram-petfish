@@ -46,6 +46,9 @@ Component({
       } else {
         console.error('未找到测试数据');
       }
+      
+      // 检查是否有未完成的测试
+      this.loadUnfinishedTest();
     },
     
     ready() {
@@ -68,6 +71,9 @@ Component({
         selectedAnswers: newSelectedAnswers
       });
 
+      // 保存测试进度到本地
+      this.saveTestProgress(newSelectedAnswers, currentQuestionIndex);
+
       // 如果是最后一题，计算结果
       if (questionIndex === questions.length - 1) {
         this.calculateResult();
@@ -77,6 +83,8 @@ Component({
           this.setData({
             currentQuestionIndex: currentQuestionIndex + 1
           });
+          // 更新保存的当前问题索引
+          this.saveTestProgress(newSelectedAnswers, currentQuestionIndex + 1);
         }, 300);
       }
     },
@@ -164,6 +172,9 @@ Component({
       }, () => {
         // 在数据设置完成后再次打印，确认数据已正确设置
         console.log('setData完成后的testResult:', this.data.testResult);
+        
+        // 保存测试结果到本地
+        this.saveTestResult(result, scores);
       });
 
       // 触发测试完成事件
@@ -173,6 +184,9 @@ Component({
       setTimeout(() => {
         this.drawRadarChart();
       }, 300);
+      
+      // 测试完成后清除测试进度
+      wx.removeStorageSync('personality_test_progress');
     },
 
     restartTest() {
@@ -182,6 +196,12 @@ Component({
         showResult: false,
         testResult: null
       });
+      
+      // 清除本地存储的测试数据
+      wx.removeStorageSync('personality_test_result');
+      wx.removeStorageSync('personality_test_scores');
+      wx.removeStorageSync('personality_test_progress');
+      wx.removeStorageSync('personality_test_radar_image');
     },
 
     drawRadarChart() {
@@ -383,15 +403,24 @@ Component({
     canvasToImage() {
       wx.canvasToTempFilePath({
         canvasId: 'radarCanvas',
-        fileType: 'jpg',
-        quality: 1,
         success: (res) => {
+          const tempFilePath = res.tempFilePath;
+          console.log('雷达图生成成功:', tempFilePath);
+          
+          // 保存雷达图路径到本地
+          try {
+            wx.setStorageSync('personality_test_radar_image', tempFilePath);
+            console.log('雷达图路径已保存到本地');
+          } catch (error) {
+            console.error('保存雷达图路径失败:', error);
+          }
+          
           this.setData({
-            radarImage: res.tempFilePath
+            radarImage: tempFilePath
           });
         },
-        fail: (err) => {
-          console.error('Canvas转图片失败', err);
+        fail: (error) => {
+          console.error('雷达图生成失败:', error);
         }
       }, this);
     },
@@ -1047,6 +1076,62 @@ Component({
       return {
         title: '来测测你的养鱼性格吧！'
       };
+    },
+
+    // 新增方法：加载未完成的测试数据
+    loadUnfinishedTest() {
+      try {
+        const unfinishedTest = wx.getStorageSync('personality_test_progress');
+        if (unfinishedTest) {
+          console.log('找到未完成的测试:', unfinishedTest);
+          // 如果有答案数据，则加载它们
+          if (unfinishedTest.selectedAnswers && unfinishedTest.selectedAnswers.length > 0) {
+            // 取决于URL参数是否要继续，若是我的测试页面跳转来的continue=true则继续测试
+            const pages = getCurrentPages();
+            const currentPage = pages[pages.length - 1];
+            // 检查URL参数中是否有continue=true
+            if (currentPage && currentPage.options && currentPage.options.continue === 'true') {
+              console.log('继续未完成的测试');
+              this.setData({
+                selectedAnswers: unfinishedTest.selectedAnswers,
+                currentQuestionIndex: unfinishedTest.currentQuestionIndex || unfinishedTest.selectedAnswers.length
+              });
+              // 显示继续测试的提示
+              wx.showToast({
+                title: '继续上次测试',
+                icon: 'success'
+              });
+            }
+          }
+        }
+      } catch (error) {
+        console.error('加载未完成测试失败:', error);
+      }
+    },
+
+    // 新增方法：保存测试进度
+    saveTestProgress(selectedAnswers, currentQuestionIndex) {
+      try {
+        wx.setStorageSync('personality_test_progress', {
+          selectedAnswers,
+          currentQuestionIndex,
+          timestamp: new Date().getTime()
+        });
+        console.log('测试进度已保存');
+      } catch (error) {
+        console.error('保存测试进度失败:', error);
+      }
+    },
+
+    // 新增方法：保存测试结果到本地
+    saveTestResult(result, scores) {
+      try {
+        wx.setStorageSync('personality_test_result', result);
+        wx.setStorageSync('personality_test_scores', scores);
+        console.log('测试结果已保存到本地');
+      } catch (error) {
+        console.error('保存测试结果失败:', error);
+      }
     }
   }
 }); 

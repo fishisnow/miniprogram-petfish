@@ -6,6 +6,13 @@ Component({
     fishId: String
   },
   data: {},
+  lifetimes: {
+    attached() {
+      // 打印组件接收到的属性，特别是标签
+      console.log('card组件属性:', this.properties);
+      console.log('card组件标签:', this.properties.tags);
+    }
+  },
   methods: {
     onClick() {
       const fishId = this.properties.fishId;

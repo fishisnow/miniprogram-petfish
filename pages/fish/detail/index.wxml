@@ -1,4 +1,6 @@
-<t-navbar title="{{detail.name}}" left-arrow bind:click-left="onBack" />
+<t-navbar title="{{detail.name}}" left-arrow bind:click-left="onBack">
+  <!-- 移除这里的收藏按钮 -->
+</t-navbar>
 
 <view class="fish-detail" wx:if="{{!loading}}">
   <!-- 鱼类图片 -->
@@ -13,7 +15,17 @@
   <!-- 基本信息 -->
   <view class="info-section">
     <view class="info-header">
+      <!-- 修改这里，添加新的包含标题和收藏按钮的布局 -->
+      <view class="title-row">
       <view class="info-title">{{detail.name}}</view>
+        <t-icon 
+          class="favorite-icon"
+          name="{{isFavorite ? 'heart-filled' : 'heart'}}" 
+          size="48rpx" 
+          color="{{isFavorite ? '#ff4c4c' : '#000000e6'}}" 
+          bindtap="toggleFavorite"
+        />
+      </view>
     </view>
 
     <!-- 描述信息 -->

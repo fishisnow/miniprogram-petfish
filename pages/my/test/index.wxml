@@ -1,0 +1,70 @@
+<t-navbar title="我的测试" left-arrow />
+<view class="test-container">
+  <block wx:if="{{testResult}}">
+    <!-- 有测试结果时显示 -->
+    <view class="result-card">
+      <view class="result-header">
+        <t-icon name="chart-line" size="48rpx" color="#0052d9" />
+        <view class="result-title">{{testResult.title}}</view>
+      </view>
+      <view class="result-description">{{testResult.description}}</view>
+      
+      <!-- 雷达图结果 -->
+      <view class="radar-container" wx:if="{{radarImage}}">
+        <image class="radar-image" src="{{radarImage}}" mode="aspectFit"></image>
+      </view>
+      
+      <!-- 能力值展示 -->
+      <view class="ability-container">
+        <view class="ability-item" wx:for="{{testResult.abilities}}" wx:key="name">
+          <view class="ability-label">{{item.name}}</view>
+          <view class="ability-bar-container">
+            <view class="ability-bar" style="width: {{item.value}}%;"></view>
+          </view>
+          <view class="ability-value">{{item.value}}%</view>
+        </view>
+      </view>
+      
+      <!-- 推荐鱼种 -->
+      <view class="recommended-fishes">
+        <view class="section-title">适合你的鱼种</view>
+        <view class="fish-list">
+          <view class="fish-item" wx:for="{{testResult.fishes}}" wx:key="index" bindtap="viewFishDetail" data-id="{{item.id}}">
+            <image class="fish-image" src="{{item.image}}" mode="aspectFill"></image>
+            <view class="fish-info">
+              <view class="fish-name">{{item.name}}</view>
+              <view class="fish-description">{{item.description}}</view>
+            </view>
+            <t-icon name="chevron-right" size="36rpx" color="#ccc" />
+          </view>
+        </view>
+      </view>
+      
+      <!-- 操作按钮 -->
+      <view class="action-buttons">
+        <t-button theme="primary" size="medium" icon="refresh" shape="round" bindtap="restartTest">重新测试</t-button>
+        <t-button theme="light" size="medium" icon="share" shape="round" bindtap="shareResult">分享结果</t-button>
+      </view>
+    </view>
+  </block>
+  
+  <!-- 有未完成的测试时显示 -->
+  <block wx:elif="{{hasUnfinishedTest}}">
+    <view class="unfinished-test">
+      <t-image src="/static/img_td.png" width="180" height="180" />
+      <view class="unfinished-title">你有一个未完成的测试</view>
+      <view class="unfinished-description">继续完成测试，发现适合你的鱼种</view>
+      <t-button theme="primary" size="medium" icon="play-circle" shape="round" bindtap="continueTest">继续测试</t-button>
+    </view>
+  </block>
+  
+  <!-- 没有测试结果时显示 -->
+  <block wx:else>
+    <view class="empty-state">
+      <t-image src="/static/img_td.png" width="180" height="180" />
+      <view class="empty-title">暂无测试结果</view>
+      <view class="empty-description">完成养鱼性格测试，了解你适合养什么鱼</view>
+      <t-button theme="primary" size="medium" icon="add-circle" shape="round" bindtap="startTest">开始测试</t-button>
+    </view>
+  </block>
+</view> 

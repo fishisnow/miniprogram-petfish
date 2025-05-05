@@ -1,0 +1,247 @@
+.my {
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+  --td-navbar-bg-color: transparent;
+}
+
+.my .nav-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 252rpx;
+  z-index: -1;
+}
+
+.my-info,
+.my-service,
+.my-setting {
+  background-color: #fff;
+}
+
+.my-info {
+  padding: 0 12rpx;
+  margin-top: 60rpx;
+  overflow: hidden;
+  border-radius: 20rpx 20rpx 0 0;
+  background-color: white;
+}
+
+.my-info__person .name {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 50rpx;
+}
+
+.my-info__person .tags {
+  display: flex;
+}
+
+.my-info__person .tags .tag {
+  margin-top: 14rpx;
+  margin-right: 12rpx;
+  --td-tag-square-size: 28rpx !important;
+}
+
+.my-service {
+  border-radius: 24rpx;
+  margin: 8rpx;
+  padding-bottom: 8rpx;
+  overflow: hidden;
+}
+
+.my-service__list-item .t-grid-item__content {
+  padding-bottom: 16rpx !important;
+}
+
+.my-service__list-item .t-grid-item__text {
+  height: 40rpx !important;
+}
+
+.my-service--tips {
+  height: 44rpx;
+  line-height: 44rpx;
+  padding-left: 40rpx;
+  margin-top: 24rpx;
+  color: #000000e6;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.my-menu {
+  margin-top: 8rpx;
+  padding: 0 8rpx;
+}
+  
+.my-menu .menu-item {
+  margin-bottom: 8rpx;
+  border-radius: 12rpx;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+}
+  
+.my-menu .menu-item:active {
+  transform: scale(0.98);
+}
+  
+.my-menu .menu-item-title {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.9);
+}
+  
+.my-menu .menu-item-description {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 4rpx;
+}
+  
+.my-menu .menu-item-icon {
+  font-size: 44rpx;
+  color: #0052d9;
+}
+
+.cell-class-title {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 50rpx;
+  text-align: left;
+  border: none !important;
+  outline: none !important;
+}
+
+.cell-class-center {
+  height: 104rpx;
+  display: flex;
+  align-items: center;
+  border: none !important;
+  outline: none !important;
+}
+
+.divider-class {
+  --td-divider-color: #e6e6e6;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* 自定义的最小边距样式，但对头部区域不应用 */
+.minimal-card {
+  margin: 0 8rpx !important;
+  padding: 0 !important;
+  --td-cell-group-margin: 8rpx !important;
+}
+
+/* 移除对t-cell-group样式的全局覆盖，只对菜单区域应用 */
+.my-menu .t-cell-group {
+  --td-cell-group-margin: 8rpx !important;
+}
+
+.my-menu .t-cell-group__card {
+  margin: 0 8rpx !important;
+  padding: 0 !important;
+}
+
+/* 覆盖 t-cell-group 的卡片主题默认左右边距 */
+.my-menu .t-cell-group--card {
+  margin: 0 8rpx !important;
+}
+
+/* 覆盖单元格的内部水平内边距，仅对菜单应用 */
+.my-menu .t-cell {
+  --td-cell-horizontal-padding: 12rpx !important;
+  --td-cell-padding: 8rpx !important;
+}
+
+/* 强制覆盖TDesign组件的样式 */
+.t-cell-group {
+  --td-cell-group-margin: 8rpx !important;
+}
+
+.t-cell-group__card {
+  margin: 0 8rpx !important;
+  padding: 0 !important;
+}
+
+/* 确保所有卡片都使用统一的较小边距，但仅对菜单区域 */
+.my-menu .t-card {
+  margin: 8rpx !important;
+  padding: 8rpx !important;
+}
+
+/* 覆盖头部cell的样式 */
+.my-info .t-cell {
+  border: none !important;
+  outline: none !important;
+  display: flex;
+  align-items: center;
+  height: 104rpx;
+}
+
+/* 调整头部单元格的垂直对齐 */
+.my-info .t-cell__title {
+  display: flex;
+  align-items: center;
+}
+
+/* 移除所有可能的边框 */
+.t-cell::after,
+.t-cell::before,
+.t-cell-group::after,
+.t-cell-group::before {
+  border: none !important;
+  outline: none !important;
+}
+
+/* 针对登录区域的额外样式 */
+.login-cell {
+  display: flex !important;
+  align-items: center !important;
+  height: auto !important;
+  min-height: 128rpx !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.login-title {
+  margin-left: 20rpx !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  height: auto !important;
+  line-height: 1.4 !important;
+  font-size: 34rpx !important;
+  font-weight: normal !important;
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.my-info .t-cell-group {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.my-info .t-cell-group::before,
+.my-info .t-cell-group::after,
+.my-info .t-cell::before,
+.my-info .t-cell::after {
+  display: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* 移除minimal-card类对头部区域的影响 */
+.my-info .minimal-card {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+} 

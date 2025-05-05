@@ -6,43 +6,23 @@ Page({
 
   data: {
     isLoad: false,
-    service: [],
     personalInfo: {},
-    gridList: [
+    listItems: [
       {
-        name: '全部发布',
-        icon: 'root-list',
-        type: 'all',
-        url: '',
+        name: '我的收藏', 
+        icon: 'heart', 
+        type: 'favorites', 
+        url: '/pages/my/favorites/index',
+        description: '查看已收藏的宠物鱼'
       },
       {
-        name: '审核中',
-        icon: 'search',
-        type: 'progress',
-        url: '',
-      },
-      {
-        name: '已发布',
-        icon: 'upload',
-        type: 'published',
-        url: '',
-      },
-      {
-        name: '草稿箱',
-        icon: 'file-copy',
-        type: 'draft',
-        url: '',
-      },
-    ],
-
-    settingList: [
-      { name: '联系客服', icon: 'service', type: 'service' },
-      { name: '设置', icon: 'setting', type: 'setting', url: '/pages/setting/index' },
-    ],
-  },
-
-  onLoad() {
-    this.getServiceList();
+        name: '我的测试', 
+        icon: 'chart-pie', 
+        type: 'test', 
+        url: '/pages/my/test/index',
+        description: '养鱼性格测试结果'
+      }
+    ]
   },
 
   async onShow() {
@@ -55,13 +35,6 @@ Page({
         personalInfo,
       });
     }
-  },
-
-  getServiceList() {
-    request('/api/getServiceList').then((res) => {
-      const { service } = res.data.data;
-      this.setData({ service });
-    });
   },
 
   async getPersonalInfo() {
@@ -79,9 +52,15 @@ Page({
     wx.navigateTo({ url: `/pages/my/info-edit/index` });
   },
 
-  onEleClick(e) {
-    const { name, url } = e.currentTarget.dataset.data;
-    if (url) return;
-    this.onShowToast('#t-toast', name);
-  },
+  onItemClick(e) {
+    const { data } = e.currentTarget.dataset;
+    const { url } = data;
+    
+    if (url) {
+      wx.navigateTo({ url });
+      return;
+    }
+    
+    this.onShowToast('#t-toast', `点击了${data.name}`);
+  }
 });

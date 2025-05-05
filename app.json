@@ -20,6 +20,16 @@
       "pages": ["index"]
     },
     {
+      "root": "pages/my/favorites",
+      "name": "favorites",
+      "pages": ["index"]
+    },
+    {
+      "root": "pages/my/test",
+      "name": "test",
+      "pages": ["index"]
+    },
+    {
       "root": "pages/chat",
       "name": "chat",
       "pages": ["index"]

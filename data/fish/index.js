@@ -84,6 +84,9 @@ export const fishDetail = {
         detailData.description = [detailData.description];
       }
       
+      // 3. 添加标签信息 - 从card中获取tags
+      detailData.tags = fish.card.tags;
+      
       // 返回完整格式的响应
       return {
         code: 200,

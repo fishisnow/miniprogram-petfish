@@ -1,0 +1,43 @@
+<t-navbar title="我的收藏" left-arrow />
+<view class="favorites-container">
+  <view wx:if="{{loading}}" class="loading-state">
+    <t-loading theme="circular" size="40rpx" text="加载中..." />
+  </view>
+  
+  <block wx:elif="{{favoritesList.length > 0}}">
+    <view class="favorites-header">
+      <text class="favorites-count">{{favoritesList.length}}个收藏</text>
+      <t-search
+        class="favorites-search"
+        placeholder="搜索收藏"
+        shape="round"
+        value="{{searchValue}}"
+        bind:change="onSearchChange"
+        bind:submit="onSearchSubmit"
+      />
+    </view>
+    
+    <view class="favorites-list">
+      <card 
+        wx:for="{{filteredList}}" 
+        wx:key="id"
+        desc="{{item.name || item.desc}}" 
+        url="{{item.url}}" 
+        tags="{{item.tags}}"
+        fish-id="{{item.id || item.fishId}}"
+      />
+    </view>
+    
+    <view class="favorites-footer">
+      <text class="favorites-tip" wx:if="{{filteredList.length === favoritesList.length}}">— 已显示全部收藏 —</text>
+      <text class="favorites-tip" wx:else>— 显示 {{filteredList.length}}/{{favoritesList.length}} 条收藏 —</text>
+    </view>
+  </block>
+  
+  <view wx:else class="empty-state">
+    <t-image src="/static/img_td.png" width="180" height="180" />
+    <view class="empty-text">暂无收藏内容</view>
+    <view class="empty-sub-text">收藏喜欢的鱼类，方便随时查看</view>
+    <t-button theme="primary" size="medium" icon="search" shape="round" bindtap="goExplore">去探索</t-button>
+  </view>
+</view> 
