@@ -21,28 +21,125 @@
       background-color: @bg-color;
     }
   }
+}
 
-  .home-card-list {
+/* 卡片列表布局 */
+.home-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: @bg-color;
+}
+
+/* 卡片容器 */
+.card-wrapper {
+  width: 48%;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+/* 底部提示信息 */
+.home-bottom-tip {
+  text-align: center;
+  padding: 30rpx 0;
+  color: #999;
+  font-size: 24rpx;
+  background-color: @bg-color;
+  margin-bottom: 20rpx;
+  
+  .loading-more {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 24rpx 12rpx;
-    padding: 24rpx;
-    background-color: @bg-color;
+    align-items: center;
+    justify-content: center;
+    
+    .loading-text {
+      margin-left: 10rpx;
+    }
   }
-
-  .home-bottom-tip {
-    text-align: center;
-    padding: 30rpx 0;
-    color: #999;
+  
+  .load-more-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16rpx 0;
+    color: #888;
     font-size: 24rpx;
-    background-color: @bg-color;
-    margin-bottom: 20rpx;
+    
+    .pull-up-icon {
+      width: 40rpx;
+      height: 40rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8rpx;
+      position: relative;
+      animation: pulse 1.5s infinite ease-in-out;
+      
+      .arrow {
+        width: 16rpx;
+        height: 16rpx;
+        border-top: 2rpx solid #888;
+        border-right: 2rpx solid #888;
+        transform: rotate(-45deg); // 旋转使箭头朝上
+      }
+    }
+    
+    .pull-up-text {
+      line-height: 1;
+    }
+    
+    &:active {
+      opacity: 0.8;
+    }
   }
 }
 
-.home-release {
-  position: fixed;
-  bottom: 208rpx;
-  right: 32rpx;
+@keyframes pulse {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6rpx);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* 加载中状态 */
+.home-loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300rpx;
+  background-color: @bg-color;
+  padding: 40rpx;
+  
+  .loading-text {
+    margin-top: 20rpx;
+    color: #666;
+    font-size: 28rpx;
+  }
+}
+
+/* 空数据提示 */
+.home-empty-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300rpx;
+  background-color: @bg-color;
+  color: #999;
+  font-size: 28rpx;
+}
+
+/* 滚动视图样式 */
+scroll-view {
+  background-color: @bg-color;
+  width: 100%;
 }
