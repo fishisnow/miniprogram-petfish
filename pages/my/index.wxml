@@ -33,22 +33,22 @@
 
   <view class="my-menu">
     <t-cell-group theme="card" t-class="minimal-card">
-      <t-cell
+    <t-cell
         wx:for="{{listItems}}"
-        wx:for-item="item"
-        wx:key="type"
-        title="{{item.name}}"
+      wx:for-item="item"
+      wx:key="type"
+      title="{{item.name}}"
         description="{{item.description}}"
-        leftIcon="{{item.icon}}"
-        hover
-        arrow
+      leftIcon="{{item.icon}}"
+      hover
+      arrow
         t-class="menu-item"
         t-class-title="menu-item-title"
         t-class-description="menu-item-description"
         t-class-left-icon="menu-item-icon"
-        data-data="{{item}}"
+      data-data="{{item}}"
         bindtap="onItemClick"
-      />
-    </t-cell-group>
+    />
+  </t-cell-group>
   </view>
 </view>

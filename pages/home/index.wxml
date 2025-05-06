@@ -1,64 +1,37 @@
 <wxss src="./card-override.wxss" />
-<nav nav-type="search" />
+<nav nav-type="search" activeTab="{{activeTab}}" bind:tabchange="onTabChange" />
 <view class="home-container">
   <view class="home-content">
-    <t-tabs defaultValue="recommend">
-      <t-tab-panel label="全部" value="recommend">
-        <t-pull-down-refresh
-          value="{{enable}}"
-          bind:refresh="onRefresh"
-          loadingTexts="{{['下拉刷新', '松手刷新', '正在刷新', '刷新完成']}}"
-        >
-          <scroll-view 
-            scroll-y 
-            style="height: calc(100vh - 250rpx); width: 100%;"
-            bindscrolltolower="loadMoreData" 
-            lower-threshold="200"
-            enhanced="{{true}}"
-            show-scrollbar="{{false}}"
-          >
-            <view wx:if="{{loading}}" class="home-loading-container">
-              <t-loading theme="circular" size="60rpx" />
-              <text class="loading-text">加载中...</text>
-            </view>
-
-            <view wx:elif="{{cardInfo.length > 0}}" class="home-card-list">
-              <view class="card-wrapper" wx:for="{{cardInfo}}" wx:key="index">
-                <card
-                  desc="{{item.desc}}"
-                  url="{{item.url}}"
-                  tags="{{item.tags}}"
-                  fish-id="{{item.fishId}}"
-                />
-              </view>
-            </view>
-            <view wx:else class="home-empty-container">
-              <text>暂无数据</text>
-            </view>
-
-            <view class="home-bottom-tip">
-              <view wx:if="{{isLoadingMore}}" class="loading-more">
-                <t-loading theme="circular" size="40rpx" />
-                <text class="loading-text">{{loadingText}}</text>
-              </view>
-              <view wx:elif="{{hasMoreData && cardInfo.length > 0}}" bindtap="loadMoreData" class="load-more-btn">
-                <view class="pull-up-icon">
-                  <view class="arrow"></view>
-                </view>
-                <text class="pull-up-text">上拉加载更多</text>
-              </view>
-              <text wx:elif="{{!hasMoreData && cardInfo.length > 0}}">到底部了，没有更多啦~</text>
-            </view>
-          </scroll-view>
-        </t-pull-down-refresh>
-      </t-tab-panel>
-      <t-tab-panel label="最受欢迎" value="follow">
+    <t-pull-down-refresh
+      value="{{enable}}"
+      bind:refresh="onRefresh"
+      loadingTexts="{{['下拉刷新', '松手刷新', '正在刷新', '刷新完成']}}"
+    >
+      <scroll-view 
+        scroll-y 
+        style="height: calc(100vh - 200rpx); width: 100%;"
+        bindscrolltolower="loadMoreData" 
+        lower-threshold="200"
+        enhanced="{{true}}"
+        show-scrollbar="{{false}}"
+      >
         <view wx:if="{{loading}}" class="home-loading-container">
           <t-loading theme="circular" size="60rpx" />
           <text class="loading-text">加载中...</text>
         </view>
 
-        <view wx:elif="{{focusCardInfo.length > 0}}" class="home-card-list">
+        <view wx:elif="{{activeTab === 'recommend' && cardInfo.length > 0}}" class="home-card-list">
+          <view class="card-wrapper" wx:for="{{cardInfo}}" wx:key="index">
+            <card
+              desc="{{item.desc}}"
+              url="{{item.url}}"
+              tags="{{item.tags}}"
+              fish-id="{{item.fishId}}"
+            />
+          </view>
+        </view>
+        
+        <view wx:elif="{{activeTab === 'follow' && focusCardInfo.length > 0}}" class="home-card-list">
           <view class="card-wrapper" wx:for="{{focusCardInfo}}" wx:key="index">
             <card
               desc="{{item.desc}}"
@@ -68,21 +41,32 @@
             />
           </view>
         </view>
+        
         <view wx:else class="home-empty-container">
           <text>暂无数据</text>
         </view>
-        
+
         <view class="home-bottom-tip">
-          <view wx:if="{{focusCardInfo.length > 0 && popularHasMoreData}}" bindtap="loadMoreData" class="load-more-btn">
+          <view wx:if="{{isLoadingMore}}" class="loading-more">
+            <t-loading theme="circular" size="40rpx" />
+            <text class="loading-text">{{loadingText}}</text>
+          </view>
+          <view wx:elif="{{activeTab === 'recommend' && hasMoreData && cardInfo.length > 0}}" bindtap="loadMoreData" class="load-more-btn">
             <view class="pull-up-icon">
               <view class="arrow"></view>
             </view>
             <text class="pull-up-text">上拉加载更多</text>
           </view>
-          <text wx:elif="{{focusCardInfo.length > 0}}">到底部了，没有更多啦~</text>
+          <view wx:elif="{{activeTab === 'follow' && popularHasMoreData && focusCardInfo.length > 0}}" bindtap="loadMoreData" class="load-more-btn">
+            <view class="pull-up-icon">
+              <view class="arrow"></view>
+            </view>
+            <text class="pull-up-text">上拉加载更多</text>
+          </view>
+          <text wx:elif="{{(activeTab === 'recommend' && cardInfo.length > 0) || (activeTab === 'follow' && focusCardInfo.length > 0)}}">到底部了，没有更多啦~</text>
         </view>
-      </t-tab-panel>
-    </t-tabs>
+      </scroll-view>
+    </t-pull-down-refresh>
   </view>
 </view>
 

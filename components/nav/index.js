@@ -8,6 +8,10 @@ Component({
       value: 'title',
     },
     titleText: String,
+    activeTab: {
+      type: String,
+      value: 'recommend'
+    }
   },
   data: {
     visible: false,
@@ -70,5 +74,15 @@ Component({
         url: `/pages/search/index`,
       });
     },
+    
+    // 处理标签切换
+    switchTab(e) {
+      const value = e.currentTarget.dataset.value;
+      this.setData({
+        activeTab: value
+      });
+      // 触发自定义事件，通知父组件标签已切换
+      this.triggerEvent('tabchange', { value });
+    }
   },
 });

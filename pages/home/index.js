@@ -7,6 +7,7 @@ import request from '~/api/request';
 Page({
   data: {
     enable: false,
+    activeTab: 'recommend', // 当前激活的标签
     cardInfo: [],
     focusCardInfo: [], // 最受欢迎的鱼类列表
     motto: 'Hello World',
@@ -86,6 +87,20 @@ Page({
   onShow() {
     // 避免重复加载
     if (this.data.cardInfo.length === 0) {
+      this.initData();
+    }
+  },
+
+  // 监听标签切换事件
+  onTabChange(e) {
+    const { value } = e.detail;
+    
+    this.setData({
+      activeTab: value
+    });
+    
+    // 如果是切换到"最受欢迎"标签，而且还没有加载数据，则加载数据
+    if (value === 'follow' && this.data.focusCardInfo.length === 0) {
       this.initData();
     }
   },
@@ -218,10 +233,20 @@ Page({
   },
   // 加载更多数据
   loadMoreData() {
-    if (this.data.hasMoreData && !this.data.isLoadingMore) {
-      console.log('加载更多数据，当前页码:', this.data.currentPage);
-      const nextPage = this.data.currentPage + 1;
-      this.loadCardsByPage(nextPage);
+    // 根据当前激活的标签决定加载哪种数据
+    if (this.data.activeTab === 'recommend') {
+      if (this.data.hasMoreData && !this.data.isLoadingMore) {
+        console.log('加载更多数据，当前页码:', this.data.currentPage);
+        const nextPage = this.data.currentPage + 1;
+        this.loadCardsByPage(nextPage);
+      }
+    } else if (this.data.activeTab === 'follow') {
+      // 如果是"最受欢迎"标签，且还有更多数据
+      if (this.data.popularHasMoreData && !this.data.isLoadingMore) {
+        // 这里可以添加加载更多最受欢迎数据的逻辑
+        console.log('加载更多最受欢迎数据');
+        // 暂时没有实现
+      }
     }
   },
   onLoad(option) {
@@ -236,7 +261,7 @@ Page({
         content = '保存成功';
       }
       if (content) {
-        this.showOperMsg(content);
+      this.showOperMsg(content);
       }
     }
   },
@@ -252,9 +277,9 @@ Page({
       // 重新初始化所有数据
       await this.initData();
       
-      this.setData({
-        enable: false
-      });
+        this.setData({
+          enable: false
+        });
     } catch (error) {
       console.error('刷新失败:', error);
       this.setData({
