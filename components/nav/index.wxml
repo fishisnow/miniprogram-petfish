@@ -1,24 +1,40 @@
-<view class="home-navbar">
-  <t-navbar title="" background="#ffffff">
-    <view slot="left">
-      <view class="home-navbar__left">
-        <view class="menu-icon-container">
-          <t-icon class="home-navbar__icon" bind:tap="openDrawer" name="view-list" size="48rpx" />
-        </view>
-        <view class="nav-tabs-container">
-          <view class="nav-tabs">
-            <view class="{{activeTab === 'recommend' ? 'tab-item active' : 'tab-item'}}" bind:tap="switchTab" data-value="recommend">全部</view>
-            <view class="{{activeTab === 'follow' ? 'tab-item active' : 'tab-item'}}" bind:tap="switchTab" data-value="follow">最受欢迎</view>
-          </view>
-        </view>
-        <view class="right-container">
-          <view class="search-icon" bindtap="searchTurn">
-            <t-icon name="search" size="40rpx" />
-          </view>
-        </view>
-      </view>
+<view class="navigation-bar" data-page-type="{{pageType}}">
+  <!-- 状态栏占位 -->
+  <view style="height: {{statusHeight}}px;"></view>
+  
+  <!-- 导航内容区 - 确保在所有页面布局一致 -->
+  <view class="nav-content">
+    <!-- 左侧菜单按钮 -->
+    <view class="nav-left">
+      <t-icon class="nav-icon" bind:tap="openDrawer" name="view-list" size="48rpx" />
     </view>
-  </t-navbar>
+    
+    <!-- 中间标题/标签区域 -->
+    <view class="nav-center">
+      <!-- 首页显示标签切换 -->
+      <block wx:if="{{pageType === 'home'}}">
+        <view class="nav-tabs">
+          <view class="{{activeTab === 'recommend' ? 'tab-item active' : 'tab-item'}}" bind:tap="switchTab" data-value="recommend">全部</view>
+          <view class="{{activeTab === 'follow' ? 'tab-item active' : 'tab-item'}}" bind:tap="switchTab" data-value="follow">最受欢迎</view>
+          
+          <!-- 搜索图标整合到标签栏 -->
+          <view class="tab-search-icon" bindtap="searchTurn" hover-class="icon-hover">
+            <t-icon name="search" size="40rpx" color="#333333" />
+          </view>
+        </view>
+      </block>
+      
+      <!-- 非首页显示标题 -->
+      <block wx:else>
+        <view class="nav-title">{{pageType === 'message' ? '趣味测试' : '我的'}}</view>
+      </block>
+    </view>
+    
+    <!-- 右侧空白区域，为了保持布局一致 -->
+    <view class="nav-right">
+    </view>
+  </view>
+
   <t-drawer
     style="padding-top: {{statusHeight}}px;"
     visible="{{visible}}"

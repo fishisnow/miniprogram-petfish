@@ -24,7 +24,6 @@ Page({
     totalPages: 1,        // 总页数
     isLoadingMore: false, // 是否正在加载更多
     hasMoreData: true,    // 是否还有更多数据
-    loadingText: '加载中...',
     popularHasMoreData: false
   },
   // 生命周期
@@ -34,6 +33,12 @@ Page({
 
   // 初始化数据
   async initData() {
+    // 如果已经在加载中，不再重复触发
+    if (this.data.isLoadingMore) {
+      return;
+    }
+    
+    // 设置加载状态，清空现有数据
     this.setData({
       loading: true,
       cardInfo: [],
@@ -43,11 +48,11 @@ Page({
     });
 
     try {
-      // 获取最受欢迎的鱼类数据
-      const popularRes = await request('/home/popular');
-      
-      // 获取第一页鱼类数据
-      await this.loadCardsByPage(1);
+      // 获取最受欢迎的鱼类数据和第一页数据
+      const [popularRes, success] = await Promise.all([
+        request('/home/popular'),
+        this.loadCardsByPage(1)
+      ]);
       
       // 如果获取到了最受欢迎的鱼类数据
       if (popularRes && popularRes.code === 200) {
@@ -56,30 +61,33 @@ Page({
           fishId: card.id
         }));
         
-        // 假设最受欢迎的数据只有一页，没有更多数据
-        const hasMorePopularData = false;
-        
         this.setData({
           focusCardInfo: popularCardInfo,
-          loading: false,
-          // 可以根据实际情况设置是否有更多数据
-          popularHasMoreData: hasMorePopularData
+          popularHasMoreData: false // 暂时认为只有一页
         });
       } else {
         // 如果没有获取到最受欢迎的鱼类数据，就显示全部中的前几个
         this.setData({
           focusCardInfo: this.data.cardInfo.slice(0, 3),
-          loading: false,
           popularHasMoreData: false
         });
       }
+      
+      // 无论如何，都需要关闭loading状态
+      this.setData({
+        loading: false,
+        enable: false
+      });
     } catch (error) {
       console.error('初始化数据出错:', error);
       wx.showToast({
         title: '获取数据失败',
         icon: 'none'
       });
-      this.setData({ loading: false });
+      this.setData({ 
+        loading: false,
+        enable: false 
+      });
     }
   },
 
@@ -107,19 +115,26 @@ Page({
 
   // 加载指定页码的鱼类数据
   async loadCardsByPage(page) {
-    if (this.data.isLoadingMore && page > 1) return;
+    // 防止重复加载，但第一页初始加载时允许
+    if (this.data.isLoadingMore && page > 1) {
+      return false;
+    }
     
-    this.setData({ 
-      isLoadingMore: true,
-      loadingText: '正在加载更多...'
-    });
+    // 加载更多时显示底部加载状态
+    if (page > 1) {
+      this.setData({ 
+        isLoadingMore: true
+      });
+    }
     
     try {
+      console.log('开始请求页码:', page);
       // 兼容原有API，先尝试不带分页参数请求
       const cardRes = await request('/home/cards');
+      console.log('请求结果:', cardRes);
       
       if (cardRes && cardRes.code === 200) {
-        // 检查返回的数据结构
+        // 处理返回数据
         let newCards = [];
         let total = 0;
         
@@ -158,14 +173,20 @@ Page({
         // 判断是否还有更多数据
         const hasMoreData = page < totalPages;
         
+        console.log('处理后数据:', {
+          page,
+          newCards: newCards.length,
+          totalPages,
+          hasMoreData
+        });
+        
         if (page === 1) {
           // 第一页，直接设置数据
           this.setData({
             cardInfo: newCards,
             currentPage: page,
             totalPages,
-            hasMoreData,
-            loading: false
+            hasMoreData
           });
         } else {
           // 非第一页，追加数据
@@ -173,23 +194,18 @@ Page({
             cardInfo: [...this.data.cardInfo, ...newCards],
             currentPage: page,
             totalPages,
-            hasMoreData,
-            loading: false
+            hasMoreData
           });
         }
         
-        console.log('加载数据成功:', {
-          page,
-          totalPages,
-          dataLength: newCards.length,
-          totalLength: this.data.cardInfo.length
-        });
+        return true;
       } else {
         console.error('获取数据失败:', cardRes);
         wx.showToast({
           title: '获取数据失败',
           icon: 'none'
         });
+        return false;
       }
     } catch (error) {
       console.error('加载数据出错:', error);
@@ -197,11 +213,14 @@ Page({
         title: '获取数据失败',
         icon: 'none'
       });
+      return false;
     } finally {
-      this.setData({ 
-        isLoadingMore: false,
-        loadingText: '加载中...'
-      });
+      // 重置加载状态
+      if (page > 1) {
+        this.setData({ 
+          isLoadingMore: false
+        });
+      }
     }
   },
   // 监听页面上拉触底事件
@@ -233,19 +252,34 @@ Page({
   },
   // 加载更多数据
   loadMoreData() {
+    // 如果正在刷新整个列表或者正在加载更多或者还没有初始数据，就不再触发
+    if (this.data.enable || this.data.isLoadingMore || this.data.loading || !this.data.cardInfo || this.data.cardInfo.length === 0) {
+      console.log('加载条件不满足，不触发加载更多:', {
+        enable: this.data.enable,
+        isLoadingMore: this.data.isLoadingMore,
+        loading: this.data.loading,
+        hasCardInfo: this.data.cardInfo && this.data.cardInfo.length > 0
+      });
+      return;
+    }
+    
     // 根据当前激活的标签决定加载哪种数据
     if (this.data.activeTab === 'recommend') {
-      if (this.data.hasMoreData && !this.data.isLoadingMore) {
+      if (this.data.hasMoreData) {
         console.log('加载更多数据，当前页码:', this.data.currentPage);
         const nextPage = this.data.currentPage + 1;
         this.loadCardsByPage(nextPage);
+      } else {
+        console.log('没有更多数据了');
       }
     } else if (this.data.activeTab === 'follow') {
       // 如果是"最受欢迎"标签，且还有更多数据
-      if (this.data.popularHasMoreData && !this.data.isLoadingMore) {
+      if (this.data.popularHasMoreData) {
         // 这里可以添加加载更多最受欢迎数据的逻辑
         console.log('加载更多最受欢迎数据');
         // 暂时没有实现
+      } else {
+        console.log('没有更多最受欢迎数据了');
       }
     }
   },
@@ -269,6 +303,15 @@ Page({
     this.refresh();
   },
   async refresh() {
+    // 如果已经在加载中，防止重复触发
+    if (this.data.isLoadingMore) {
+      this.setData({
+        enable: false
+      });
+      return;
+    }
+    
+    // 设置下拉刷新状态，但不清除现有数据，避免闪烁
     this.setData({
       enable: true
     });
@@ -276,19 +319,19 @@ Page({
     try {
       // 重新初始化所有数据
       await this.initData();
-      
-        this.setData({
-          enable: false
-        });
     } catch (error) {
       console.error('刷新失败:', error);
-      this.setData({
-        enable: false
-      });
       wx.showToast({
         title: '刷新失败',
         icon: 'none'
       });
+    } finally {
+      // 确保下拉刷新状态被关闭
+      setTimeout(() => {
+        this.setData({
+          enable: false
+        });
+      }, 500); // 添加短暂延时，确保刷新动画流畅
     }
   },
   showOperMsg(content) {

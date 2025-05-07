@@ -11,6 +11,10 @@ Component({
     activeTab: {
       type: String,
       value: 'recommend'
+    },
+    pageType: {
+      type: String,
+      value: 'home'  // 可选值: 'home', 'message', 'my'
     }
   },
   data: {
@@ -33,11 +37,18 @@ Component({
       }
     ],
     statusHeight: 0,
+    navbarHeight: 0,
   },
   lifetimes: {
     ready() {
-      const statusHeight = wx.getWindowInfo().statusBarHeight;
-      this.setData({ statusHeight });
+      const systemInfo = wx.getSystemInfoSync();
+      const statusHeight = systemInfo.statusBarHeight;
+      const navbarHeight = 44; // 导航栏固定高度（像素）
+      
+      this.setData({ 
+        statusHeight, 
+        navbarHeight
+      });
     },
   },
   methods: {

@@ -2,8 +2,12 @@
   height: calc(100vh - 56px);
   overflow-y: auto;
   --td-navbar-bg-color: transparent;
+  padding: 0;
+  margin: 0;
+  background-color: #f5f7fa;
 }
 
+/* 修改导航背景图样式，与消息页保持一致 */
 .my .nav-bg {
   position: absolute;
   top: 0;
@@ -11,7 +15,15 @@
   left: 0;
   width: 100%;
   height: 252rpx;
-  z-index: -1;
+  z-index: 0;
+}
+
+/* 导航栏样式调整 */
+.navigation-bar {
+  border-bottom: none !important;
+  background: transparent !important;
+  z-index: 10;
+  position: relative;
 }
 
 .my-info,
@@ -21,11 +33,13 @@
 }
 
 .my-info {
-  padding: 0 12rpx;
-  margin-top: 60rpx;
+  padding: 0;
+  margin: 20rpx 20rpx 0;
   overflow: hidden;
   border-radius: 20rpx 20rpx 0 0;
   background-color: white;
+  position: relative;
+  z-index: 1;
 }
 
 .my-info__person .name {
@@ -72,7 +86,7 @@
 
 .my-menu {
   margin-top: 8rpx;
-  padding: 0 8rpx;
+  padding: 0 20rpx;
 }
   
 .my-menu .menu-item {
@@ -130,46 +144,46 @@
 
 /* 自定义的最小边距样式，但对头部区域不应用 */
 .minimal-card {
-  margin: 0 8rpx !important;
+  margin: 0 !important;
   padding: 0 !important;
-  --td-cell-group-margin: 8rpx !important;
+  --td-cell-group-margin: 0 !important;
 }
 
 /* 移除对t-cell-group样式的全局覆盖，只对菜单区域应用 */
 .my-menu .t-cell-group {
-  --td-cell-group-margin: 8rpx !important;
+  --td-cell-group-margin: 0 !important;
 }
 
 .my-menu .t-cell-group__card {
-  margin: 0 8rpx !important;
+  margin: 0 !important;
   padding: 0 !important;
 }
 
 /* 覆盖 t-cell-group 的卡片主题默认左右边距 */
 .my-menu .t-cell-group--card {
-  margin: 0 8rpx !important;
+  margin: 0 !important;
 }
 
 /* 覆盖单元格的内部水平内边距，仅对菜单应用 */
 .my-menu .t-cell {
-  --td-cell-horizontal-padding: 12rpx !important;
-  --td-cell-padding: 8rpx !important;
+  --td-cell-horizontal-padding: 20rpx !important;
+  --td-cell-padding: 16rpx !important;
 }
 
 /* 强制覆盖TDesign组件的样式 */
 .t-cell-group {
-  --td-cell-group-margin: 8rpx !important;
+  --td-cell-group-margin: 0 !important;
 }
 
 .t-cell-group__card {
-  margin: 0 8rpx !important;
+  margin: 0 !important;
   padding: 0 !important;
 }
 
 /* 确保所有卡片都使用统一的较小边距，但仅对菜单区域 */
 .my-menu .t-card {
-  margin: 8rpx !important;
-  padding: 8rpx !important;
+  margin: 0 !important;
+  padding: 16rpx !important;
 }
 
 /* 覆盖头部cell的样式 */
@@ -179,6 +193,7 @@
   display: flex;
   align-items: center;
   height: 104rpx;
+  padding: 0 20rpx !important;
 }
 
 /* 调整头部单元格的垂直对齐 */

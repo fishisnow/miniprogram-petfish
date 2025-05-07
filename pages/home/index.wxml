@@ -1,11 +1,10 @@
-<wxss src="./card-override.wxss" />
-<nav nav-type="search" activeTab="{{activeTab}}" bind:tabchange="onTabChange" />
 <view class="home-container">
+  <nav pageType="home" activeTab="{{activeTab}}" bind:tabchange="onTabChange" />
   <view class="home-content">
     <t-pull-down-refresh
       value="{{enable}}"
       bind:refresh="onRefresh"
-      loadingTexts="{{['下拉刷新', '松手刷新', '正在刷新', '刷新完成']}}"
+      loadingTexts="{{['下拉刷新', '松手刷新', '加载中...', '刷新完成']}}"
     >
       <scroll-view 
         scroll-y 
@@ -15,41 +14,45 @@
         enhanced="{{true}}"
         show-scrollbar="{{false}}"
       >
-        <view wx:if="{{loading}}" class="home-loading-container">
+        <view wx:if="{{loading && !enable}}" class="home-loading-container">
           <t-loading theme="circular" size="60rpx" />
           <text class="loading-text">加载中...</text>
         </view>
 
         <view wx:elif="{{activeTab === 'recommend' && cardInfo.length > 0}}" class="home-card-list">
-          <view class="card-wrapper" wx:for="{{cardInfo}}" wx:key="index">
-            <card
-              desc="{{item.desc}}"
-              url="{{item.url}}"
-              tags="{{item.tags}}"
-              fish-id="{{item.fishId}}"
-            />
-          </view>
+          <block wx:for="{{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]}}" wx:key="*this" wx:if="{{index < cardInfo.length}}">
+            <view class="card-wrapper {{index % 2 === 0 ? 'left' : 'right'}}">
+              <card
+                desc="{{cardInfo[index].desc}}"
+                url="{{cardInfo[index].url}}"
+                tags="{{cardInfo[index].tags}}"
+                fish-id="{{cardInfo[index].fishId}}"
+              />
+            </view>
+          </block>
         </view>
         
         <view wx:elif="{{activeTab === 'follow' && focusCardInfo.length > 0}}" class="home-card-list">
-          <view class="card-wrapper" wx:for="{{focusCardInfo}}" wx:key="index">
-            <card
-              desc="{{item.desc}}"
-              url="{{item.url}}"
-              tags="{{item.tags}}"
-              fish-id="{{item.fishId}}"
-            />
-          </view>
+          <block wx:for="{{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]}}" wx:key="*this" wx:if="{{index < focusCardInfo.length}}">
+            <view class="card-wrapper {{index % 2 === 0 ? 'left' : 'right'}}">
+              <card
+                desc="{{focusCardInfo[index].desc}}"
+                url="{{focusCardInfo[index].url}}"
+                tags="{{focusCardInfo[index].tags}}"
+                fish-id="{{focusCardInfo[index].fishId}}"
+              />
+            </view>
+          </block>
         </view>
         
-        <view wx:else class="home-empty-container">
+        <view wx:elif="{{!loading && !enable}}" class="home-empty-container">
           <text>暂无数据</text>
         </view>
 
-        <view class="home-bottom-tip">
+        <view class="home-bottom-tip" wx:if="{{!loading && !enable && cardInfo.length > 0}}">
           <view wx:if="{{isLoadingMore}}" class="loading-more">
             <t-loading theme="circular" size="40rpx" />
-            <text class="loading-text">{{loadingText}}</text>
+            <text class="loading-text">加载中...</text>
           </view>
           <view wx:elif="{{activeTab === 'recommend' && hasMoreData && cardInfo.length > 0}}" bindtap="loadMoreData" class="load-more-btn">
             <view class="pull-up-icon">

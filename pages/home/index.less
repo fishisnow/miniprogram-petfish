@@ -23,20 +23,60 @@
 
 /* 卡片列表布局 */
 .home-card-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 20rpx;
+  padding: 10rpx 8rpx;
   width: 100%;
   box-sizing: border-box;
   background-color: @bg-color;
+  overflow: hidden; /* 清除浮动 */
 }
 
 /* 卡片容器 */
 .card-wrapper {
-  width: 48%;
-  margin-bottom: 20rpx;
+  float: left;
+  width: 48.5%; /* 稍微小于50%，确保有间距 */
+  margin-bottom: 16rpx;
   box-sizing: border-box;
+  border-radius: 9px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  
+  &.left {
+    margin-right: 1.5%;
+    clear: left; /* 确保左侧卡片始终在左边 */
+  }
+  
+  &.right {
+    margin-left: 1.5%;
+  }
+}
+
+/* 清除浮动 */
+.home-card-list:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* 卡片样式定制 - 用于覆盖card组件的样式 */
+.home-card {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 9px;
+  background-color: white;
+  
+  .home-card__image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+  }
+  
+  .home-card__info {
+    padding: 16rpx;
+    font-size: 28rpx;
+  }
 }
 
 /* 底部提示信息 */

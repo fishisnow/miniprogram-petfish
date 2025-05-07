@@ -1,6 +1,6 @@
 <view class="test-list-container">
+  <nav title-text="快乐养鱼" pageType="message" />
   <image class="nav-bg" src="/static/bg_navbar.png" />
-  <nav title-text="快乐养鱼" />
   
   <!-- 轮播Banner -->
   <view class="banner-container">
@@ -10,8 +10,8 @@
           interval="3000" 
           duration="500" 
           circular="{{true}}"
-          previous-margin="15rpx"
-          next-margin="15rpx"
+          previous-margin="10rpx"
+          next-margin="10rpx"
           bindchange="swiperChange">
       <swiper-item wx:for="{{banners}}" wx:key="id" bindtap="startTest" data-test-id="{{item.testId}}">
         <view class="swiper-item-wrap {{currentSwiperIndex === index ? 'active' : ''}}">

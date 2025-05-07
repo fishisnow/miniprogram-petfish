@@ -1,5 +1,7 @@
 <view class="home-card" bindtap="onClick">
-  <t-image t-class="home-card__image" src="{{url}}" mode="aspectFill" />
+  <view class="home-card__image">
+    <t-image t-class="card-img" src="{{url}}" mode="aspectFill" />
+  </view>
   <view class="home-card__info">
     <text>{{desc}}</text>
     <view class="home-card__tag-group" wx:if="{{tags && tags.length > 0}}">

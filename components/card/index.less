@@ -3,25 +3,38 @@
 .home-card {
   display: inline-flex;
   flex-direction: column;
-  width: 340rpx;
-  height: 488rpx;
+  width: 100%;
+  height: auto;
   border-radius: 9px;
   background: @bg-color-white;
 
   &__image {
-    width: 340rpx;
-    height: 340rpx;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    overflow: hidden;
+    
+    .card-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__info {
-    padding: 32rpx;
+    padding: 16rpx;
     font-weight: 400;
     font-size: @font-size-small;
   }
 
   &__tag-group {
     display: flex;
-    gap: 16rpx;
-    margin-top: 16rpx;
+    flex-wrap: wrap;
+    gap: 8rpx;
+    margin-top: 12rpx;
   }
 }

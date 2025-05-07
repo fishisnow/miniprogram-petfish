@@ -7,9 +7,56 @@ page {
   padding-bottom: calc(env(safe-area-inset-bottom) + 112rpx);
   background: #f5f7fa;
 }
-.nav-bar {
-  border-bottom: 1rpx solid #e7e7e7;
+
+/* 导航栏样式 - 确保与组件一致 */
+.navigation-bar {
+  border-bottom: none !important;
+  background: transparent !important;
+  z-index: 10;
+  position: relative;
 }
+
+/* 导航栏内容容器 */
+.navigation-bar .nav-content {
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* 左侧菜单按钮 */
+.navigation-bar .nav-left {
+  min-height: 44px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* 图标样式 */
+.navigation-bar .nav-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 44px !important;
+  height: 44px !important;
+}
+
+/* 中间标题部分 */
+.navigation-bar .nav-center {
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* 右侧部分 */
+.navigation-bar .nav-right {
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
 .message-list {
   height: 0;
   flex-grow: 1;
@@ -56,21 +103,88 @@ page {
 .test-list-container {
   min-height: 100vh;
   background: #f5f7fa;
-  padding-top: 180rpx;
+  padding: 0;
+  margin: 0;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 顶部背景图调整位置 */
+.nav-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 252rpx;
+  z-index: 0;
+}
+
+/* 轮播区域调整位置，确保不被导航栏遮挡 */
+.banner-container {
+  width: 100%;
+  position: relative;
+  padding-top: 16rpx;
+  margin-top: 0;
+  box-sizing: border-box;
+  z-index: 1;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  margin-bottom: 30rpx;
 }
 
 /* 顶部Banner样式 */
 .top-banner {
-  width: 100vw;
+  width: 100%;
   height: 340rpx;
   overflow: hidden;
-  margin-bottom: 0;
+  margin: 0;
   position: relative;
-  left: 0;
-  right: 0;
+  border-radius: 20rpx;
+}
+
+/* 轮播导航按钮 */
+.swiper-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60rpx;
+  height: 60rpx;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.swiper-nav-prev {
+  left: 30rpx;
+}
+
+.swiper-nav-next {
+  right: 30rpx;
+}
+
+.arrow-left, .arrow-right {
+  width: 20rpx;
+  height: 20rpx;
+  border-top: 4rpx solid #333;
+  border-left: 4rpx solid #333;
+}
+
+.arrow-left {
+  transform: rotate(-45deg);
+  margin-left: 6rpx;
+}
+
+.arrow-right {
+  transform: rotate(135deg);
+  margin-right: 6rpx;
 }
 
 .banner-image {
@@ -78,6 +192,21 @@ page {
   height: 100%;
   display: block;
   object-fit: cover;
+  border-radius: 20rpx;
+}
+
+/* 轮播项样式 */
+.swiper-item-wrap {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.swiper-item-wrap.active {
+  transform: scale(1);
 }
 
 /* 分类容器 */
@@ -117,7 +246,7 @@ page {
 }
 
 .test-list {
-  padding: 30rpx;
+  padding: 0 20rpx 30rpx;
   width: 100%;
   box-sizing: border-box;
 }
@@ -134,6 +263,12 @@ page {
   color: #ffffff;
   width: 100%;
   box-sizing: border-box;
+}
+
+/* 鱼缸造景卡片样式 - 绿色渐变 */
+.landscaping-card {
+  background: linear-gradient(135deg, #2ab19b 0%, #5dd3c2 100%);
+  box-shadow: 0 8rpx 30rpx rgba(42, 177, 155, 0.2);
 }
 
 .feature-content {
@@ -187,6 +322,11 @@ page {
   font-size: 28rpx;
   font-weight: 500;
   box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 鱼缸造景卡片按钮自定义颜色 */
+.landscaping-card .feature-btn {
+  color: #2ab19b;
 }
 
 .feature-arrow {
@@ -324,33 +464,26 @@ page {
   color: #999999;
 }
 
-/* Banner样式 */
-.banner {
-  width: 100%;
-  height: 360rpx;
-  margin-top: 180rpx;
+/* 指示点样式自定义 */
+.wx-swiper-dots {
+  position: absolute !important;
+  bottom: 20rpx !important;
+  left: 0 !important;
+  right: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
 }
 
-.banner-swiper {
-  width: 100%;
-  height: 100%;
+.wx-swiper-dot {
+  width: 14rpx !important;
+  height: 14rpx !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  margin: 0 6rpx !important;
+  border-radius: 50% !important;
 }
 
-/* 标题样式 */
-.section-title {
-  padding: 30rpx;
-  display: flex;
-  align-items: baseline;
-}
-
-.title-text {
-  font-size: 36rpx;
-  font-weight: bold;
-  color: #333;
-  margin-right: 16rpx;
-}
-
-.title-desc {
-  font-size: 24rpx;
-  color: #999;
+.wx-swiper-dot-active {
+  background: #ffffff !important;
+  width: 14rpx !important;
+  border-radius: 50% !important;
 }
