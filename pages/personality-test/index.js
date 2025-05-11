@@ -1,5 +1,25 @@
 Page({
-  data: {},
+  data: {
+    visible: false,
+    sidebar: [
+      {
+        title: '首页',
+        url: 'pages/home/index',
+        isSidebar: true,
+      },
+      {
+        title: '快乐养鱼',
+        url: 'pages/message/index',
+        isSidebar: true,
+      },
+      {
+        title: '我的',
+        url: 'pages/my/index',
+        isSidebar: true,
+      }
+    ],
+    statusHeight: 0
+  },
 
   onLoad(options) {
     // 页面加载时的初始化
@@ -14,6 +34,9 @@ Page({
     
     // 检查是否是继续未完成测试的请求
     this.continueFlag = options.continue === 'true';
+
+    const systemInfo = wx.getSystemInfoSync();
+    this.setData({ statusHeight: systemInfo.statusBarHeight });
   },
 
   onShow() {
@@ -44,5 +67,33 @@ Page({
       title: '测试完成！',
       icon: 'success'
     });
+  },
+
+  openDrawer() {
+    this.setData({
+      visible: true
+    });
+  },
+
+  itemClick(e) {
+    const that = this;
+    const { isSidebar, url } = e.detail.item;
+    if (isSidebar) {
+      wx.switchTab({
+        url: `/${url}`,
+      }).then(() => {
+        that.setData({
+          visible: false,
+        });
+      });
+    } else {
+      wx.navigateTo({
+        url: `/${url}`,
+      }).then(() => {
+        that.setData({
+          visible: false,
+        });
+      });
+    }
   }
 }); 

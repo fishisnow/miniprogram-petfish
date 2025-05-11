@@ -2,7 +2,9 @@
   "navigationBarTitleText": "六维养鱼性格测试",
   "usingComponents": {
     "nav": "/components/nav/index",
-    "personality-test": "/components/personality-test/index"
+    "personality-test": "/components/personality-test/index",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-drawer": "tdesign-miniprogram/drawer/drawer"
   },
   "navigationStyle": "custom"
 } 

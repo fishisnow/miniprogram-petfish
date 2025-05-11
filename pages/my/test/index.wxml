@@ -51,7 +51,6 @@
   <!-- 有未完成的测试时显示 -->
   <block wx:elif="{{hasUnfinishedTest}}">
     <view class="unfinished-test">
-      <t-image src="/static/img_td.png" width="180" height="180" />
       <view class="unfinished-title">你有一个未完成的测试</view>
       <view class="unfinished-description">继续完成测试，发现适合你的鱼种</view>
       <t-button theme="primary" size="medium" icon="play-circle" shape="round" bindtap="continueTest">继续测试</t-button>
@@ -61,10 +60,9 @@
   <!-- 没有测试结果时显示 -->
   <block wx:else>
     <view class="empty-state">
-      <t-image src="/static/img_td.png" width="180" height="180" />
       <view class="empty-title">暂无测试结果</view>
       <view class="empty-description">完成养鱼性格测试，了解你适合养什么鱼</view>
-      <t-button theme="primary" size="medium" icon="add-circle" shape="round" bindtap="startTest">开始测试</t-button>
+      <t-button class="start-test-btn" theme="primary" size="medium" icon="add-circle" shape="round" bindtap="startTest">开始测试</t-button>
     </view>
   </block>
 </view> 

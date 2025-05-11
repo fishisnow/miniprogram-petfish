@@ -25,8 +25,8 @@
       </block>
       
       <!-- 非首页显示标题 -->
-      <block wx:else>
-        <view class="nav-title">{{pageType === 'message' ? '趣味测试' : '我的'}}</view>
+      <block wx:elif="{{pageType !== 'personality-test'}}">
+        <view class="nav-title">{{pageType === 'explore' ? '发现' : '我的'}}</view>
       </block>
     </view>
     

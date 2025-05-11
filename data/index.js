@@ -4,15 +4,13 @@ import config from '~/config';
 import loginMock from './login/index';
 import homeMock from './home/index';
 import searchMock from './search/index';
-import dataCenter from './dataCenter/index';
-import my from './my/index';
 import fishMock from './fish/index';
 
 const { baseUrl } = config;
 
 export default () => {
   // 在这里添加新的mock数据
-  const mockData = [...loginMock, ...homeMock, ...searchMock, ...dataCenter, ...my, ...fishMock];
+  const mockData = [...loginMock, ...homeMock, ...searchMock, ...fishMock];
   
   mockData.forEach((item) => {
     // 对于普通路径

@@ -14,7 +14,7 @@ Component({
     },
     pageType: {
       type: String,
-      value: 'home'  // 可选值: 'home', 'message', 'my'
+      value: 'home'  // 可选值: 'home', 'expore', 'my'
     }
   },
   data: {
@@ -26,8 +26,8 @@ Component({
         isSidebar: true,
       },
       {
-        title: '快乐养鱼',
-        url: 'pages/message/index',
+        title: '发现',
+        url: 'pages/explore/index',
         isSidebar: true,
       },
       {

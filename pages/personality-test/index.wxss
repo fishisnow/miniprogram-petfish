@@ -37,4 +37,16 @@ personality-test {
   width: 100%;
   height: 100%;
   display: block;
+}
+
+.custom-header {
+  position: relative;
+  display: flex;
+  padding: 0 32rpx;
+  height: 44px;
+  align-items: center;
+}
+
+.menu-icon {
+  padding: 10rpx;
 } 

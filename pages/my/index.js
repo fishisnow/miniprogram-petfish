@@ -27,29 +27,18 @@ Page({
 
   async onShow() {
     const Token = wx.getStorageSync('access_token');
-    const personalInfo = await this.getPersonalInfo();
 
     if (Token) {
       this.setData({
         isLoad: true,
-        personalInfo,
       });
     }
-  },
-
-  async getPersonalInfo() {
-    const info = await request('/api/genPersonalInfo').then((res) => res.data.data);
-    return info;
   },
 
   onLogin(e) {
     wx.navigateTo({
       url: '/pages/login/login',
     });
-  },
-
-  onNavigateTo() {
-    wx.navigateTo({ url: `/pages/my/info-edit/index` });
   },
 
   onItemClick(e) {

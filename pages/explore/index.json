@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "趣味测试",
+  "navigationBarTitleText": "发现",
   "usingComponents": {
     "nav": "/components/nav/index"
   },

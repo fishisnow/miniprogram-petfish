@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/home/index",
-    "pages/message/index",
+    "pages/explore/index",
     "pages/my/index",
     "pages/personality-test/index"
   ],
@@ -15,11 +15,6 @@
       "pages": ["index"]
     },
     {
-      "root": "pages/my/info-edit",
-      "name": "edit",
-      "pages": ["index"]
-    },
-    {
       "root": "pages/my/favorites",
       "name": "favorites",
       "pages": ["index"]
@@ -30,33 +25,13 @@
       "pages": ["index"]
     },
     {
-      "root": "pages/chat",
-      "name": "chat",
-      "pages": ["index"]
-    },
-    {
       "root": "pages/login",
       "name": "login",
       "pages": ["login"]
     },
     {
-      "root": "pages/loginCode",
-      "name": "loginCode",
-      "pages": ["loginCode"]
-    },
-    {
-      "root": "pages/dataCenter",
-      "name": "dataCenter",
-      "pages": ["index"]
-    },
-    {
       "root": "pages/setting",
       "name": "setting",
-      "pages": ["index"]
-    },
-    {
-      "root": "pages/release",
-      "name": "release",
       "pages": ["index"]
     },
     {
@@ -82,8 +57,8 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/message/index",
-        "text": "测测"
+        "pagePath": "pages/explore/index",
+        "text": "发现"
       },
       {
         "pagePath": "pages/my/index",

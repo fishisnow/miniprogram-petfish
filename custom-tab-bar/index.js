@@ -12,7 +12,7 @@ Component({
       {
         icon: 'chat',
         value: 'notice',
-        label: '消息',
+        label: '发现',
       },
       {
         icon: 'user',

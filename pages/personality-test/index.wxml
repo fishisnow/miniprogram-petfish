@@ -1,7 +1,21 @@
 <view class="personality-test-container">
   <image class="nav-bg" src="/static/bg_navbar.png" />
-  <nav title-text="六维养鱼性格测试" />
+  <view style="height: {{statusHeight}}px;"></view>
+  <view class="custom-header">
+    <view class="menu-icon">
+      <t-icon name="view-list" size="48rpx" bind:tap="openDrawer" />
+    </view>
+  </view>
   <view class="test-wrapper">
     <personality-test id="personalityTest" bind:testComplete="onTestComplete" />
   </view>
+  
+  <t-drawer
+    style="padding-top: {{statusHeight}}px;"
+    visible="{{visible}}"
+    items="{{sidebar}}"
+    placement="left"
+    title=""
+    bind:item-click="itemClick"
+  />
 </view> 

@@ -126,7 +126,7 @@ Page({
   onShow() {
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
       this.getTabBar().setData({
-        selected: 1 // 设置消息标签页为选中状态
+        selected: 1 // 设置发现标签页为选中状态
       });
     }
   },

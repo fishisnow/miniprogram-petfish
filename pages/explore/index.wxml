@@ -1,5 +1,5 @@
 <view class="test-list-container">
-  <nav title-text="快乐养鱼" pageType="message" />
+  <nav title-text="发现" pageType="explore" />
   <image class="nav-bg" src="/static/bg_navbar.png" />
   
   <!-- 轮播Banner -->

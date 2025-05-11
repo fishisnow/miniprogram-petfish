@@ -7,7 +7,7 @@
   background-color: #f5f7fa;
 }
 
-/* 修改导航背景图样式，与消息页保持一致 */
+/* 修改导航背景图样式，与发现页保持一致 */
 .my .nav-bg {
   position: absolute;
   top: 0;
