@@ -5,7 +5,8 @@ Page({
     fishId: '',
     loading: true,
     detail: null,
-    isFavorite: false  // 添加收藏状态标记
+    isFavorite: false,  // 添加收藏状态标记
+    currentImageIndex: 0  // 添加当前图片索引
   },
   
   onLoad(options) {
@@ -25,6 +26,30 @@ Page({
         wx.navigateBack();
       }, 1500);
     }
+  },
+  
+  // 切换到上一张图片
+  prevImage() {
+    const { currentImageIndex, detail } = this.data;
+    if (!detail || !detail.images || detail.images.length <= 1) return;
+    
+    const newIndex = currentImageIndex > 0 ? currentImageIndex - 1 : detail.images.length - 1;
+    this.setData({ currentImageIndex: newIndex });
+  },
+  
+  // 切换到下一张图片
+  nextImage() {
+    const { currentImageIndex, detail } = this.data;
+    if (!detail || !detail.images || detail.images.length <= 1) return;
+    
+    const newIndex = currentImageIndex < detail.images.length - 1 ? currentImageIndex + 1 : 0;
+    this.setData({ currentImageIndex: newIndex });
+  },
+  
+  // 直接切换到指定图片
+  changeImage(e) {
+    const { index } = e.currentTarget.dataset;
+    this.setData({ currentImageIndex: index });
   },
   
   // 检查当前鱼是否已收藏
@@ -87,6 +112,31 @@ Page({
     });
   },
   
+  // 图片加载错误处理
+  imageLoadError(e) {
+    const index = e.currentTarget.dataset.index;
+    console.log('图片加载错误:', index);
+    
+    // 获取当前detail数据
+    const detail = { ...this.data.detail };
+    if (detail && detail.images && detail.images.length > 0) {
+      // 提取鱼名
+      const fishName = detail.name || '';
+      
+      // 首先尝试加载本地图片，如果有匹配的鱼类名称
+      if (fishName) {
+        // 使用随机图服务作为最后备用
+        const updatedImages = [...detail.images];
+        updatedImages[index] = 'https://picsum.photos/400/300?fish=' + encodeURIComponent(fishName);
+        
+        // 更新图片数组
+        detail.images = updatedImages;
+        detail.fullPathImages = [...updatedImages];
+        this.setData({ detail });
+      }
+    }
+  },
+  
   async fetchFishDetail(id) {
     try {
       console.log('开始获取鱼类详情，ID:', id);
@@ -121,15 +171,44 @@ Page({
         
         // 处理图片路径，确保完整性
         if (fishData.images && fishData.images.length > 0) {
-          fishData.images = fishData.images.map(img => 
-            img.startsWith('http') ? img : img
-          );
+          fishData.images = fishData.images.map(img => {
+            // 处理URL编码问题
+            if (img && img.startsWith('http')) {
+              // 确保URL编码正确，避免中文字符问题
+              try {
+                // 尝试处理特殊字符
+                if (img.includes('%')) {
+                  // 已编码的URL，直接返回
+                  return img;
+                } else {
+                  // 尝试编码URL中的中文字符
+                  const parts = img.split('/');
+                  const lastPart = parts[parts.length - 1];
+                  if (/[\u4e00-\u9fa5]/.test(lastPart)) {
+                    // 如果包含中文，对最后部分进行编码
+                    parts[parts.length - 1] = encodeURIComponent(lastPart);
+                    return parts.join('/');
+                  }
+                }
+                return img;
+              } catch (e) {
+                console.error('URL处理错误:', e);
+                return img;
+              }
+            }
+            // 如果是相对路径，转换为完整路径
+            else if (img && !img.startsWith('/')) {
+              return `/${img}`;
+            }
+            return img;
+          });
           
-          // 准备预览用的完整路径图片
-          const fullPathImages = fishData.images.map(img => 
-            img.startsWith('http') ? img : `../../..${img}`
-          );
-          fishData.fullPathImages = fullPathImages;
+          // 预览用的完整路径图片使用原始URL
+          fishData.fullPathImages = [...fishData.images];
+        } else {
+          // 如果没有图片，设置默认图片
+          fishData.images = ['https://picsum.photos/400/300'];
+          fishData.fullPathImages = [...fishData.images];
         }
         
         this.setData({
@@ -175,11 +254,13 @@ Page({
     const { detail } = this.data;
     
     if (detail && detail.images && detail.images.length > 0) {
-      // 使用处理后的完整路径图片进行预览
-      const current = url.startsWith('http') ? url : `../../..${url}`;
+      console.log('预览图片:', url);
+      console.log('图片列表:', detail.images);
+      
+      // 直接使用图片URL数组
       wx.previewImage({
-        current,
-        urls: detail.fullPathImages || detail.images.map(img => img.startsWith('http') ? img : `../../..${img}`)
+        current: url,
+        urls: detail.fullPathImages || detail.images
       });
     }
   }

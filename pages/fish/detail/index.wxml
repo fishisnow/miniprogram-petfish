@@ -3,13 +3,33 @@
 </t-navbar>
 
 <view class="fish-detail" wx:if="{{!loading}}">
-  <!-- 鱼类图片 -->
-  <view class="fish-images">
-    <swiper indicator-dots autoplay circular>
-      <swiper-item wx:for="{{detail.images}}" wx:key="index">
-        <image src="{{item.startsWith('http') ? item : '../../..'+item}}" mode="aspectFill" bindtap="previewImage" data-url="{{item}}" />
-      </swiper-item>
-    </swiper>
+  <!-- 鱼类图片 - 完全重构 -->
+  <view class="fish-image-container">
+    <image 
+      class="fish-main-image"
+      src="{{detail.images[currentImageIndex || 0]}}" 
+      mode="aspectFit"
+      bindtap="previewImage" 
+      data-url="{{detail.images[currentImageIndex || 0]}}"
+      binderror="imageLoadError"
+      data-index="{{currentImageIndex || 0}}"
+      lazy-load="{{false}}"
+      show-menu-by-longpress
+      webp="{{false}}" />
+      
+    <!-- 使用小圆点作为指示器 -->
+    <view class="image-dots" wx:if="{{detail.images.length > 1}}">
+      <view 
+        class="dot {{currentImageIndex === index ? 'active' : ''}}" 
+        wx:for="{{detail.images}}" 
+        wx:key="index"
+        bindtap="changeImage"
+        data-index="{{index}}"></view>
+    </view>
+    
+    <!-- 左右切换箭头 -->
+    <view class="arrow left-arrow" bindtap="prevImage" wx:if="{{detail.images.length > 1}}">《</view>
+    <view class="arrow right-arrow" bindtap="nextImage" wx:if="{{detail.images.length > 1}}">》</view>
   </view>
 
   <!-- 基本信息 -->

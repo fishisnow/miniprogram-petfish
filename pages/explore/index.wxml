@@ -15,7 +15,13 @@
           bindchange="swiperChange">
       <swiper-item wx:for="{{banners}}" wx:key="id" bindtap="startTest" data-test-id="{{item.testId}}">
         <view class="swiper-item-wrap {{currentSwiperIndex === index ? 'active' : ''}}">
-          <image class="banner-image" src="{{item.image}}" mode="aspectFill"></image>
+          <image class="banner-image" 
+                src="{{item.image}}" 
+                mode="aspectFill" 
+                webp="{{false}}"
+                binderror="imageError" 
+                data-index="{{index}}"
+                lazy-load="{{true}}"></image>
         </view>
       </swiper-item>
     </swiper>

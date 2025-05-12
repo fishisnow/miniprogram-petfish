@@ -7,6 +7,10 @@
         "type": "folder"
       },
       {
+        "value": "images/banner",
+        "type": "folder"
+      },
+      {
         "value": "scripts",
         "type": "folder"
       }
@@ -16,7 +20,7 @@
   "setting": {
     "bundle": false,
     "userConfirmedBundleSwitch": false,
-    "urlCheck": true,
+    "urlCheck": false,
     "scopeDataCheck": false,
     "coverView": true,
     "es6": true,

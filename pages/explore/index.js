@@ -7,12 +7,12 @@ Page({
     banners: [
       {
         id: 'fish-personality',
-        image: '/images/banner/banner-fish-test.png',
+        image: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/banner-fish-test.png',
         testId: 'fish-personality'
       },
       {
         id: 'landscaping-score',
-        image: '/images/banner/landscaping.png',
+        image: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/landscaping.png',
         testId: 'landscaping-score'
       }
       // 后续可添加更多轮播广告
@@ -23,7 +23,7 @@ Page({
         id: 'fish-personality',
         title: '六维养鱼性格测试',
         subtitle: '猜猜你适合养什么鱼？',
-        image: '/images/banner/banner-fish-test.png',
+        image: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/banner-fish-test.png',
         count: 2341,
         url: '/pages/personality-test/index'
       },
@@ -31,7 +31,7 @@ Page({
         id: 'landscaping-score',
         title: '为你的鱼缸造景打分',
         subtitle: '专业水族师帮你评估鱼缸造景',
-        image: '/images/banner/landscaping.png',
+        image: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/landscaping.png',
         count: 836,
         url: '/pages/landscaping-score/index'
       }
@@ -51,6 +51,7 @@ Page({
   checkImages() {
     const checkImage = (src) => {
       return new Promise((resolve, reject) => {
+        // 使用getImageInfo检查图片是否可用
         wx.getImageInfo({
           src,
           success: (res) => {
@@ -59,7 +60,23 @@ Page({
           },
           fail: (err) => {
             console.error('图片加载失败', err);
-            resolve(false);
+            // 尝试下载图片到本地临时路径
+            wx.downloadFile({
+              url: src,
+              success: (downloadRes) => {
+                if (downloadRes.statusCode === 200) {
+                  console.log('图片下载成功', downloadRes.tempFilePath);
+                  resolve(true);
+                } else {
+                  console.error('图片下载失败', downloadRes);
+                  resolve(false);
+                }
+              },
+              fail: (downloadErr) => {
+                console.error('图片下载失败', downloadErr);
+                resolve(false);
+              }
+            });
           }
         });
       });
@@ -78,6 +95,20 @@ Page({
         
         this.setData({ banners: updatedBanners });
       });
+  },
+
+  /** 图片加载错误处理 */
+  imageError(e) {
+    const index = e.currentTarget.dataset.index;
+    console.log('图片加载错误:', index);
+    
+    // 替换为备用图片
+    const banners = [...this.data.banners];
+    banners[index].image = 'https://picsum.photos/750/360';
+    
+    this.setData({
+      banners: banners
+    });
   },
 
   /** 轮播图变化事件 */
