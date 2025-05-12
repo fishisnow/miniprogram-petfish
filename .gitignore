@@ -1,3 +1,5 @@
 node_modules
 .idea
 __MACOSX
+images/fish
+scripts/.env

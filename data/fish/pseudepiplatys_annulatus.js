@@ -1,7 +1,7 @@
 export default {
   id: 'xiaochouduanbideng',
   card: {
-    url: '/images/fish/小丑短笔灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/小丑短笔灯.jpg',
     desc: '小丑短笔灯',
     info: {
       habitat: '非洲尼日利亚三角洲 → 水温24-28℃，弱酸性软水', 

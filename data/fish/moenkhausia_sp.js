@@ -1,7 +1,7 @@
 export default {
   id: 'miluqingxianshuijingdeng',
   card: {
-    url: '/images/fish/秘鲁青线水晶灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/秘鲁青线水晶灯.jpg',
     desc: '秘鲁青线水晶灯',
     info: {
       habitat: '南美秘鲁流域 → 适宜温度24-28℃，弱酸性软水', 

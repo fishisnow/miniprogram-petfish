@@ -1,7 +1,7 @@
 export default {
   id: 'haiwangdeng',
   card: {
-    url: '/images/fish/海王灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/海王灯.jpg',
     desc: '海王灯',
     info: {
       habitat: '玻利维亚 Río Manuripi → 温度24-28℃/弱酸性软水', 

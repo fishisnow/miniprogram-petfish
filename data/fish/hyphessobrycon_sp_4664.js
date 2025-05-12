@@ -1,7 +1,7 @@
 export default {
   id: 'hongchihupodeng',
   card: {
-    url: '/images/fish/红翅琥珀灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红翅琥珀灯.jpg',
     desc: '红翅琥珀灯',
     info: {
       habitat: 'Alto Uaupesi流域 → 温度24-28℃/弱酸性软水', 

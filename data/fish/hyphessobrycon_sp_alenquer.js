@@ -1,7 +1,7 @@
 export default {
   id: 'alianka_chengxian_nihong',
   card: {
-    url: '/images/fish/阿莲卡橙线霓虹.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/阿莲卡橙线霓虹.jpg',
     desc: '阿莲卡橙线霓虹',
     info: {
       habitat: '伊拿奴泻湖（Lago inanu）→ 水温24-28℃/弱酸性软水', 

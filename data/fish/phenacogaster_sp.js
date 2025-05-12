@@ -1,7 +1,7 @@
 export default {
   id: 'miluhongchijingangdeng',
   card: {
-    url: '/images/fish/秘鲁红翅金刚灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/秘鲁红翅金刚灯.jpg',
     desc: '秘鲁红翅金刚灯',
     info: {
       habitat: '产自秘鲁南部地区→ 温度24-28℃/弱酸性软水', 

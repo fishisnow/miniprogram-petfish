@@ -1,7 +1,7 @@
 export default {
   id: 'honghuoyimoguide',
   card: {
-    url: '/images/fish/红火蚁魔鬼灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红火蚁魔鬼灯.jpg',
     desc: '红火蚁魔鬼灯',
     info: {
       habitat: 'Rio Juruena上游Rio Formiga → 温度24-28℃/弱酸性软水', 

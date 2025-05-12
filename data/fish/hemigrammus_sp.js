@@ -1,7 +1,7 @@
 export default {
   id: 'anfutouweideng',
   card: {
-    url: '/images/fish/暗腹头尾灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/暗腹头尾灯.jpg',
     desc: '暗腹头尾灯',
     info: {
       habitat: '普鲁斯流域 → 温度24-28℃/弱酸性软水', 

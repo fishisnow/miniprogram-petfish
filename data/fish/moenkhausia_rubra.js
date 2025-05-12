@@ -1,7 +1,7 @@
 export default {
   id: 'hongyuekekadeng',
   card: {
-    url: '/images/fish/红月可卡灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红月可卡灯.jpg',
     desc: '红月可卡灯',
     info: {
       habitat: 'Rio Juruena上游的Rio Juina → 温度24-28℃/弱酸性软水', 

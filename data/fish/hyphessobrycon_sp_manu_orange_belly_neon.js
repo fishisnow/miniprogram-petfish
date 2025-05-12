@@ -1,7 +1,7 @@
 export default {
   id: 'manuchengfuneon',
   card: {
-    url: '/images/fish/马努橙腹霓虹.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/马努橙腹霓虹.jpg',
     desc: '马努橙腹霓虹',
     info: {
       habitat: '秘鲁南部的马努国家公园地区，水温24-28℃，弱酸性软水', 

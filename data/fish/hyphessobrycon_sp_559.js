@@ -1,7 +1,7 @@
 export default {
   id: 'jiuhongjindeng',
   card: {
-    url: '/images/fish/酒红金灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/酒红金灯.jpg',
     desc: '酒红金灯',
     info: {
       habitat: '输入自秘鲁 Yurimaguas，Rio Huallaga → 水温24-28℃，弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'diwanglandeng',
   card: {
-    url: '/images/fish/帝王蓝灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/帝王蓝灯.jpg',
     desc: '帝王蓝灯',
     info: {
       habitat: '秘鲁 Loreto，水温24-28℃，弱酸性软水', 

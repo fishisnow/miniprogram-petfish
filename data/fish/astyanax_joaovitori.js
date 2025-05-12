@@ -1,7 +1,7 @@
 export default {
   id: 'bohelvxianmoguiden',
   card: {
-    url: '/images/fish/薄荷绿线魔鬼灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/薄荷绿线魔鬼灯.jpg',
     desc: '薄荷绿线魔鬼灯',
     info: {
       habitat: '申古上游流域 Alto Xingu → 建议水温24-28℃，弱酸性软水', 

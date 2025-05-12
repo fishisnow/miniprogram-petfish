@@ -1,7 +1,7 @@
 export default {
   id: 'alipuananxixianlanliulideng',
   card: {
-    url: '/images/fish/阿里普阿南细线蓝琉璃灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/阿里普阿南细线蓝琉璃灯.jpg',
     desc: '阿里普阿南细线蓝琉璃灯',
     info: {
       habitat: '产自 Aripuana 地区 → 温度24-28℃，弱酸性软水', 

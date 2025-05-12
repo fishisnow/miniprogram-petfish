@@ -1,7 +1,7 @@
 export default {
   id: 'baijianbohedeng',
   card: {
-    url: '/images/fish/白箭薄荷灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/白箭薄荷灯.jpg',
     desc: '白箭薄荷灯',
     info: {
       habitat: '阿拉瓜亚河上游 → 水温24-28℃，弱酸性软水', 

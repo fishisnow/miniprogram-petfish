@@ -1,7 +1,7 @@
 export default {
   id: 'xuehongmoguideng',
   card: {
-    url: '/images/fish/血红魔鬼灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/血红魔鬼灯.jpg',
     desc: '血红魔鬼灯',
     info: {
       habitat: '巴西茹鲁埃纳河上游支流帕帕加奥河 → 温度24-28℃/弱酸性软水', 

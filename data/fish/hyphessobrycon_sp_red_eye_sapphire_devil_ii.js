@@ -1,7 +1,7 @@
 export default {
   id: 'hongyantianqingmoguiII',
   card: {
-    url: '/images/fish/红眼天青魔鬼灯二型.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红眼天青魔鬼灯二型.jpg',
     desc: '红眼天青魔鬼灯二型',
     info: {
       habitat: '南美黑水流域 → 温度24-28℃/弱酸性软水', 

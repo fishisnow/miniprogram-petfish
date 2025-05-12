@@ -1,7 +1,7 @@
 export default {
   id: 'lvbeixiaoxuexinqi',
   card: {
-    url: '/images/fish/绿背小血心旗.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/绿背小血心旗.jpg',
     desc: '绿背小血心旗',
     info: {
       habitat: '普鲁斯流域（Rio Purus），水温24-28℃，弱酸性软水', 

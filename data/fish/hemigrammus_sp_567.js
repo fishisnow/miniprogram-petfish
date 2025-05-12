@@ -1,7 +1,7 @@
 export default {
   id: 'chimumujinxian',
   card: {
-    url: '/images/fish/赤目金线灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/赤目金线灯.jpg',
     desc: '赤目金线灯',
     info: {
       habitat: '亚马逊流域，水温24-28℃，弱酸性软水', 

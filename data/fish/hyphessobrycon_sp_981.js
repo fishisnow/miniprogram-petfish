@@ -1,7 +1,7 @@
 export default {
   id: 'sanseqi',
   card: {
-    url: '/images/fish/三色旗.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/三色旗.jpg',
     desc: '三色旗',
     info: {
       habitat: '巴西东部的瓜玛流域（Rio Guamá）→ 温度24-28℃，弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'banweideng',
   card: {
-    url: '/images/fish/斑尾灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/斑尾灯.jpg',
     desc: '斑尾灯',
     info: {
       habitat: '秘鲁纳普河流域 → 温度24-28℃/弱酸性软水', 

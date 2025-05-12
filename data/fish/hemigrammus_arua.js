@@ -1,7 +1,7 @@
 export default {
   id: 'tangguodeng',
   card: {
-    url: '/images/fish/糖果灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/糖果灯.jpg',
     desc: '糖果灯',
     info: {
       habitat: '巴西塔巴赫斯水系（Rio Tapajos）→ 温度24-28℃/弱酸性软水', 

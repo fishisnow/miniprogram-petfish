@@ -1,48 +1,47 @@
-# 鱼类数据自动注册系统
+# 七牛云图片上传工具
 
-这个系统用于自动化管理鱼类数据文件的导入和注册过程，解决了手动维护大量鱼类数据导入的问题。
+该工具用于将微信小程序中的鱼类图片上传到七牛云，并更新JS文件中的图片URL引用。
 
-## 工作原理
+## 使用说明
 
-1. 使用 `generate-fish-imports.js` 脚本扫描 `data/fish` 目录中的所有鱼类数据文件
-2. 自动生成 `fish-registry.js` 注册表文件，包含所有鱼类的导入和注册
-3. `index.js` 使用注册表文件中的函数来访问鱼类数据
+1. 首先安装依赖：
 
-## 使用方法
-
-### 添加新鱼类
-
-1. 在 `data/fish` 目录中创建新的鱼类数据文件（如 `new_fish.js`）
-2. 运行脚本更新注册表：
-   ```
-   npm run update-fish
-   ```
-3. 完成！新的鱼类已经自动添加到系统中
-
-### 在代码中使用
-
-在代码中，您可以使用 `fish-registry.js` 提供的函数来访问鱼类数据：
-
-```javascript
-import { getAllFish, getFishById, getFishByKey } from '../data/fish/fish-registry';
-
-// 获取所有鱼类
-const allFish = getAllFish();
-
-// 根据ID获取特定鱼类
-const fish = getFishById('fish001');
-
-// 根据文件名获取特定鱼类
-const goldfish = getFishByKey('goldfish');
+```bash
+cd scripts
+npm install
 ```
 
-## 自动化
+2. 修改 `qiniu-uploader.js` 中的七牛云配置：
 
-我们已经配置了 `predev` 脚本，每次运行开发服务器前会自动更新鱼类注册表。
+```javascript
+// 七牛云配置
+const config = {
+  accessKey: 'YOUR_ACCESS_KEY',  // 替换为你的七牛云AccessKey
+  secretKey: 'YOUR_SECRET_KEY',  // 替换为你的七牛云SecretKey
+  bucket: 'YOUR_BUCKET_NAME',    // 替换为你的存储空间名称
+  zone: 'Zone_z0',               // 根据存储空间所在区域选择：z0华东, z1华北, z2华南, na0北美, as0东南亚
+  domain: 'YOUR_DOMAIN'          // 替换为你的七牛云域名，如 http://example.cdn.com/ (必须以斜杠结尾)
+};
+```
+
+3. 运行脚本上传图片：
+
+```bash
+npm start
+```
 
 ## 注意事项
 
-1. 脚本会自动忽略 `index.js`、`template.js` 和 `fish-registry.js` 文件
-2. 确保每个鱼类数据文件都默认导出一个完整的鱼类对象
-3. 文件名会自动转换为驼峰命名作为导入变量名
-4. 如果手动修改了 `fish-registry.js`，再次运行脚本会覆盖您的修改 
+- 确保所有配置信息正确，否则上传将会失败
+- 脚本会自动跳过已经使用七牛云地址的文件
+- 上传结果会保存在 `qiniu-upload-log.json` 中，方便后续查看和验证
+- 如果运行过程中出现错误，请查看控制台输出的错误信息
+
+## 工作流程
+
+1. 脚本会扫描 `data/fish` 目录下的所有JS文件
+2. 从每个JS文件中提取图片URL
+3. 根据URL在 `images/fish` 目录中找到对应的图片文件
+4. 将图片上传到七牛云
+5. 更新JS文件中的URL为七牛云地址
+6. 保存上传记录到日志文件 

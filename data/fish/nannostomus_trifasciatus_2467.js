@@ -1,7 +1,7 @@
 export default {
   id: 'sanxianqianbideng',
   card: {
-    url: '/images/fish/三线铅笔灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/三线铅笔灯.jpg',
     desc: '三线铅笔灯',
     info: {
       habitat: '南美洲亚马逊河流域 → 水温24-28℃，弱酸性软水', 

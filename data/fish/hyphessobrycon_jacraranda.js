@@ -1,7 +1,7 @@
 export default {
   id: 'hongjianningmengdeng',
   card: {
-    url: '/images/fish/红箭柠檬灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红箭柠檬灯.jpg',
     desc: '红箭柠檬灯',
     info: {
       habitat: '塔巴荷斯地区的河岸城镇 Jacraranda 附近 → 温度24-28℃，弱酸性软水', 

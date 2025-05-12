@@ -1,7 +1,7 @@
 export default {
   id: 'liweisdeng',
   card: {
-    url: '/images/fish/李维斯灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/李维斯灯.jpg',
     desc: '李维斯灯',
     info: {
       habitat: '南美地区（巴西内格罗、哥伦比亚奥里诺科）→ 温度24-28℃，弱酸性软水', 

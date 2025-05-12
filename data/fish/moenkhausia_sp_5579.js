@@ -1,7 +1,7 @@
 export default {
   id: 'huancailanmoguiden',
   card: {
-    url: '/images/fish/幻彩蓝魔鬼灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/幻彩蓝魔鬼灯.jpg',
     desc: '幻彩蓝魔鬼灯',
     info: {
       habitat: 'Rio Papagaio支流 → 温度24-28℃/弱酸性软水', 

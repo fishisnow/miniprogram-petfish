@@ -1,7 +1,7 @@
 export default {
   id: 'hongqianbi',
   card: {
-    url: '/images/fish/小红铅笔.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/小红铅笔.jpg',
     desc: '小红铅笔',
     info: {
       habitat: '产自圭亚那，苏里南，秘鲁，以及巴西，适合草缸，适宜温度为22～28度，PH4～7', 

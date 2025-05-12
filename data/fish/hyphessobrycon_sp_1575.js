@@ -1,7 +1,7 @@
 export default {
   id: 'hongyanqiaokelinihong',
   card: {
-    url: '/images/fish/红眼巧克力霓虹.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红眼巧克力霓虹.jpg',
     desc: '红眼巧克力霓虹',
     info: {
       habitat: '巴西塔巴荷斯（Rio Tapajos）、茹鲁埃纳流域（Rio Juruena）、瓜波流域（Rio Guapore）→ 24-28℃弱酸性软水', 

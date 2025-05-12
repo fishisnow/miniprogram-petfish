@@ -53,13 +53,6 @@
           "query": "",
           "launchMode": "default",
           "scene": null
-        },
-        {
-          "name": "setting",
-          "pathName": "pages/setting/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
         }
       ]
     }

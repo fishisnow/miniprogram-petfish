@@ -1,7 +1,7 @@
 export default {
   id: 'hongchicaihongkekadeng',
   card: {
-    url: '/images/fish/红翅彩虹可卡灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红翅彩虹可卡灯.jpg',
     desc: '红翅彩虹可卡灯',
     info: {
       habitat: '申古水系库鲁亚流域，水温24-28℃，弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'yaotiaogongzhu',
   card: {
-    url: '/images/fish/窈窕公主灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/窈窕公主灯.jpg',
     desc: '窈窕公主灯',
     info: {
       habitat: '南美流域→ 水温24-28℃/弱酸性软水', 

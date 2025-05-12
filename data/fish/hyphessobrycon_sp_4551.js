@@ -1,7 +1,7 @@
 export default {
   id: 'lanliulibanyoudeng',
   card: {
-    url: '/images/fish/蓝琉璃斑尾灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/蓝琉璃斑尾灯.jpg',
     desc: '蓝琉璃斑尾灯',
     info: {
       habitat: '巴西南部 → 水温24-28℃，弱酸性软水(pH 5.5-6.5)', 

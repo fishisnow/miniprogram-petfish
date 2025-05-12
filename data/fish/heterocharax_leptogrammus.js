@@ -1,7 +1,7 @@
 export default {
   id: 'hongshuijingerxiandeng',
   card: {
-    url: '/images/fish/红水晶二线灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红水晶二线灯.jpg',
     desc: '红水晶二线灯',
     info: {
       habitat: '委内瑞拉 → 温度24-28℃/弱酸性软水', 

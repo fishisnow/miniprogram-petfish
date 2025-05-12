@@ -1,7 +1,7 @@
 export default {
   id: 'hongweiyoulingdeng',
   card: {
-    url: '/images/fish/红尾幽灵灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红尾幽灵灯.jpg',
     desc: '红尾幽灵灯',
     info: {
       habitat: '秘鲁Loreto地区 → 水温24-28℃，弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'dianguangmeiren',
   card: {
-    url: '/images/fish/电光美人.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/电光美人.jpg',
     desc: '电光美人',
     info: {
       habitat: '澳洲水域 → 水温22-26℃/硬度10-15°dH/pH6.5-7.5', 

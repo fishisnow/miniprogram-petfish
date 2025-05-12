@@ -1,7 +1,7 @@
 export default {
   id: 'qishipencaideng',
   card: {
-    url: '/images/fish/骑士铅笔灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/骑士铅笔灯.jpg',
     desc: '骑士铅笔灯',
     info: {
       habitat: '南美流域 → 温度24-28℃/弱酸性软水', 

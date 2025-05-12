@@ -1,7 +1,7 @@
 export default {
   id: 'huangyumaodeng',
   card: {
-    url: '/images/fish/黄羽毛灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/黄羽毛灯.jpg',
     desc: '黄羽毛灯',
     info: {
       habitat: '苏里南、法属奎内亚的Mana River → 温度24-28℃/弱酸性软水', 

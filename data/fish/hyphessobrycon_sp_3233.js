@@ -1,7 +1,7 @@
 export default {
   id: 'heiyouyoulingdeng',
   card: {
-    url: '/images/fish/黑尾幽灵灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/黑尾幽灵灯.jpg',
     desc: '黑尾幽灵灯',
     info: {
       habitat: '哥伦比亚 Rio Guaviare 中下游 → 24-28℃弱酸性软水', 

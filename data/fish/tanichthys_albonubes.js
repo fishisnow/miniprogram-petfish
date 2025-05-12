@@ -1,7 +1,7 @@
 export default {
   id: 'baiyunjinsi',
   card: {
-    url: '/images/fish/白云金丝鱼.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/白云金丝鱼.jpg',
     desc: '白云金丝鱼',
     info: {
       habitat: '山间清澈溪流→ 水温5-25℃，pH6.0-7.5', 

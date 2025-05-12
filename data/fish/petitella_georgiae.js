@@ -1,7 +1,7 @@
 export default {
   id: 'hongyanjiandao',
   card: {
-    url: '/images/fish/红眼剪刀.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红眼剪刀.jpg',
     desc: '红眼剪刀',
     info: {
       habitat: '亚马逊河流域中上游 → 温度24-28℃/弱酸性软水', 

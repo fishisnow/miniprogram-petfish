@@ -30,11 +30,6 @@
       "pages": ["login"]
     },
     {
-      "root": "pages/setting",
-      "name": "setting",
-      "pages": ["index"]
-    },
-    {
       "root": "pages/fish",
       "name": "fish",
       "pages": ["detail/index"]

@@ -1,7 +1,7 @@
 export default {
   id: 'juzigongzhudeng',
   card: {
-    url: '/images/fish/橘子公主灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/橘子公主灯.jpg',
     desc: '橘子公主灯',
     info: {
       habitat: 'Rio Juruena支流，水温24-28℃，弱酸性软水', 

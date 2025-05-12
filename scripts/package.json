@@ -1,0 +1,13 @@
+{
+  "name": "qiniu-uploader",
+  "version": "1.0.0",
+  "description": "上传图片到七牛云并更新JS文件中的URL",
+  "main": "qiniu-uploader.js",
+  "scripts": {
+    "start": "node qiniu-uploader.js"
+  },
+  "dependencies": {
+    "qiniu": "^7.8.0",
+    "glob": "^7.2.3"
+  }
+} 

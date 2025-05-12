@@ -1,7 +1,7 @@
 export default {
   id: 'huangcailanduidandeng',
   card: {
-    url: '/images/fish/黄彩蓝缎带灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/黄彩蓝缎带灯.jpg',
     desc: '黄彩蓝缎带灯',
     info: {
       habitat: '南美黑水流域 → 水温24-28℃/弱酸性软水', 

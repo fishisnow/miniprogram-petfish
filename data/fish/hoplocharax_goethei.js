@@ -1,7 +1,7 @@
 export default {
   id: 'damujinxian',
   card: {
-    url: '/images/fish/大目金线灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/大目金线灯.jpg',
     desc: '大目金线灯',
     info: {
       habitat: '巴西中部玛瑙斯一带，适宜温度24-28℃，弱酸性软水', 

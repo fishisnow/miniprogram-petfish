@@ -1,7 +1,7 @@
 export default {
   id: 'lanyandeng',
   card: {
-    url: '/images/fish/蓝眼灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/蓝眼灯.jpg',
     desc: '蓝眼灯',
     info: {
       habitat: '西非高原湖泊水域 → 水温24-28℃/弱酸性软水', 

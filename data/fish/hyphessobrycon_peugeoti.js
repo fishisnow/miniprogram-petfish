@@ -1,7 +1,7 @@
 export default {
   id: 'emo-huoyan-deng',
   card: {
-    url: '/images/fish/恶魔火焰灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/恶魔火焰灯.jpg',
     desc: '恶魔火焰灯',
     info: {
       habitat: '塔巴荷斯上游支流 Rio Juruena → 温度24-28℃/弱酸性软水', 

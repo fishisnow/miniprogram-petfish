@@ -1,7 +1,7 @@
 export default {
   id: 'hongzuankekadeng',
   card: {
-    url: '/images/fish/红钻可卡灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红钻可卡灯.jpg',
     desc: '红钻可卡灯',
     info: {
       habitat: '产地在 Comodoro Mato Grosso → 适宜温度24-28℃，弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'lanliuliyanweideng',
   card: {
-    url: '/images/fish/蓝琉璃燕尾灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/蓝琉璃燕尾灯.jpg',
     desc: '蓝琉璃燕尾灯',
     info: {
       habitat: '巴西阿拉瓜雅流域支流 Rio das mortes → 温度24-28℃/弱酸性软水', 

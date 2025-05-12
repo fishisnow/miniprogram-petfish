@@ -1,7 +1,7 @@
 export default {
   id: 'feicuihuanweideng',
   card: {
-    url: '/images/fish/翡翠幻尾灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/翡翠幻尾灯.jpg',
     desc: '翡翠幻尾灯',
     info: {
       habitat: '阿拉瓜亚流域 → 温度24-28℃/弱酸性软水', 

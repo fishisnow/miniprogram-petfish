@@ -1,7 +1,7 @@
 export default {
   id: 'baijinhongxiudeng',
   card: {
-    url: '/images/fish/白金红袖灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/白金红袖灯.jpg',
     desc: '白金红袖灯',
     info: {
       habitat: '秘鲁原生种，适宜温度24-28℃，弱酸性软水', 

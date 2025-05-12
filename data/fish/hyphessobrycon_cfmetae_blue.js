@@ -1,7 +1,7 @@
 export default {
   id: 'meitalanxiandeng',
   card: {
-    url: '/images/fish/梅塔蓝线灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/梅塔蓝线灯.jpg',
     desc: '梅塔蓝线灯',
     info: {
       habitat: '秘鲁原生，适合酸性软水，温度22-26℃', 

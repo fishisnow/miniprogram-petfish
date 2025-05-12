@@ -1,7 +1,7 @@
 export default {
   id: 'dafandeng',
   card: {
-    url: '/images/fish/大帆灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/大帆灯.jpg',
     desc: '大帆灯',
     info: {
       habitat: '南美洲北部，如巴西内格罗河上游的巴塞罗斯等流域，秘鲁的纳普流域以及奎内亚的沿岸流域 Río Essequibo 等地 → 温度24-28℃，弱酸性软水', 

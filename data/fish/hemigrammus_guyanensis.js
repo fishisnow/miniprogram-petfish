@@ -1,7 +1,7 @@
 export default {
   id: 'hongdian_deng',
   card: {
-    url: '/images/fish/红点灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红点灯.jpg',
     desc: '红点灯',
     info: {
       habitat: '南美洲热带水域 → 适宜温度24-28℃，弱酸性软水', 

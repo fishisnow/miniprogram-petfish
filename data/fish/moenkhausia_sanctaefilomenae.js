@@ -1,7 +1,7 @@
 export default {
   id: 'yinpingdeng',
   card: {
-    url: '/images/fish/银屏灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/银屏灯.jpg',
     desc: '银屏灯',
     info: {
       habitat: '南美洲亚马逊河、圭亚那等地 → 水温22-25℃/pH5.8-6.8/软水', 

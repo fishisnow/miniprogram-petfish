@@ -1,7 +1,7 @@
 export default {
   id: 'qiaokelinihong',
   card: {
-    url: '/images/fish/蓝眼巧克力霓虹.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/蓝眼巧克力霓虹.jpg',
     desc: '蓝眼巧克力霓虹',
     info: {
       habitat: '瓜波流域及马托格罗素地区 → 水温24-28℃，弱酸性软水', 

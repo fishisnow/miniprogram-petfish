@@ -1,7 +1,7 @@
 export default {
   id: 'diwangheideng',
   card: {
-    url: '/images/fish/帝王黑灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/帝王黑灯.jpg',
     desc: '帝王黑灯',
     info: {
       habitat: '原产秘鲁与玻利维亚界河Rio Madre de Dios → 温度24-28℃/弱酸性软水', 

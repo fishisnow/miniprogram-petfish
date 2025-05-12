@@ -1,7 +1,7 @@
 export default {
   id: 'anyuekekadeng',
   card: {
-    url: '/images/fish/暗月可卡灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/暗月可卡灯.jpg',
     desc: '暗月可卡灯',
     info: {
       habitat: '塔巴荷斯水系 → 水温24-28℃，弱酸性软水', 

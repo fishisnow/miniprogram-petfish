@@ -1,7 +1,7 @@
 export default {
   id: 'xuezuanludeng',
   card: {
-    url: '/images/fish/血钻露比灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/血钻露比灯.jpg',
     desc: '血钻露比灯',
     info: {
       habitat: '南美热带水域 → 适宜温度24-28℃，弱酸性软水', 

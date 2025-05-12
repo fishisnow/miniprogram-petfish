@@ -1,7 +1,7 @@
 export default {
   id: 'mohuanhonglindeng',
   card: {
-    url: '/images/fish/魔幻红鳞灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/魔幻红鳞灯.jpg',
     desc: '魔幻红鳞灯',
     info: {
       habitat: '南美热带水域 → 温度24-28℃/弱酸性软水', 

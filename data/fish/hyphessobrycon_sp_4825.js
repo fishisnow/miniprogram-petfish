@@ -1,7 +1,7 @@
 export default {
   id: 'ziyikaitideng',
   card: {
-    url: '/images/fish/紫衣凯蒂灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/紫衣凯蒂灯.jpg',
     desc: '紫衣凯蒂灯',
     info: {
       habitat: '南美流域 → 水温24-28℃/弱酸性软水', 

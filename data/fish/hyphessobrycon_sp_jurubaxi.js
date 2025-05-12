@@ -1,7 +1,7 @@
 export default {
   id: 'jurubaxi-prince-tetra',
   card: {
-    url: '/images/fish/茹鲁巴斯王子灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/茹鲁巴斯王子灯.jpg',
     desc: '茹鲁巴斯王子灯',
     info: {
       habitat: '内格罗河上游流域 → 建议水温26-30℃，软水环境', 

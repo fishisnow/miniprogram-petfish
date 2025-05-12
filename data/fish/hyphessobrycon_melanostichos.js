@@ -1,7 +1,7 @@
 export default {
   id: 'lan_duan_dai_deng_er_xing',
   card: {
-    url: '/images/fish/蓝缎带灯二型.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/蓝缎带灯二型.jpg',
     desc: '蓝缎带灯二型',
     info: {
       habitat: '原产于巴西的茹鲁埃纳流域（Rio Juruena）上游，适宜温度24-28℃，弱酸性软水（pH 5.5-6.5）', 

@@ -1,7 +1,7 @@
 export default {
   id: 'huangjinkekadeng',
   card: {
-    url: '/images/fish/黄金可卡灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/黄金可卡灯.jpg',
     desc: '黄金可卡灯',
     info: {
       habitat: '巴西塔巴荷斯系统内的Rio Peixoto及Rio Neodori→适宜温度24-28℃，弱酸性软水', 

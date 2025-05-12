@@ -1,7 +1,7 @@
 export default {
   id: 'bolimaoyu',
   card: {
-    url: '/images/fish/玻璃猫鱼.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/玻璃猫鱼.jpg',
     desc: '玻璃猫鱼',
     info: {
       habitat: '亚洲的泰国、马来西亚、印度尼西亚 → 水温22-28℃/弱酸性软水', 

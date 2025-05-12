@@ -1,7 +1,7 @@
 export default {
   id: 'huangshiqingmoguideng',
   card: {
-    url: '/images/fish/皇室青魔鬼灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/皇室青魔鬼灯.jpg',
     desc: '皇室青魔鬼灯',
     info: {
       habitat: '南美亚马逊流域 → 温度24-28℃/弱酸性软水', 

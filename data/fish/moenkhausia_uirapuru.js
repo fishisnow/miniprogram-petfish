@@ -1,7 +1,7 @@
 export default {
   id: 'hongsaikekadeng',
   card: {
-    url: '/images/fish/红鳃可卡灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红鳃可卡灯.jpg',
     desc: '红鳃可卡灯',
     info: {
       habitat: '巴西马托格罗索州内瓜波河上游支流 → 温度24-28℃/弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'luoleituobaiyishuijingdeng',
   card: {
-    url: '/images/fish/洛雷托白翅水晶灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/洛雷托白翅水晶灯.jpg',
     desc: '洛雷托白翅水晶灯',
     info: {
       habitat: '秘鲁洛雷托地区 → 水温24-28℃，弱酸性软水', 

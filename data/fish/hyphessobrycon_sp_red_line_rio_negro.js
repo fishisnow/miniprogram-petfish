@@ -1,7 +1,7 @@
 export default {
   id: 'chimuchixiandeng',
   card: {
-    url: '/images/fish/赤目赤线灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/赤目赤线灯.jpg',
     desc: '赤目赤线灯',
     info: {
       habitat: '内格罗流域 → 温度24-28℃/弱酸性软水', 

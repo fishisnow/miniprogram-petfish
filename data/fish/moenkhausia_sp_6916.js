@@ -1,7 +1,7 @@
 export default {
   id: 'chimuxiangjiaodeng',
   card: {
-    url: '/images/fish/赤目香蕉灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/赤目香蕉灯.jpg',
     desc: '赤目香蕉灯',
     info: {
       habitat: '南美流域 → 水温24-28℃，弱酸性软水', 

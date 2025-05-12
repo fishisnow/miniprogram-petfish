@@ -1,7 +1,7 @@
 export default {
   id: 'hongbijianchaoyu',
   card: {
-    url: '/images/fish/红鼻剪刀鱼.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红鼻剪刀鱼.jpg',
     desc: '红鼻剪刀鱼',
     info: {
       habitat: '南美洲亚马逊河流域下游，适宜水温22～26℃，弱酸性软水(pH5.4～6.8)',

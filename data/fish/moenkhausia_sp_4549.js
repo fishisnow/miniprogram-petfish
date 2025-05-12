@@ -1,7 +1,7 @@
 export default {
   id: 'keledicuideng',
   card: {
-    url: '/images/fish/可乐蒂翠绿灯.jpg',
+    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/可乐蒂翠绿灯.jpg',
     desc: '可乐蒂翠绿灯',
     info: {
       habitat: '广泛分布在巴西、哥伦比亚及秘鲁多支流域 → 温度24-28℃，弱酸性软水', 
