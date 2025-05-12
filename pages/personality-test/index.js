@@ -53,12 +53,7 @@ Page({
       wx.setStorageSync('personality_test_scores', result.scores);
       console.log('测试结果已保存到本地');
       
-      // 测试完成后，跳转到结果页面
-      setTimeout(() => {
-        wx.navigateTo({
-          url: '/pages/my/test/index',
-        });
-      }, 1500); // 延迟跳转，给用户展示成功提示的时间
+      // 只显示测试完成的提示即可
     } catch (error) {
       console.error('保存测试结果失败:', error);
     }

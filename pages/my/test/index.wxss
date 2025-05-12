@@ -14,17 +14,12 @@
   margin-bottom: 24rpx;
 }
 
-.result-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 16rpx;
-}
-
-.result-title {
+.card-title {
   font-size: 36rpx;
   font-weight: bold;
   color: #333;
-  margin-left: 16rpx;
+  text-align: center;
+  margin: 16rpx 0 24rpx;
 }
 
 .result-description {
@@ -32,65 +27,13 @@
   color: #666;
   line-height: 1.6;
   margin-bottom: 24rpx;
+  padding: 0 16rpx;
+  text-align: center;
 }
 
-/* 雷达图样式 */
-.radar-container {
-  display: flex;
-  justify-content: center;
-  margin: 24rpx 0;
-  background: rgba(0, 82, 217, 0.05);
-  padding: 24rpx;
-  border-radius: 12rpx;
-}
-
-.radar-image {
-  width: 400rpx;
-  height: 400rpx;
-}
-
-/* 能力值展示 */
-.ability-container {
-  margin: 24rpx 0;
-}
-
-.ability-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20rpx;
-}
-
-.ability-label {
-  width: 160rpx;
-  font-size: 26rpx;
-  color: #666;
-}
-
-.ability-bar-container {
-  flex: 1;
-  height: 16rpx;
-  background-color: #f2f3ff;
-  border-radius: 8rpx;
-  overflow: hidden;
-  margin: 0 16rpx;
-}
-
-.ability-bar {
-  height: 100%;
-  background: linear-gradient(90deg, #0052d9, #44a9ff);
-  border-radius: 8rpx;
-}
-
-.ability-value {
-  width: 80rpx;
-  font-size: 24rpx;
-  color: #0052d9;
-  text-align: right;
-}
-
-/* 推荐鱼种样式 */
-.recommended-fishes {
-  margin-top: 24rpx;
+/* 性格分析区域 */
+.analysis-section {
+  margin: 32rpx 0;
 }
 
 .section-title {
@@ -102,55 +45,116 @@
   padding-left: 16rpx;
 }
 
+/* 图表容器 */
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.radar-chart {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24rpx;
+}
+
+/* 维度图表 */
+.dimensions-chart {
+  width: 100%;
+  margin-top: 16rpx;
+}
+
+.dimension-item {
+  margin-bottom: 16rpx;
+}
+
+.dimension-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8rpx;
+}
+
+.dimension-name {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.dimension-score {
+  font-size: 26rpx;
+  color: #0052d9;
+  font-weight: bold;
+}
+
+.dimension-bar-bg {
+  width: 100%;
+  height: 16rpx;
+  background-color: #f2f3ff;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.dimension-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #0052d9, #44a9ff);
+  border-radius: 8rpx;
+}
+
+/* 推荐鱼种样式 */
+.recommended-section {
+  margin-top: 32rpx;
+}
+
 .fish-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
   margin-top: 16rpx;
 }
 
 .fish-item {
-  display: flex;
-  align-items: center;
-  background-color: #f8f9fa;
-  border-radius: 12rpx;
-  padding: 16rpx;
-  margin-bottom: 16rpx;
-  transition: all 0.2s ease;
-}
-
-.fish-item:active {
-  transform: scale(0.98);
   background-color: #f2f3ff;
-}
-
-.fish-image {
-  width: 120rpx;
-  height: 120rpx;
-  border-radius: 8rpx;
-  margin-right: 16rpx;
-  object-fit: cover;
-}
-
-.fish-info {
-  flex: 1;
-}
-
-.fish-name {
+  color: #0052d9;
   font-size: 28rpx;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 8rpx;
-}
-
-.fish-description {
-  font-size: 24rpx;
-  color: #666;
-  line-height: 1.5;
+  padding: 12rpx 24rpx;
+  border-radius: 100rpx;
+  display: inline-block;
 }
 
 /* 操作按钮样式 */
-.action-buttons {
+.action-area {
   display: flex;
   justify-content: space-between;
   margin-top: 48rpx;
+  gap: 16rpx;
+}
+
+.share-btn, .restart-btn {
+  flex: 1;
+  height: 88rpx;
+  border-radius: 44rpx;
+  font-size: 30rpx;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-btn {
+  background-color: #ffffff;
+  color: #0052d9;
+  border: 2rpx solid #e0e0e0;
+}
+
+.restart-btn {
+  background-color: #0052d9;
+  color: #ffffff;
+}
+
+.share-icon {
+  width: 36rpx;
+  height: 36rpx;
+  background-size: contain;
+  margin-right: 8rpx;
 }
 
 /* 空状态和未完成测试状态 */
@@ -180,17 +184,4 @@
   text-align: center;
   margin-bottom: 48rpx;
   max-width: 80%;
-}
-
-/* 吉卜力风格按钮 */
-.start-test-btn, .t-button--primary {
-  background-color: #7bb661 !important; /* 吉卜力风格的绿色 */
-  border-color: #7bb661 !important;
-  box-shadow: 0 6rpx 12rpx rgba(123, 182, 97, 0.2);
-  transition: all 0.3s ease;
-}
-
-.start-test-btn:active, .t-button--primary:active {
-  background-color: #6a9e53 !important;
-  transform: translateY(2rpx);
 } 

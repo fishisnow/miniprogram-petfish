@@ -3,47 +3,52 @@
   <block wx:if="{{testResult}}">
     <!-- 有测试结果时显示 -->
     <view class="result-card">
-      <view class="result-header">
-        <t-icon name="chart-line" size="48rpx" color="#0052d9" />
-        <view class="result-title">{{testResult.title}}</view>
-      </view>
+      <view class="card-title">{{testResult.title}}</view>
       <view class="result-description">{{testResult.description}}</view>
       
-      <!-- 雷达图结果 -->
-      <view class="radar-container" wx:if="{{radarImage}}">
-        <image class="radar-image" src="{{radarImage}}" mode="aspectFit"></image>
-      </view>
-      
-      <!-- 能力值展示 -->
-      <view class="ability-container">
-        <view class="ability-item" wx:for="{{testResult.abilities}}" wx:key="name">
-          <view class="ability-label">{{item.name}}</view>
-          <view class="ability-bar-container">
-            <view class="ability-bar" style="width: {{item.value}}%;"></view>
+      <!-- 性格分析板块 -->
+      <view class="analysis-section">
+        <view class="section-title">性格分析</view>
+        
+        <!-- 雷达图结果 -->
+        <view class="chart-container">
+          <!-- 雷达图 -->
+          <view class="radar-chart">
+            <image wx:if="{{radarImage}}" src="{{radarImage}}" mode="widthFix" style="width: 220px; height: auto;"></image>
           </view>
-          <view class="ability-value">{{item.value}}%</view>
+
+          <!-- 维度评分条形图 -->
+          <view class="dimensions-chart">
+            <view class="dimension-item" wx:for="{{testResult.abilities}}" wx:key="name">
+              <view class="dimension-info">
+                <text class="dimension-name">{{item.name}}</text>
+                <text class="dimension-score">{{item.value}}</text>
+              </view>
+              <view class="dimension-bar-bg">
+                <view class="dimension-bar" style="width: {{item.value * 5}}%;"></view>
+              </view>
+            </view>
+          </view>
         </view>
       </view>
       
       <!-- 推荐鱼种 -->
-      <view class="recommended-fishes">
-        <view class="section-title">适合你的鱼种</view>
+      <view class="recommended-section">
+        <view class="section-title">推荐鱼种</view>
         <view class="fish-list">
-          <view class="fish-item" wx:for="{{testResult.fishes}}" wx:key="index" bindtap="viewFishDetail" data-id="{{item.id}}">
-            <image class="fish-image" src="{{item.image}}" mode="aspectFill"></image>
-            <view class="fish-info">
-              <view class="fish-name">{{item.name}}</view>
-              <view class="fish-description">{{item.description}}</view>
-            </view>
-            <t-icon name="chevron-right" size="36rpx" color="#ccc" />
+          <view class="fish-item" wx:for="{{testResult.fishes}}" wx:key="id" bindtap="viewFishDetail" data-id="{{item.id}}">
+            <text class="fish-name">{{item.name}}</text>
           </view>
         </view>
       </view>
       
       <!-- 操作按钮 -->
-      <view class="action-buttons">
-        <t-button theme="primary" size="medium" icon="refresh" shape="round" bindtap="restartTest">重新测试</t-button>
-        <t-button theme="light" size="medium" icon="share" shape="round" bindtap="shareResult">分享结果</t-button>
+      <view class="action-area">
+        <button class="share-btn" open-type="share">
+          <view class="share-icon"></view>
+          分享结果
+        </button>
+        <button class="restart-btn" bindtap="restartTest">重新测试</button>
       </view>
     </view>
   </block>
