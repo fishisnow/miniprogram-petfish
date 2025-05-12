@@ -1126,9 +1126,23 @@ Component({
     // 新增方法：保存测试结果到本地
     saveTestResult(result, scores) {
       try {
+        // 确保鱼种信息是正确的格式
+        if (result && result.fishes) {
+          // 如果fishes是字符串数组，转换为对象数组以在"我的测试"页面正确显示
+          if (typeof result.fishes[0] === 'string') {
+            const fishNames = result.fishes;
+            result.fishes = fishNames.map((name, index) => {
+              return {
+                id: 'fish_' + (index + 1), // 创建一个临时ID
+                name: name
+              };
+            });
+          }
+        }
+        
         wx.setStorageSync('personality_test_result', result);
         wx.setStorageSync('personality_test_scores', scores);
-        console.log('测试结果已保存到本地');
+        console.log('测试结果已保存到本地, 包含推荐鱼种:', result.fishes);
       } catch (error) {
         console.error('保存测试结果失败:', error);
       }

@@ -142,8 +142,7 @@
 
 .result-header {
   width: 100%;
-  padding: 20rpx;
-  padding-top: calc(40rpx + env(safe-area-inset-top));
+  padding: 0 20rpx; /* 移除垂直内边距，只保留水平内边距 */
   background: #88c0a8; /* 更明亮的绿色调，参考龙猫中的色调 */
   box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
   position: relative;
@@ -151,16 +150,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 90rpx;
+  height: 88rpx; /* 使用固定高度替代min-height */
+  margin-top: calc(44px + 10rpx); /* 状态栏高度（44px）加额外间距 */
+  box-sizing: border-box;
 }
 
 .result-header .back-button {
   position: absolute;
   left: 30rpx;
-  top: calc(40rpx + env(safe-area-inset-top));
+  top: 50%;
   transform: translateY(-50%);
-  width: 70rpx;
-  height: 70rpx;
+  width: 64rpx; /* 稍微调小按钮尺寸 */
+  height: 64rpx;
   background: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   display: flex;
@@ -170,11 +171,12 @@
 }
 
 .result-title {
-  font-size: 38rpx;
+  font-size: 36rpx; /* 稍微调小字体 */
   font-weight: bold;
   color: #ffffff;
   text-align: center;
-  margin: 10rpx 0;
+  margin: 0;
+  padding: 0; /* 移除内边距 */
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   letter-spacing: 2rpx;
   max-width: 80%;
@@ -183,9 +185,9 @@
 .result-scroll {
   flex: 1;
   padding: 20rpx;
-  padding-top: 30rpx;
   box-sizing: border-box;
   overflow-y: auto;
+  margin-top: 20rpx; /* 增加顶部外边距，与标题区域分开 */
 }
 
 .result-card {

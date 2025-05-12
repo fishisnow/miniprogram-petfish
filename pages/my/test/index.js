@@ -46,6 +46,30 @@ Page({
         if (!completedTest.abilities && abilities.length > 0) {
           completedTest.abilities = abilities;
         }
+        
+        // 处理推荐鱼种数据，确保格式正确
+        if (completedTest.fishes && Array.isArray(completedTest.fishes)) {
+          // 如果fishes是字符串数组，转换为对象数组
+          if (typeof completedTest.fishes[0] === 'string') {
+            const fishNames = completedTest.fishes;
+            completedTest.fishes = fishNames.map((name, index) => {
+              return {
+                id: 'fish_' + (index + 1), // 创建一个临时ID
+                name: name
+              };
+            });
+          }
+          // 如果fishes中的元素没有id和name属性，尝试添加
+          else if (completedTest.fishes[0] && typeof completedTest.fishes[0] === 'object') {
+            completedTest.fishes = completedTest.fishes.map((fish, index) => {
+              if (!fish.id) fish.id = 'fish_' + (index + 1);
+              if (!fish.name && fish.title) fish.name = fish.title;
+              return fish;
+            });
+          }
+          console.log('处理后的鱼种数据:', completedTest.fishes);
+        }
+        
         this.setData({
           testResult: completedTest,
           radarImage: radarImage || '',

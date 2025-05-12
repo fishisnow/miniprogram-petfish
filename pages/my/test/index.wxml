@@ -37,7 +37,7 @@
         <view class="section-title">推荐鱼种</view>
         <view class="fish-list">
           <view class="fish-item" wx:for="{{testResult.fishes}}" wx:key="id" bindtap="viewFishDetail" data-id="{{item.id}}">
-            <text class="fish-name">{{item.name}}</text>
+            <text>{{item.name}}</text>
           </view>
         </view>
       </view>

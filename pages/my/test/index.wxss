@@ -2,7 +2,7 @@
   padding: 24rpx;
   min-height: 100vh;
   box-sizing: border-box;
-  background-color: #f8f9fa;
+  background-color: #f3f8ee;
 }
 
 /* 结果卡片样式 */
@@ -12,23 +12,28 @@
   padding: 24rpx;
   box-shadow: 0 2rpx 20rpx rgba(0, 0, 0, 0.08);
   margin-bottom: 24rpx;
+  border: 1px solid rgba(136, 192, 168, 0.2);
 }
 
 .card-title {
   font-size: 36rpx;
   font-weight: bold;
-  color: #333;
+  color: #4b6c5d;
   text-align: center;
   margin: 16rpx 0 24rpx;
 }
 
 .result-description {
   font-size: 28rpx;
-  color: #666;
+  color: #5a6268;
   line-height: 1.6;
   margin-bottom: 24rpx;
   padding: 0 16rpx;
   text-align: center;
+  background: #f9fdf5;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  border-left: 6rpx solid #88c0a8;
 }
 
 /* 性格分析区域 */
@@ -39,9 +44,9 @@
 .section-title {
   font-size: 32rpx;
   font-weight: bold;
-  color: #333;
+  color: #4b6c5d;
   margin-bottom: 24rpx;
-  border-left: 6rpx solid #0052d9;
+  border-left: 6rpx solid #88c0a8;
   padding-left: 16rpx;
 }
 
@@ -58,50 +63,119 @@
   margin-bottom: 24rpx;
 }
 
+.radar-chart image {
+  border-radius: 110px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
 /* 维度图表 */
 .dimensions-chart {
   width: 100%;
   margin-top: 16rpx;
+  padding: 20rpx 10rpx;
+  border-radius: 16rpx;
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .dimension-item {
   margin-bottom: 16rpx;
 }
 
+/* 最后一个维度项目不需要底部间距 */
+.dimension-item:last-child {
+  margin-bottom: 0;
+}
+
 .dimension-info {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8rpx;
+  margin-bottom: 6rpx;
 }
 
 .dimension-name {
   font-size: 26rpx;
-  color: #666;
+  color: #4b6c5d;
+  font-weight: 500;
 }
 
 .dimension-score {
   font-size: 26rpx;
-  color: #0052d9;
   font-weight: bold;
+  color: #88c0a8;
 }
 
 .dimension-bar-bg {
   width: 100%;
   height: 16rpx;
-  background-color: #f2f3ff;
+  background-color: #edf5f0;
   border-radius: 8rpx;
   overflow: hidden;
 }
 
+/* 各个性格类型的不同颜色 - 优化为更明亮的吉卜力色调 */
+.dimension-item:nth-child(1) .dimension-bar {
+  background: linear-gradient(90deg, #88c0a8, #b5e0cc);
+}
+
+.dimension-item:nth-child(2) .dimension-bar {
+  background: linear-gradient(90deg, #5e9eb8, #8ac7e0);
+}
+
+.dimension-item:nth-child(3) .dimension-bar {
+  background: linear-gradient(90deg, #f197a3, #f7bbc4);
+}
+
+.dimension-item:nth-child(4) .dimension-bar {
+  background: linear-gradient(90deg, #b2c75f, #d4e590);
+}
+
+.dimension-item:nth-child(5) .dimension-bar {
+  background: linear-gradient(90deg, #ffc266, #ffd699);
+}
+
+.dimension-item:nth-child(6) .dimension-bar {
+  background: linear-gradient(90deg, #b699cc, #d7c2e3);
+}
+
+/* 让不同维度的分数显示对应的颜色 */
+.dimension-item:nth-child(1) .dimension-score {
+  color: #88c0a8;
+}
+
+.dimension-item:nth-child(2) .dimension-score {
+  color: #5e9eb8;
+}
+
+.dimension-item:nth-child(3) .dimension-score {
+  color: #f197a3;
+}
+
+.dimension-item:nth-child(4) .dimension-score {
+  color: #b2c75f;
+}
+
+.dimension-item:nth-child(5) .dimension-score {
+  color: #ffc266;
+}
+
+.dimension-item:nth-child(6) .dimension-score {
+  color: #b699cc;
+}
+
+/* 默认颜色 */
 .dimension-bar {
   height: 100%;
-  background: linear-gradient(90deg, #0052d9, #44a9ff);
+  background: linear-gradient(90deg, #88c0a8, #b5e0cc);
   border-radius: 8rpx;
 }
 
 /* 推荐鱼种样式 */
 .recommended-section {
   margin-top: 32rpx;
+  background: #f9fdf5;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.04);
 }
 
 .fish-list {
@@ -112,12 +186,14 @@
 }
 
 .fish-item {
-  background-color: #f2f3ff;
-  color: #0052d9;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #4b6c5d;
   font-size: 28rpx;
   padding: 12rpx 24rpx;
-  border-radius: 100rpx;
+  border-radius: 24rpx;
   display: inline-block;
+  border: 1px solid rgba(136, 192, 168, 0.3);
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.03);
 }
 
 /* 操作按钮样式 */
@@ -141,20 +217,13 @@
 
 .share-btn {
   background-color: #ffffff;
-  color: #0052d9;
+  color: #88c0a8;
   border: 2rpx solid #e0e0e0;
 }
 
 .restart-btn {
-  background-color: #0052d9;
+  background-color: #88c0a8;
   color: #ffffff;
-}
-
-.share-icon {
-  width: 36rpx;
-  height: 36rpx;
-  background-size: contain;
-  margin-right: 8rpx;
 }
 
 /* 空状态和未完成测试状态 */
@@ -169,13 +238,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  color: #4b6c5d;
 }
 
 .empty-title, .unfinished-title {
   margin: 0 0 24rpx;
   font-size: 36rpx;
   font-weight: bold;
-  color: #333;
+  color: #4b6c5d;
 }
 
 .empty-description, .unfinished-description {
@@ -184,4 +254,9 @@
   text-align: center;
   margin-bottom: 48rpx;
   max-width: 80%;
+}
+
+.start-test-btn {
+  color: #ffffff !important;
+  background-color: #88c0a8 !important;
 } 
