@@ -712,142 +712,69 @@ Component({
         const footerText = '扫描右侧二维码，测试你的养鱼性格';
         ctx.fillText(footerText, canvasWidth / 2 - 70, footerTop + 80);
 
-        // 绘制小程序码
-        wx.getFileSystemManager().readFile({
-          filePath: `${wx.env.USER_DATA_PATH}/minicode.jpg`, // 临时存储的小程序码路径
-          fail: () => {
-            // 如果临时文件不存在，从项目路径加载
-            const fs = wx.getFileSystemManager();
-            fs.copyFile({
-              srcPath: '/images/minicode.jpg',
-              destPath: `${wx.env.USER_DATA_PATH}/minicode.jpg`,
-              success: () => {
-                this.drawQRCode(ctx, canvasWidth, footerTop, marginX);
+        // 直接绘制小程序码
+        const qrSize = 120;
+        const qrX = canvasWidth - marginX - qrSize - 20;
+        const qrY = footerTop + 30;
+        
+        // 绘制小程序码背景阴影
+        ctx.save();
+        ctx.setShadow(0, 2, 8, 'rgba(0, 0, 0, 0.08)');
+        ctx.beginPath();
+        ctx.arc(qrX + qrSize/2, qrY + qrSize/2, qrSize/2 + 4, 0, Math.PI * 2);
+        ctx.setFillStyle('#ffffff');
+        ctx.fill();
+        ctx.restore();
+        
+        // 直接绘制小程序码图片
+        const minicodePath = '/images/minicode.jpg';
+        ctx.drawImage(minicodePath, qrX, qrY, qrSize, qrSize);
+        
+        // 更新最终画布高度
+        canvasHeight = footerTop + 180;
+        
+        // 添加底部版权信息
+        ctx.setFontSize(22);
+        ctx.setFillStyle('#88c0a8');
+        ctx.setTextAlign('center');
+        ctx.fillText('养鱼性格测试 · 快乐养鱼', canvasWidth / 2, canvasHeight - 24);
+        
+        // 完成绘制
+        ctx.draw(false, () => {
+          // 转换为图片，延迟800毫秒确保绘制完成
+          setTimeout(() => {
+            wx.canvasToTempFilePath({
+              canvasId: 'resultCanvas',
+              x: 0,
+              y: 0,
+              width: canvasWidth,
+              height: canvasHeight,
+              destWidth: canvasWidth,
+              destHeight: canvasHeight,
+              fileType: 'jpg',
+              quality: 1,
+              success: (res) => {
+                wx.hideLoading();
+                // 保存到相册
+                wx.saveImageToPhotosAlbum({
+                  filePath: res.tempFilePath,
+                  success: () => {
+                    wx.showToast({ title: '保存成功', icon: 'success' });
+                  },
+                  fail: (err) => {
+                    console.error('保存图片失败', err);
+                    wx.showToast({ title: '保存失败', icon: 'none' });
+                  }
+                });
               },
               fail: (err) => {
-                console.error('复制小程序码失败', err);
-                // 尝试直接从项目路径加载
-                this.drawQRCode(ctx, canvasWidth, footerTop, marginX, '/images/minicode.jpg');
+                wx.hideLoading();
+                console.error('生成结果图片失败', err);
+                this.tryScreenshotMethod();
               }
-            });
-          },
-          success: (res) => {
-            this.drawQRCode(ctx, canvasWidth, footerTop, marginX, null, res.data);
-          }
+            }, this);
+          }, 800);
         });
-      });
-    },
-
-    // 定义绘制小程序码的函数
-    drawQRCode: function(ctx, canvasWidth, footerTop, marginX, path, qrImageData) {
-      const qrSize = 120;
-      const qrX = canvasWidth - marginX - qrSize - 20;
-      const qrY = footerTop + 30;
-      
-      // 绘制小程序码背景阴影
-      ctx.save();
-      ctx.setShadow(0, 2, 8, 'rgba(0, 0, 0, 0.08)');
-      ctx.beginPath();
-      ctx.arc(qrX + qrSize/2, qrY + qrSize/2, qrSize/2 + 4, 0, Math.PI * 2);
-      ctx.setFillStyle('#ffffff');
-      ctx.fill();
-      ctx.restore();
-      
-      // 绘制小程序码
-      if (qrImageData) {
-        wx.getFileSystemManager().writeFile({
-          filePath: `${wx.env.USER_DATA_PATH}/temp_qr.jpg`,
-          data: qrImageData,
-          encoding: 'binary',
-          success: () => {
-            ctx.drawImage(`${wx.env.USER_DATA_PATH}/temp_qr.jpg`, qrX, qrY, qrSize, qrSize);
-            this.finishDrawing(ctx, canvasWidth, footerTop);
-          },
-          fail: (err) => {
-            console.error('保存临时小程序码失败', err);
-            this.finishDrawing(ctx, canvasWidth, footerTop);
-          }
-        });
-      } else if (path) {
-        // 直接使用路径绘制
-        try {
-          ctx.drawImage(path, qrX, qrY, qrSize, qrSize);
-          this.finishDrawing(ctx, canvasWidth, footerTop);
-        } catch (error) {
-          console.error('绘制小程序码失败', error);
-          this.finishDrawing(ctx, canvasWidth, footerTop);
-        }
-      } else {
-        // 无法绘制小程序码，只完成其他部分
-        console.log('无小程序码数据，继续完成绘制');
-        this.finishDrawing(ctx, canvasWidth, footerTop);
-      }
-    },
-
-    // 定义完成绘制的函数
-    finishDrawing: function(ctx, canvasWidth, footerTop) {
-      // 更新最终画布高度
-      let canvasHeight = footerTop + 180;
-      
-      // 添加底部版权信息
-      ctx.setFontSize(22);
-      ctx.setFillStyle('#88c0a8');
-      ctx.setTextAlign('center');
-      ctx.fillText('养鱼性格测试 · 快乐养鱼', canvasWidth / 2, canvasHeight - 24);
-      
-      // 完成绘制
-      ctx.draw(false, () => {
-        // 转换为图片，延迟800毫秒确保绘制完成
-        setTimeout(() => {
-          wx.canvasToTempFilePath({
-            canvasId: 'resultCanvas',
-            x: 0,
-            y: 0,
-            width: canvasWidth,
-            height: canvasHeight,
-            destWidth: canvasWidth,
-            destHeight: canvasHeight,
-            fileType: 'jpg',
-            quality: 1,
-            success: (res) => {
-              wx.hideLoading();
-              // 保存到相册
-              wx.saveImageToPhotosAlbum({
-                filePath: res.tempFilePath,
-                success: () => {
-                  wx.showToast({ title: '保存成功', icon: 'success' });
-                },
-                fail: (err) => {
-                  console.error('保存图片失败', err);
-                  wx.showToast({ title: '保存失败', icon: 'none' });
-                }
-              });
-            },
-            fail: (err) => {
-              wx.hideLoading();
-              console.error('生成结果图片失败', err);
-              this.tryScreenshotMethod();
-            }
-          }, this);
-        }, 800);
-      });
-    },
-
-    // 备用的截图方法
-    tryScreenshotMethod: function() {
-      wx.showModal({
-        title: '提示',
-        content: '生成图片失败，是否尝试截图方式保存？',
-        success: (res) => {
-          if (res.confirm) {
-            // 这里可以实现截图逻辑，或者引导用户自行截图
-            wx.showToast({
-              title: '请使用系统截图功能保存结果',
-              icon: 'none',
-              duration: 3000
-            });
-          }
-        }
       });
     },
 
@@ -1146,6 +1073,24 @@ Component({
       } catch (error) {
         console.error('保存测试结果失败:', error);
       }
+    },
+
+    // 备用的截图方法
+    tryScreenshotMethod: function() {
+      wx.showModal({
+        title: '提示',
+        content: '生成图片失败，是否尝试截图方式保存？',
+        success: (res) => {
+          if (res.confirm) {
+            // 这里可以实现截图逻辑，或者引导用户自行截图
+            wx.showToast({
+              title: '请使用系统截图功能保存结果',
+              icon: 'none',
+              duration: 3000
+            });
+          }
+        }
+      });
     }
   }
 }); 
