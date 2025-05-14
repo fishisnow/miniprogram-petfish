@@ -547,4 +547,11 @@
   text-align: center;
   margin: 16rpx 0;
   line-height: 1.5;
+}
+
+/* 结果页面使用的隐藏画布 */
+.result-canvas {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
 } 

@@ -20,7 +20,8 @@
   "license": "MIT",
   "description": "a start-kit for wechat miniprogram powerby TDesign miniprogram",
   "dependencies": {
-    "tdesign-miniprogram": "^1.8.6"
+    "tdesign-miniprogram": "^1.8.6",
+    "wxml-to-canvas": "^1.1.1"
   },
   "devDependencies": {
     "eslint": "^8.49.0",
