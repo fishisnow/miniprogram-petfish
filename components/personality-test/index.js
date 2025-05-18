@@ -472,7 +472,7 @@ Component({
       
       // 使用手机屏幕常规尺寸的画布，提高清晰度
       const canvasWidth = 375;  // 标准手机屏幕宽度
-      const canvasHeight = 667; // 初始高度，后面会根据实际内容调整
+      const canvasHeight = 800; // 增加高度以确保内容不被压缩
       
       const ctx = wx.createCanvasContext('resultCanvas', this);
       
@@ -481,9 +481,9 @@ Component({
         primary: '#88c0a8',     // 明亮的吉卜力绿
         secondary: '#4b6c5d',   // 较深的文本色
         background: '#ffffff',
-        cardBg: '#f9fdf5',
-        textPrimary: '#4b6c5d',
-        textSecondary: '#758a7f',
+        cardBg: '#f9fdf5',      // 淡绿色卡片底色
+        textPrimary: '#4b6c5d', // 主要文本颜色
+        textSecondary: '#758a7f', // 次要文本颜色
         border: 'rgba(136, 192, 168, 0.3)',
         fishDot: '#88c0a8',     // 统一的鱼种圆点颜色
         dimensions: {
@@ -501,32 +501,32 @@ Component({
       ctx.fillRect(0, 0, canvasWidth, canvasHeight);
       
       // 定义边距和当前绘制位置
-      const marginX = 20; // 左右边距
-      const sectionGap = 20; // 增加各区域之间的间距，使布局更加宽松美观
+      const marginX = 15; // 减小左右边距
+      const sectionGap = 16; // 减小各区域之间的间距
       let currentY = 0; 
       
       // 绘制顶部背景条 - 减小高度使标题更加紧凑
       ctx.setFillStyle(colors.primary);
-      ctx.fillRect(0, 0, canvasWidth, 45); // 将高度从60减少到45
+      ctx.fillRect(0, 0, canvasWidth, 50); // 略微增加高度，使标题更突出
       
-      // 绘制标题 - 减小字体大小
-      ctx.setFontSize(18); // 将字体从22减小到18
+      // 绘制标题 - 调整字体大小
+      ctx.setFontSize(20); // 增大字体从18到20
       ctx.setFillStyle('#ffffff');
       ctx.setTextAlign('center');
-      ctx.fillText(this.data.testResult.title, canvasWidth / 2, 28); // 调整位置从36到28
-      currentY = 45 + sectionGap; // 统一间距
+      ctx.fillText(this.data.testResult.title, canvasWidth / 2, 32); // 调整位置使其垂直居中
+      currentY = 50 + sectionGap; // 统一间距
       
       // 绘制描述文本 - 确保测试结果描述文字显示
-      ctx.setFontSize(14); // 适当减小字体提高可读性
-      ctx.setFillStyle('#000000'); // 使用纯黑色
+      ctx.setFontSize(15); // 略微增大字体提高可读性
+      ctx.setFillStyle(colors.textPrimary); // 使用主题色而不是纯黑色，更柔和
       ctx.setTextAlign('left');
       
       // 确保描述文本存在
       const descText = this.data.testResult.description || '这种性格类型的养鱼者注重鱼缸的整体美感和生态平衡，喜欢精心设计和布置水族环境。';
-      const maxDescWidth = canvasWidth - marginX * 2 - 40; // 调整宽度，确保左右边距一致
+      const maxDescWidth = canvasWidth - marginX * 2 - 30; // 调整宽度，确保左右边距一致但不过大
       const lineHeight = 24; // 增加行高，提高可读性
       
-      // 简化文本处理方法 - 自然流动展示文本，不强制换行
+      // 文本处理方法 - 自然流动展示文本，不强制换行
       const breakTextIntoLines = (text, maxWidth, ctx) => {
         const lines = [];
         let currentLine = '';
@@ -560,74 +560,74 @@ Component({
       console.log('分行后:', descLines, '行数:', descLines.length);
       
       // 调整描述区域的高度，确保足够容纳所有文本
-      const descHeight = Math.max(descLines.length * lineHeight + 40, 90); // 调整空间
+      const descHeight = Math.max(descLines.length * lineHeight + 40, 100); // 增加最小高度
       
       // 先绘制背景卡片
-      this.drawRoundedRect(ctx, marginX, currentY, canvasWidth - marginX * 2, descHeight, 10, colors.cardBg);
+      this.drawRoundedRect(ctx, marginX, currentY, canvasWidth - marginX * 2, descHeight, 12, colors.cardBg);
       
       // 保存当前上下文状态
       ctx.save();
       
       // 重新设置文本样式，确保它不受之前绘制操作的影响
       ctx.setFontSize(15); // 字体尺寸
-      ctx.setFillStyle('#4b6c5d'); // 使用柔和的绿色调，符合整体设计风格
+      ctx.setFillStyle(colors.textPrimary); // 使用柔和的绿色调，符合整体设计风格
       ctx.setTextAlign('left');
       ctx.setTextBaseline('middle'); // 使文本垂直居中对齐
       
       // 增加初始文本位置的垂直偏移，确保文本居中显示
-      currentY += descHeight / 2 - ((descLines.length * lineHeight) / 2) + 5;
+      let descY = currentY + 25; // 起始位置更靠上一些
       
       // 绘制描述文本的每一行，使用符合整体风格的颜色
       descLines.forEach((line, index) => {
         console.log(`绘制第${index+1}行文本:`, line);
-        // 绘制文本，取消阴影，使用轻量级样式
         ctx.setShadow(0, 0, 0, 'rgba(0, 0, 0, 0)'); // 移除阴影
-        ctx.fillText(line, marginX + 20, currentY); // 增加左侧边距
-        currentY += lineHeight;
+        ctx.fillText(line, marginX + 16, descY); // 增加左侧边距
+        descY += lineHeight;
       });
       
       // 恢复上下文状态
       ctx.restore();
       
-      // 确保下一个区域有足够的间距
-      currentY = 45 + sectionGap + descHeight + 5;
+      // 更新当前Y位置到下一区域
+      currentY = currentY + descHeight + sectionGap;
       
       // 合并雷达图和柱状图到同一区域 - 使用白色底色
-      const radarSize = 200; // 雷达图尺寸
-      const barHeight = 8; // 柱状图高度
-      const barGap = 30; // 柱状图间距
+      const radarSize = 220; // 增大雷达图尺寸
+      const barHeight = 10; // 增加柱状图高度
+      const barGap = 32; // 增加柱状图间距
       
       // 计算合并区域的总高度
-      const chartWidth = canvasWidth - marginX * 2 - 60;
-      const radarChartHeight = radarSize + 30; // 雷达图区域高度
-      const barChartHeight = (barGap * radarScores.length) + 20; // 柱状图区域高度
-      const combinedHeight = radarChartHeight + barChartHeight + 35; // 合并区域总高度
+      const chartWidth = canvasWidth - marginX * 2 - 50;
+      const radarChartHeight = radarSize + 20; // 减小雷达图区域高度
+      const barChartHeight = (barGap * radarScores.length + 30); // 适当减小柱状图区域高度
+      const combinedHeight = radarChartHeight + barChartHeight + 50; // 减小多余空白区域
       
-      // 绘制合并区域的背景卡片 - 使用白色底色
-      this.drawRoundedRect(ctx, marginX, currentY, canvasWidth - marginX * 2, combinedHeight, 10, '#ffffff');
+      // 绘制合并区域的背景卡片 - 使用白色底色，减轻边框
+      this.drawRoundedRect(ctx, marginX, currentY, canvasWidth - marginX * 2, combinedHeight, 12, '#ffffff', 0.1);
       
-      // 绘制"性格分析"标题 - 左侧吸附样式
+      // 绘制"性格分析"标题 - 左侧竖条样式
       ctx.save();
-      ctx.setFontSize(16);
-      ctx.setFillStyle(colors.primary);
-      ctx.setTextAlign('left');
-      ctx.fillText('性格分析', marginX + 15, currentY + 20);
-      
-      // 为标题添加装饰性的下划线
+      // 添加左侧竖条装饰
       ctx.beginPath();
-      ctx.moveTo(marginX + 15, currentY + 30);
-      ctx.lineTo(marginX + 85, currentY + 30);
-      ctx.setStrokeStyle(colors.primary);
-      ctx.setLineWidth(2);
-      ctx.stroke();
+      ctx.rect(marginX + 8, currentY + 16, 3, 18);
+      ctx.setFillStyle('#88c0a8');
+      ctx.fill();
+      
+      ctx.setFontSize(16);
+      ctx.setFillStyle('#4b6c5d');
+      ctx.setTextAlign('left');
+      ctx.fillText('性格分析', marginX + 16, currentY + 26);
       ctx.restore();
       
       // 更新currentY到雷达图起始位置
-      currentY += 40;
+      currentY += 50;
+      
+      // 调整雷达图尺寸，使其更接近原页面
+      const adjustedRadarSize = 190; // 减小雷达图尺寸
       
       // 绘制更精细的雷达图
-      this.drawRefinedRadarChart(ctx, (canvasWidth - radarSize) / 2, currentY, radarSize, colors);
-      currentY += radarSize + 15; // 雷达图后添加间距
+      this.drawRefinedRadarChart(ctx, (canvasWidth - adjustedRadarSize) / 2, currentY, adjustedRadarSize, colors);
+      currentY += adjustedRadarSize + 30; // 增加雷达图与柱状图间距
       
       // 定义维度ID数组以确定颜色
       const dimensionIds = this.data.dimensions.map(dim => dim.id);
@@ -639,43 +639,52 @@ Component({
         const dimensionId = dimensionIds[i];
         const dimensionColor = colors.dimensions[dimensionId] || colors.primary;
         
-        // 绘制维度名称
-        ctx.setFontSize(12);
-        ctx.setFillStyle(colors.textPrimary);
+        // 移除背景灰色条，直接绘制文字
+        ctx.save();
+        ctx.setShadow(0, 0, 0, 'rgba(0,0,0,0)'); // 确保没有阴影效果
+        ctx.setFontSize(13); // 减小字体
+        ctx.setFillStyle('#4b6c5d');
         ctx.setTextAlign('left');
-        ctx.fillText(dimensionName, marginX + 15, currentY + 4);
+        ctx.fillText(dimensionName, marginX + 20, currentY); // 调整位置稍微靠左一点
         
-        // 绘制得分 - 确保右侧有足够间距
-        ctx.setFontSize(12);
+        // 绘制得分 - 修改位置和样式保证不溢出
+        ctx.setFontSize(13); // 与维度名称一致
         ctx.setFillStyle(dimensionColor);
         ctx.setTextAlign('right');
-        ctx.fillText(score.toString(), canvasWidth - marginX - 20, currentY + 4);
+        // 确保得分数字不会太靠边缘
+        ctx.fillText(score.toString(), canvasWidth - marginX - 28, currentY);
+        ctx.restore();
         
-        currentY += 14;
+        currentY += 16; // 减小文字与柱状图之间的间距
         
-        // 绘制条形图背景
+        // 绘制条形图背景 - 使用更淡的灰色
         ctx.beginPath();
-        ctx.rect(marginX + 15, currentY - barHeight / 2, chartWidth, barHeight);
-        ctx.setFillStyle('#edf5f0');
+        ctx.rect(marginX + 16, currentY - barHeight / 2, chartWidth, barHeight);
+        ctx.setFillStyle('#f5f5f5'); // 更淡的背景色
         ctx.fill();
         
-        // 绘制条形图数据条
+        // 绘制条形图数据条 - 只绘制得分比例部分
         const barWidth = (score / 20) * chartWidth; // 最大分数设为20
         ctx.beginPath();
-        ctx.rect(marginX + 15, currentY - barHeight / 2, barWidth, barHeight);
+        ctx.rect(marginX + 16, currentY - barHeight / 2, barWidth, barHeight);
         
-        // 创建渐变
-        const grd = ctx.createLinearGradient(marginX + 15, currentY, marginX + 15 + barWidth, currentY);
-        grd.addColorStop(0, dimensionColor);
-        grd.addColorStop(1, this.lightenColor(dimensionColor, 30));
-        ctx.setFillStyle(grd);
+        // 使用对应维度的纯色而非渐变，稍微降低饱和度
+        let color = dimensionColor;
+        if (dimensionId === 'buddhist') color = '#8bc1ac'; // 略微调淡
+        else if (dimensionId === 'tech') color = '#6fabc6'; // 略微调淡
+        else if (dimensionId === 'appearance') color = '#f0a0a8'; // 略微调淡
+        else if (dimensionId === 'aquascape') color = '#b4cb7a'; // 略微调淡
+        else if (dimensionId === 'diversity') color = '#ffd080'; // 略微调淡
+        else if (dimensionId === 'social') color = '#c8afd8'; // 略微调淡
+        
+        ctx.setFillStyle(color);
         ctx.fill();
         
-        currentY += barGap - 14; // 调整为统一间距
+        currentY += 24; // 减小每个条形图之间的间距
       }
       
-      // 增加间隔
-      currentY += sectionGap; // 调整为统一间距
+      // 增加间隔，调整与下一区域的间距
+      currentY += sectionGap;
       
       // 处理鱼种推荐区域
       const fishCardWidth = canvasWidth - marginX * 2;
@@ -689,81 +698,96 @@ Component({
       }
       
       // 预先计算鱼种区域的高度
-      let fishX = marginX + 15;
-      let fishY = 0;
+      let fishX = marginX + 16;
       const fishMaxWidth = fishCardWidth - 30;
-      const fishPadding = 10;
+      const fishPadding = 16; // 调整鱼种标签之间的间距
       
-      ctx.setFontSize(12);
+      ctx.setFontSize(14);
+      
+      // 先模拟排列，计算需要的行数
+      let rowCount = 1; // 至少有一行
+      let simulateX = fishX;
       
       fishList.forEach((fish) => {
         const fishName = String(fish);
         const fishTextWidth = ctx.measureText(fishName).width;
-        const fishWidth = fishTextWidth + 30;
+        const fishWidth = fishTextWidth + 40; // 调整宽度更接近原页面
         
-        if (fishX + fishWidth > marginX + fishMaxWidth) {
-          fishX = marginX + 15;
-          fishY += 40;
+        // 检查是否需要换行
+        if (simulateX + fishWidth > marginX + fishMaxWidth) {
+          simulateX = marginX + 16; // 重置X位置到行首
+          rowCount++; // 行数加1
         }
         
-        fishX += fishWidth + fishPadding;
+        simulateX += fishWidth + fishPadding;
       });
       
-      // 计算鱼种卡片所需高度
-      const fishCardHeight = Math.max(80, fishY + 60);
+      console.log('鱼种行数计算：', rowCount);
       
-      // 绘制推荐鱼种卡片背景 - 使用白色底色保持一致性
-      this.drawRoundedRect(ctx, marginX, currentY, fishCardWidth, fishCardHeight, 10, '#ffffff');
+      // 计算鱼种卡片所需高度 - 基于行数动态计算
+      // 标题高度 + 每行高度 + 底部边距
+      const titleHeight = 60; // 标题区域高度
+      const rowHeight = 45; // 每行鱼种高度
+      const bottomMargin = 30; // 底部边距
       
-      // 绘制推荐鱼种标题 - 左侧吸附样式
+      // 计算最终卡片高度 = 标题 + 所有行 + 底部边距
+      const fishCardHeight = titleHeight + (rowCount * rowHeight) + bottomMargin;
+      
+      console.log('计算的鱼种卡片高度:', fishCardHeight);
+      
+      // 绘制推荐鱼种卡片背景 - 调整为与页面一致的淡绿色
+      this.drawRoundedRect(ctx, marginX, currentY, fishCardWidth, fishCardHeight, 12, '#f9fdf5', 0.1);
+      
+      // 绘制推荐鱼种标题 - 左侧竖条样式
       ctx.save();
-      ctx.setFontSize(16);
-      ctx.setFillStyle(colors.primary);
-      ctx.setTextAlign('left');
-      ctx.fillText('推荐鱼种', marginX + 15, currentY + 20);
-      
-      // 为标题添加装饰性的下划线
+      ctx.setShadow(0, 0, 0, 'rgba(0,0,0,0)'); // 确保没有阴影效果
+      // 添加左侧竖条装饰
       ctx.beginPath();
-      ctx.moveTo(marginX + 15, currentY + 30);
-      ctx.lineTo(marginX + 85, currentY + 30);
-      ctx.setStrokeStyle(colors.primary);
-      ctx.setLineWidth(2);
-      ctx.stroke();
+      ctx.rect(marginX + 8, currentY + 16, 3, 18);
+      ctx.setFillStyle('#88c0a8');
+      ctx.fill();
+      
+      ctx.setFontSize(16);
+      ctx.setFillStyle('#4b6c5d');
+      ctx.setTextAlign('left');
+      ctx.fillText('推荐鱼种', marginX + 16, currentY + 26);
       ctx.restore();
       
-      currentY += 40;
-      
       // 绘制鱼种列表 - 重置开始位置
-      fishX = marginX + 15;
-      const fishStartY = currentY;
+      fishX = marginX + 24;
+      const fishStartY = currentY + 60; // 从标题下方开始第一行
+      currentY = fishStartY;
       
       ctx.setTextAlign('left');
       
       fishList.forEach((fish, index) => {
         // 计算鱼种标签宽度
-        const fishName = String(fish); // 确保是字符串
+        const fishName = String(fish);
         const fishTextWidth = ctx.measureText(fishName).width;
-        const fishWidth = fishTextWidth + 30; // 调整宽度
+        const fishWidth = fishTextWidth + 40;
         
         // 如果当前行放不下，换行
         if (fishX + fishWidth > marginX + fishMaxWidth) {
-          fishX = marginX + 15;
-          currentY += 40; // 调整行距
+          fishX = marginX + 24;
+          currentY += 45;
         }
         
-        // 绘制鱼种标签背景
-        this.drawRoundedRect(ctx, fishX, currentY - 12, fishWidth, 24, 10, 'rgba(255, 255, 255, 0.9)');
+        // 绘制鱼种标签 - 圆角胶囊样式，更接近原页面的样式
+        this.drawRoundedRect(ctx, fishX, currentY - 16, fishWidth, 32, 16, '#ffffff', 0.1);
         
-        // 统一使用绿色圆点
+        // 绘制小圆点
+        ctx.save();
+        ctx.setShadow(0, 0, 0, 'rgba(0,0,0,0)');
         ctx.beginPath();
-        ctx.arc(fishX + 10, currentY + 4, 3, 0, Math.PI * 2); // 绘制小圆点
-        ctx.setFillStyle(colors.fishDot); // 使用统一的绿色
+        ctx.arc(fishX + 14, currentY, 4, 0, Math.PI * 2);
+        ctx.setFillStyle('#88c0a8');
         ctx.fill();
         
-        // 绘制鱼种名称 - 确保右侧有足够间距
-        ctx.setFillStyle(colors.textPrimary);
-        ctx.setFontSize(12);
-        ctx.fillText(fishName, fishX + 20, currentY + 4);
+        // 绘制鱼种名称 - 调整位置和颜色
+        ctx.setFillStyle('#4b6c5d'); // 更柔和的文字颜色
+        ctx.setFontSize(13); // 稍微减小字体
+        ctx.fillText(fishName, fishX + 24, currentY);
+        ctx.restore();
         
         // 更新X坐标
         fishX += fishWidth + fishPadding;
@@ -774,7 +798,7 @@ Component({
       
       // 绘制底部区域
       const footerTop = currentY + sectionGap;
-      const footerHeight = 60; // 减小底部区域高度
+      const footerHeight = 70; // 增大底部区域高度
       
       // 使用渐变背景
       const grd = ctx.createLinearGradient(0, footerTop, 0, footerTop + footerHeight);
@@ -792,13 +816,13 @@ Component({
       ctx.stroke();
       
       // 小程序码放在右下角
-      const qrSize = 50; // 减小二维码尺寸
-      const qrX = canvasWidth - qrSize - 10; // 放置在右下角
+      const qrSize = 55; // 稍微增大二维码尺寸
+      const qrX = canvasWidth - qrSize - 15; // 放置在右下角，增加边距
       const qrY = footerTop + (footerHeight - qrSize) / 2; // 垂直居中
       
       // 绘制小程序码背景阴影
       ctx.save();
-      ctx.setShadow(0, 1, 4, 'rgba(0, 0, 0, 0.08)');
+      ctx.setShadow(0, 2, 6, 'rgba(0, 0, 0, 0.12)');
       ctx.beginPath();
       ctx.arc(qrX + qrSize/2, qrY + qrSize/2, qrSize/2 + 2, 0, Math.PI * 2);
       ctx.setFillStyle('#ffffff');
@@ -810,11 +834,14 @@ Component({
       ctx.drawImage(minicodePath, qrX, qrY, qrSize, qrSize);
       
       // 绘制底部文字，左侧对齐
-      ctx.setFontSize(14);
+      ctx.save();
+      ctx.setShadow(0, 0, 0, 'rgba(0,0,0,0)'); // 确保没有阴影效果
+      ctx.setFontSize(15);
       ctx.setFillStyle('#88c0a8');
       ctx.setTextAlign('left');
       const footerText = '扫码测试你的养鱼性格';
-      ctx.fillText(footerText, marginX, footerTop + footerHeight/2 + 5);
+      ctx.fillText(footerText, marginX + 5, footerTop + footerHeight/2 + 5);
+      ctx.restore();
       
       // 修正最终画布高度
       const finalHeight = footerTop + footerHeight;
@@ -830,8 +857,8 @@ Component({
             y: 0,
             width: canvasWidth,
             height: finalHeight,
-            destWidth: canvasWidth * 3, // 增加分辨率倍数，提高清晰度
-            destHeight: finalHeight * 3, // 增加分辨率倍数，提高清晰度
+            destWidth: canvasWidth * 4, // 增加分辨率倍数，提高清晰度
+            destHeight: finalHeight * 4, // 增加分辨率倍数，提高清晰度
             fileType: 'jpg',
             quality: 1, // 使用最高质量
             success: (res) => {
@@ -864,10 +891,10 @@ Component({
                   y: 0,
                   width: canvasWidth,
                   height: finalHeight,
-                  destWidth: canvasWidth * 2, // 使用较低的倍数
-                  destHeight: finalHeight * 2, // 使用较低的倍数
+                  destWidth: canvasWidth * 3, // 使用较低的倍数但仍保持高清晰度
+                  destHeight: finalHeight * 3, // 使用较低的倍数但仍保持高清晰度
                   fileType: 'jpg',
-                  quality: 0.9, // 稍微降低质量，提高成功率
+                  quality: 0.95, // 稍微降低质量，提高成功率
                   success: (res) => {
                     wx.saveImageToPhotosAlbum({
                       filePath: res.tempFilePath,
@@ -911,7 +938,11 @@ Component({
     },
 
     // 绘制圆角矩形
-    drawRoundedRect(ctx, x, y, width, height, radius, fillColor) {
+    drawRoundedRect(ctx, x, y, width, height, radius, fillColor, shadowPercent = 0.05) {
+      // 添加轻微阴影效果，使卡片看起来更立体
+      ctx.save();
+      ctx.setShadow(0, 2, 8, `rgba(0, 0, 0, ${shadowPercent})`);
+
       // 开始绘制
       ctx.beginPath();
       ctx.moveTo(x + radius, y);
@@ -929,10 +960,15 @@ Component({
       ctx.setFillStyle(fillColor);
       ctx.fill();
       
-      // 添加淡色边框
-      ctx.setStrokeStyle('rgba(136, 192, 168, 0.2)');
-      ctx.setLineWidth(2);
+      // 移除阴影，绘制边框
+      ctx.setShadow(0, 0, 0, 'rgba(0, 0, 0, 0)');
+      
+      // 添加淡色边框，更加精致
+      ctx.setStrokeStyle('rgba(136, 192, 168, 0.15)');
+      ctx.setLineWidth(1);
       ctx.stroke();
+      
+      ctx.restore();
     },
 
     // 新增绘制更细腻雷达图的方法
@@ -946,7 +982,7 @@ Component({
       // 设置画布基本参数
       const centerX = startX + size / 2;
       const centerY = startY + size / 2;
-      const radius = size * 0.42; // 雷达图半径
+      const radius = size * 0.4; // 雷达图半径略小
       
       // 计算维度数量和角度
       const dimensionCount = radarDimensionNames.length;
@@ -960,15 +996,15 @@ Component({
       // 获取维度ID数组以确定颜色
       const dimensionIds = this.data.dimensions.map(dim => dim.id);
       
-      // 绘制雷达图背景 - 使用更细腻的网格图案
+      // 绘制雷达图背景 - 使用更柔和的圆形背景
       ctx.save();
       ctx.beginPath();
-      ctx.arc(centerX, centerY, radius + 5, 0, Math.PI * 2);
-      ctx.setFillStyle('#fafafa');
+      ctx.arc(centerX, centerY, radius + 18, 0, Math.PI * 2);
+      ctx.setFillStyle('#f9f9f9'); // 极淡的背景色，接近原页面
       ctx.fill();
       ctx.restore();
       
-      // 绘制雷达图背景多边形 (5个层级)，使用更细的线条
+      // 绘制雷达图背景多边形 (5个层级)，使用更精细的线条
       for (let level = 1; level <= 5; level++) {
         const levelRadius = radius * (level / 5);
         ctx.beginPath();
@@ -986,21 +1022,12 @@ Component({
         }
         
         ctx.closePath();
-        ctx.setStrokeStyle('#e8f0eb');
-        ctx.setLineWidth(1);  // 使用更细的线条
+        ctx.setStrokeStyle('#e9e9e9'); // 更浅的线条颜色接近原页面
+        ctx.setLineWidth(0.7);  // 使用更细的线条
         ctx.stroke();
-        
-        // 添加刻度值标签 (只在垂直方向添加)
-        if (level === 5 || level === 3 || level === 1) {  // 只在关键层级添加刻度
-          const scaleValue = Math.round((level / 5) * maxScoreDisplay);
-          ctx.setFontSize(10);  // 减小字体从16到10
-          ctx.setFillStyle('#a6cbb8');
-          ctx.setTextAlign('center');
-          ctx.fillText(scaleValue.toString(), centerX, centerY - levelRadius - 3);
-        }
       }
       
-      // 绘制从中心到各顶点的连线 - 使用更细的线条
+      // 绘制从中心到各顶点的连线 - 使用更精细的线条
       for (let i = 0; i < dimensionCount; i++) {
         const angle = i * angleStep - Math.PI / 2;
         const x = centerX + radius * Math.cos(angle);
@@ -1009,12 +1036,10 @@ Component({
         ctx.beginPath();
         ctx.moveTo(centerX, centerY);
         ctx.lineTo(x, y);
-        ctx.setStrokeStyle('#e0efe7');
-        ctx.setLineWidth(1);  // 使用更细的线条
+        ctx.setStrokeStyle('#e3e3e3'); // 更浅的线条颜色接近原页面
+        ctx.setLineWidth(0.7);  // 使用更细的线条
         ctx.stroke();
       }
-      
-      // 去掉维度名称标签的背景圆形
       
       // 绘制数据多边形
       ctx.beginPath();
@@ -1034,35 +1059,44 @@ Component({
       }
       ctx.closePath();
       
-      // 填充数据多边形 - 使用更透明的填充
-      ctx.setFillStyle('rgba(136, 192, 168, 0.25)');  // 更透明
+      // 填充数据多边形 - 使用更淡的填充更接近原页面
+      ctx.setFillStyle('rgba(136, 192, 168, 0.15)');  // 更淡的填充色
       ctx.fill();
       
-      // 绘制数据多边形边框 - 使用更细的线条
-      ctx.setStrokeStyle(colors.primary);
-      ctx.setLineWidth(1.5);  // 更细的线条
+      // 绘制数据多边形边框 - 使用更清晰的线条，贴近原页面
+      ctx.setStrokeStyle('#5d9e85'); // 使用更深色的边框，但透明度更低
+      ctx.setLineWidth(1.2);  
       ctx.stroke();
       
-      // 绘制各维度的名称 - 使用更小的字体
-      ctx.setFontSize(12);  // 更小的字体从20减到12
+      // 绘制各维度的名称 - 简化标签显示
+      ctx.setFontSize(11);  // 减小字体大小与原页面一致
       ctx.setTextAlign('center');
       ctx.setTextBaseline('middle');
       
       for (let i = 0; i < dimensionCount; i++) {
         const angle = i * angleStep - Math.PI / 2;
         // 标签位置略微超出图表边缘
-        const labelRadius = radius * 1.15;
+        const labelRadius = radius * 1.25;
         const x = centerX + labelRadius * Math.cos(angle);
         const y = centerY + labelRadius * Math.sin(angle);
         
         const dimensionId = dimensionIds[i];
-        const dimensionColor = colors.dimensions[dimensionId] || colors.primary;
+        // 根据维度选择合适的颜色，但调淡
+        let dimensionColor;
+        if (dimensionId === 'buddhist') dimensionColor = '#8bc1ac';
+        else if (dimensionId === 'tech') dimensionColor = '#6fabc6';
+        else if (dimensionId === 'appearance') dimensionColor = '#f0a0a8';
+        else if (dimensionId === 'aquascape') dimensionColor = '#b4cb7a';
+        else if (dimensionId === 'diversity') dimensionColor = '#ffd080';
+        else if (dimensionId === 'social') dimensionColor = '#c8afd8';
+        else dimensionColor = '#88c0a8';
         
+        // 绘制标签文字 - 淡色文字
         ctx.setFillStyle(dimensionColor);
         ctx.fillText(radarDimensionNames[i], x, y);
       }
       
-      // 绘制各维度的数据点和得分 - 使用更小的数据点
+      // 绘制各维度的数据点 - 更小更精致的数据点
       for (let i = 0; i < dimensionCount; i++) {
         const score = radarScores[i];
         // 使用自适应刻度
@@ -1072,23 +1106,24 @@ Component({
         const y = centerY + radius * scoreRatio * Math.sin(angle);
         
         const dimensionId = dimensionIds[i];
-        const dimensionColor = colors.dimensions[dimensionId] || colors.primary;
+        // 使用相同的颜色选择逻辑
+        let dimensionColor;
+        if (dimensionId === 'buddhist') dimensionColor = '#8bc1ac';
+        else if (dimensionId === 'tech') dimensionColor = '#6fabc6';
+        else if (dimensionId === 'appearance') dimensionColor = '#f0a0a8';
+        else if (dimensionId === 'aquascape') dimensionColor = '#b4cb7a';
+        else if (dimensionId === 'diversity') dimensionColor = '#ffd080';
+        else if (dimensionId === 'social') dimensionColor = '#c8afd8';
+        else dimensionColor = '#88c0a8';
         
-        // 绘制数据点 - 更小的点
+        // 简化数据点，更接近原页面的小圆点
         ctx.beginPath();
-        ctx.arc(x, y, 5, 0, Math.PI * 2);  // 更小的点从8减到5
+        ctx.arc(x, y, 3.5, 0, Math.PI * 2); // 更小的圆点
         ctx.setFillStyle(dimensionColor);
         ctx.fill();
         ctx.setStrokeStyle('#ffffff');
-        ctx.setLineWidth(1);  // 更细的边框
+        ctx.setLineWidth(0.8);
         ctx.stroke();
-        
-        // 在数据点内绘制分数 - 使用更小的字体
-        ctx.setFontSize(10);  // 更小的字体从14减到10
-        ctx.setFillStyle('#ffffff');
-        ctx.setTextAlign('center');
-        ctx.setTextBaseline('middle');
-        ctx.fillText(score.toString(), x, y);
       }
     },
 
