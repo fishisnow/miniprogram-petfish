@@ -2,7 +2,7 @@
 // 这个列表由开发者维护，按照受欢迎程度排序
 export const popularFishIds = [
   'honglvdeng',            // 红绿灯鱼 (paracheirodon_innesi)
-  'baoliandeng',           // 霸王灯鱼 (paracheirodon_axelrodi)
+  'baoliandeng',           // 宝莲灯鱼 (paracheirodon_axelrodi)
   'hongyanfeifengdeng',    // 红眼飞凤灯 (odontostilbe_sp)
   'languowangdeng',        // 蓝果王灯 (inpaichthys_kerri)
   'lvlian',                // 绿脸(paracheirodon_simulans)
