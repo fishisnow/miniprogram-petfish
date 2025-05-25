@@ -708,30 +708,42 @@ Component({
       let rowCount = 1; // 至少有一行
       let simulateX = fishX;
       
-      fishList.forEach((fish) => {
+      // 添加调试信息
+      console.log('鱼种列表:', fishList);
+      console.log('开始计算鱼种行数，初始X:', simulateX, '最大宽度:', marginX + fishMaxWidth);
+      
+      // 调整计算方式，确保与实际绘制时使用相同的参数
+      fishList.forEach((fish, index) => {
         const fishName = String(fish);
         const fishTextWidth = ctx.measureText(fishName).width;
-        const fishWidth = fishTextWidth + 40; // 调整宽度更接近原页面
+        // 增加宽度计算中的边距，与实际绘制保持一致
+        const fishWidth = fishTextWidth + 35; // 增加边距，确保计算与实际绘制一致
         
-        // 检查是否需要换行
-        if (simulateX + fishWidth > marginX + fishMaxWidth) {
+        console.log(`鱼种[${index}] "${fishName}" 宽度:${fishWidth}, 当前X:${simulateX}, 剩余空间:${marginX + fishMaxWidth - simulateX}`);
+        
+        // 检查是否需要换行 - 增加更大的缓冲区
+        if (simulateX + fishWidth > marginX + fishMaxWidth - 15) {
           simulateX = marginX + 16; // 重置X位置到行首
           rowCount++; // 行数加1
+          console.log(`鱼种[${index}] "${fishName}" 需要换行，当前行数:${rowCount}`);
         }
         
         simulateX += fishWidth + fishPadding;
+        console.log(`鱼种[${index}] "${fishName}" 放置后，新的X位置:${simulateX}`);
       });
       
-      console.log('鱼种行数计算：', rowCount);
+      // 确保行数至少为1
+      rowCount = Math.max(1, rowCount);
+      console.log('最终鱼种行数计算：', rowCount);
       
       // 计算鱼种卡片所需高度 - 基于行数动态计算
       // 标题高度 + 每行高度 + 底部边距
-      const titleHeight = 60; // 标题区域高度
-      const rowHeight = 45; // 每行鱼种高度
-      const bottomMargin = 30; // 底部边距
+      const titleHeight = 55; // 减小标题区域高度
+      const rowHeight = 42; // 减小每行鱼种高度，与绘制逻辑一致
       
-      // 计算最终卡片高度 = 标题 + 所有行 + 底部边距
-      const fishCardHeight = titleHeight + (rowCount * rowHeight) + bottomMargin;
+      // 计算最终卡片高度
+      // 根据行数增加适当的底部边距
+      const fishCardHeight = titleHeight + (rowCount * rowHeight);
       
       console.log('计算的鱼种卡片高度:', fishCardHeight);
       
@@ -754,22 +766,29 @@ Component({
       ctx.restore();
       
       // 绘制鱼种列表 - 重置开始位置
-      fishX = marginX + 24;
-      const fishStartY = currentY + 60; // 从标题下方开始第一行
-      currentY = fishStartY;
+      fishX = marginX + 16;
+       // 从标题下方开始第一行，减小标题与鱼种的间距
+      currentY = currentY + 60;
       
       ctx.setTextAlign('left');
+      
+      // 记录最后一行的Y位置
+      let lastRowY = currentY;
       
       fishList.forEach((fish, index) => {
         // 计算鱼种标签宽度
         const fishName = String(fish);
         const fishTextWidth = ctx.measureText(fishName).width;
-        const fishWidth = fishTextWidth + 40;
+        const fishWidth = fishTextWidth + 35; // 使用相同的宽度计算
         
-        // 如果当前行放不下，换行
-        if (fishX + fishWidth > marginX + fishMaxWidth) {
+        // 使用相同的换行判断条件
+        if (fishX + fishWidth > marginX + fishMaxWidth - 15) {
           fishX = marginX + 24;
-          currentY += 45;
+          currentY += 42; // 减小行间距从45到42
+          lastRowY = currentY; // 更新最后一行位置
+          console.log(`绘制鱼种[${index}] "${fishName}" 需要换行, 新Y位置:${currentY}`);
+        } else {
+          console.log(`绘制鱼种[${index}] "${fishName}" 当前行放得下, X:${fishX}`);
         }
         
         // 绘制鱼种标签 - 圆角胶囊样式，更接近原页面的样式
@@ -793,12 +812,17 @@ Component({
         fishX += fishWidth + fishPadding;
       });
       
-      // 更新结束位置
-      currentY = fishStartY + fishCardHeight - 20;
+      // 更新结束位置 - 根据行数调整最后一行与底部的间距
+      // 当有多行鱼种时，需要增加底部间距
+      currentY = lastRowY;
       
-      // 绘制底部区域
-      const footerTop = currentY + sectionGap;
-      const footerHeight = 70; // 增大底部区域高度
+      // 绘制底部区域 - 根据行数和内容动态调整间距
+      // 多行鱼种时增加更多间距，确保整体布局更加平衡
+      const spaceBetweenFishAndFooter = rowCount > 1 ? 60 : 48;
+      const footerTop = currentY + spaceBetweenFishAndFooter;
+      
+      // 当有多行鱼种时，稍微缩小底部区域高度，保持整体比例
+      const footerHeight = 60;
       
       // 使用渐变背景
       const grd = ctx.createLinearGradient(0, footerTop, 0, footerTop + footerHeight);
