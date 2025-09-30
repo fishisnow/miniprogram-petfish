@@ -1,0 +1,18 @@
+<view class="privacy-popup" wx:if="{{show}}">
+  <view class="privacy-mask"></view>
+  <view class="privacy-content">
+    <view class="privacy-title">隐私保护指引</view>
+    <view class="privacy-text">
+      <text>感谢您使用我们的小程序！\n\n</text>
+      <text>在您使用我们的服务前，请认真阅读</text>
+      <text class="privacy-link" bindtap="openPrivacyContract">{{privacyContractName}}</text>
+      <text>。如您同意{{privacyContractName}}，请点击"同意"开始使用我们的服务。\n\n</text>
+      <text class="privacy-info">我们将严格遵守法律法规要求，采取相应的安全保护措施，保护您的个人信息安全。</text>
+    </view>
+    <view class="privacy-buttons">
+      <button class="btn-disagree" bindtap="handleDisagree">拒绝</button>
+      <button class="btn-agree" id="agree-btn" open-type="agreePrivacyAuthorization" bindagreeprivacyauthorization="handleAgree">同意</button>
+    </view>
+  </view>
+</view>
+

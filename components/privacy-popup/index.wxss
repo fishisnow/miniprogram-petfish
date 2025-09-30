@@ -1,0 +1,92 @@
+.privacy-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+
+.privacy-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.privacy-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 620rpx;
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 48rpx 40rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.privacy-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 32rpx;
+}
+
+.privacy-text {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 40rpx;
+  max-height: 500rpx;
+  overflow-y: auto;
+}
+
+.privacy-link {
+  color: #576b95;
+  text-decoration: underline;
+}
+
+.privacy-info {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.privacy-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.btn-disagree,
+.btn-agree {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  font-size: 32rpx;
+  border: none;
+  padding: 0;
+}
+
+.btn-disagree {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.btn-agree {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+}
+
+.btn-agree::after {
+  border: none;
+}
+
+.btn-disagree::after {
+  border: none;
+}
+

@@ -9,3 +9,6 @@
     </view>
   </view>
 </view>
+
+<!-- 隐私弹窗 -->
+<privacy-popup />

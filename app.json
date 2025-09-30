@@ -6,7 +6,8 @@
     "pages/personality-test/index"
   ],
   "usingComponents": {
-    "t-toast": "tdesign-miniprogram/toast/toast"
+    "t-toast": "tdesign-miniprogram/toast/toast",
+    "privacy-popup": "/components/privacy-popup/index"
   },
   "subpackages": [
     {
@@ -68,5 +69,6 @@
     "request": 10000,
     "downloadFile": 10000
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "__usePrivacyCheck__": true
 }

@@ -74,3 +74,6 @@
 </view>
 
 <t-message id="t-message" />
+
+<!-- 隐私弹窗 -->
+<privacy-popup />
