@@ -20,26 +20,26 @@
         </view>
 
         <view wx:elif="{{activeTab === 'recommend' && cardInfo.length > 0}}" class="home-card-list">
-          <block wx:for="{{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]}}" wx:key="*this" wx:if="{{index < cardInfo.length}}">
+          <block wx:for="{{cardInfo}}" wx:key="fishId">
             <view class="card-wrapper {{index % 2 === 0 ? 'left' : 'right'}}">
               <card
-                desc="{{cardInfo[index].desc}}"
-                url="{{cardInfo[index].url}}"
-                tags="{{cardInfo[index].tags}}"
-                fish-id="{{cardInfo[index].fishId}}"
+                desc="{{item.desc}}"
+                url="{{item.url}}"
+                tags="{{item.tags}}"
+                fish-id="{{item.fishId}}"
               />
             </view>
           </block>
         </view>
         
         <view wx:elif="{{activeTab === 'follow' && focusCardInfo.length > 0}}" class="home-card-list">
-          <block wx:for="{{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]}}" wx:key="*this" wx:if="{{index < focusCardInfo.length}}">
+          <block wx:for="{{focusCardInfo}}" wx:key="fishId">
             <view class="card-wrapper {{index % 2 === 0 ? 'left' : 'right'}}">
               <card
-                desc="{{focusCardInfo[index].desc}}"
-                url="{{focusCardInfo[index].url}}"
-                tags="{{focusCardInfo[index].tags}}"
-                fish-id="{{focusCardInfo[index].fishId}}"
+                desc="{{item.desc}}"
+                url="{{item.url}}"
+                tags="{{item.tags}}"
+                fish-id="{{item.fishId}}"
               />
             </view>
           </block>
