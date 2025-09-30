@@ -1,7 +1,7 @@
 export default {
   id: 'keledicuideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/可乐蒂翠绿灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/可乐蒂翠绿灯.jpg',
     desc: '可乐蒂翠绿灯',
     info: {
       habitat: '南美洲北部苏里南 → 水温24-28℃，弱酸性软水', 

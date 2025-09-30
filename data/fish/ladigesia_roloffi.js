@@ -1,7 +1,7 @@
 export default {
   id: 'bijiasuo',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/毕加索灯鱼.jpg',
+    url: 'http://img.fishisnow.xyz/fish/毕加索灯鱼.jpg',
     desc: '毕加索灯鱼',
     info: {
       habitat: '西非利比里亚、塞拉利昂、科特迪瓦 → 22-26℃弱酸性软水', 

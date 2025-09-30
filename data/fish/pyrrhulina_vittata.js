@@ -1,7 +1,7 @@
 export default {
   id: 'heidoujianshuiyu',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/黑豆溅水鱼.jpg',
+    url: 'http://img.fishisnow.xyz/fish/黑豆溅水鱼.jpg',
     desc: '黑豆溅水鱼',
     info: {
       habitat: '秘鲁及玻利维亚境内的亚马逊河上游 → 温度24-28℃/弱酸性软水', 

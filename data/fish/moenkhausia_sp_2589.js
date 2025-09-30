@@ -1,7 +1,7 @@
 export default {
   id: 'feicuinideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/翡翠霓虹灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/翡翠霓虹灯.jpg',
     desc: '翡翠霓虹灯',
     info: {
       habitat: '茹鲁埃纳流域 Rio Juruena，Mato Grosso → 温度24-28℃，弱酸性软水', 

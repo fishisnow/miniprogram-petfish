@@ -1,7 +1,7 @@
 export default {
   id: 'luoleituo_shuijingdeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/洛雷托水晶灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/洛雷托水晶灯.jpg',
     desc: '洛雷托水晶灯',
     info: {
       habitat: '秘鲁洛雷托 → 24-28℃弱酸性软水', 

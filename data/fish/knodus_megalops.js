@@ -1,7 +1,7 @@
 export default {
   id: 'jurenlancaideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/巨人蓝彩灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/巨人蓝彩灯.jpg',
     desc: '巨人蓝彩灯',
     info: {
       habitat: '秘鲁南部 → 24-28℃/弱酸性软水', 

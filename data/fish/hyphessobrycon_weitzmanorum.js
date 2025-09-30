@@ -1,7 +1,7 @@
 export default {
   id: 'kelanmenghuanqi',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/钴蓝梦幻旗.jpg',
+    url: 'http://img.fishisnow.xyz/fish/钴蓝梦幻旗.jpg',
     desc: '钴蓝梦幻旗',
     info: {
       habitat: '巴西中部Mato Grosso → 水温24-28℃，弱酸性软水', 

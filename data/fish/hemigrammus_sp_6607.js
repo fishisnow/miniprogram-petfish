@@ -1,7 +1,7 @@
 export default {
   id: 'hongjianyinghuodeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红肩萤火虫灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/红肩萤火虫灯.jpg',
     desc: '红肩萤火虫灯',
     info: {
       habitat: '巴西阿玛帕省流域 → 24-28℃弱酸性软水', 

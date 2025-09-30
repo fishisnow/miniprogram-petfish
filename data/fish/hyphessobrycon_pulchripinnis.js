@@ -1,7 +1,7 @@
 export default {
   id: 'huangyi-youlingdeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/黄翼幽灵灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/黄翼幽灵灯.jpg',
     desc: '黄翼幽灵灯',
     info: {
       habitat: '巴西圣保罗 Ribeirão Preto → 适宜温度24-28℃，弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'pantanal_lanxian_wangzi',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/潘塔纳尔蓝线王子灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/潘塔纳尔蓝线王子灯.jpg',
     desc: '潘塔纳尔蓝线王子灯',
     info: {
       habitat: '产自潘塔纳尔地区，适宜温度24-28℃，弱酸性软水', 

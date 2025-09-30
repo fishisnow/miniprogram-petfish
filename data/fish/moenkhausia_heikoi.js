@@ -1,7 +1,7 @@
 export default {
   id: 'shuilingdeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/水灵灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/水灵灯.jpg',
     desc: '水灵灯',
     info: {
       habitat: '产自申古河支流Rio iriri，栖息在水流湍急的河段 → 适宜温度24-28℃，弱酸性软水', 

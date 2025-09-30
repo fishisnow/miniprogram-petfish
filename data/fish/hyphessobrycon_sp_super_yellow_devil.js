@@ -1,7 +1,7 @@
 export default {
   id: 'super_yellow_devil_tetra',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/超级黄魔鬼灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/超级黄魔鬼灯.jpg',
     desc: '超级黄魔鬼灯',
     info: {
       habitat: '野生采集自柏拉省 (Rio Guama, Para State)，与蓝蒂灯同流域 → 适宜温度24-28℃，弱酸性软水', 

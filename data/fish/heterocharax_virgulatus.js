@@ -1,7 +1,7 @@
 export default {
   id: 'erxianshuijingdeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/二线水晶灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/二线水晶灯.jpg',
     desc: '二线水晶灯',
     info: {
       habitat: '塔巴荷斯水系及内格罗上游 → 温度24-28℃/弱酸性软水', 

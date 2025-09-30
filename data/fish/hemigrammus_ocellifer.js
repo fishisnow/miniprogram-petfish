@@ -1,7 +1,7 @@
 export default {
   id: 'touweideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/头尾灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/头尾灯.jpg',
     desc: '头尾灯',
     info: {
       habitat: '亚马逊河流域 → 23-28℃弱酸性老水', 

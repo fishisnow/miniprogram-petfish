@@ -1,7 +1,7 @@
 export default {
   id: 'zhimaniunaideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/芝麻牛奶灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/芝麻牛奶灯.jpg',
     desc: '芝麻牛奶灯',
     info: {
       habitat: '秘鲁境内清水或白浊水质的河流 → 温度24-28℃/弱酸性软水', 

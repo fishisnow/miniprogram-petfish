@@ -1,7 +1,7 @@
 export default {
   id: 'banhongyidianhong',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/半红型一点红.jpg',
+    url: 'http://img.fishisnow.xyz/fish/半红型一点红.jpg',
     desc: '半红型一点红',
     info: {
       habitat: '哥伦比亚奥利诺科支流Rio Mesetas及委内瑞拉Capanaparo River National Park范围内的Caño La Pica → 水温24-28℃，弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'gelunbiyazifuluokadeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/哥伦比亚紫腹洛卡灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/哥伦比亚紫腹洛卡灯.jpg',
     desc: '哥伦比亚紫腹洛卡灯',
     info: {
       habitat: '南美洲哥伦比亚水域 → 温度24-28℃/弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'wenquanjiandaodeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/温泉剪刀灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/温泉剪刀灯.jpg',
     desc: '温泉剪刀灯',
     info: {
       habitat: '玻利维亚Rio San migual温泉地区，水温38℃/pH 6.0-7.5', 

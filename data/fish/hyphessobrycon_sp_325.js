@@ -1,7 +1,7 @@
 export default {
   id: 'hei-che-qi',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/黑扯旗.jpg',
+    url: 'http://img.fishisnow.xyz/fish/黑扯旗.jpg',
     desc: '黑扯旗',
     info: {
       habitat: '巴西瓜波流域及巴拉圭河上游 → 适宜水温24-28℃，弱酸性软水', 

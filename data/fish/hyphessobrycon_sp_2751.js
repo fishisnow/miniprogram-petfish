@@ -1,7 +1,7 @@
 export default {
   id: 'hongweiheini',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红尾黑霓虹.jpg',
+    url: 'http://img.fishisnow.xyz/fish/红尾黑霓虹.jpg',
     desc: '红尾黑霓虹',
     info: {
       habitat: '南美秘鲁流域 → 水温24-28℃/弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'huanyansansedeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/幻眼三色灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/幻眼三色灯.jpg',
     desc: '幻眼三色灯',
     info: {
       habitat: '塔巴荷斯及亚马逊河下游的Rio Tocantins流域→ 温度24-28℃/弱酸性软水', 

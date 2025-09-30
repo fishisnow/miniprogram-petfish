@@ -1,7 +1,7 @@
 export default {
   id: 'jinxianduanbideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/金线短笔灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/金线短笔灯.jpg',
     desc: '金线短笔灯',
     info: {
       habitat: '西非尼日尔河及乍得盆地 → 水温24-28℃/弱酸性软水', 

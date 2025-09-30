@@ -1,7 +1,7 @@
 export default {
   id: 'ningmengdeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/柠檬灯鱼.jpg',
+    url: 'http://img.fishisnow.xyz/fish/柠檬灯鱼.jpg',
     desc: '柠檬灯鱼',
     info: {
       habitat: '微酸性软水，水温23-26℃', 

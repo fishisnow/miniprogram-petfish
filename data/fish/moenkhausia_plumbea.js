@@ -1,7 +1,7 @@
 export default {
   id: 'ziyingcaihongkekadeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/紫影彩虹可卡灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/紫影彩虹可卡灯.jpg',
     desc: '紫影彩虹可卡灯',
     info: {
       habitat: 'Rio Teles Pires上游Rio Braco Norte的瀑布和深潭水域→建议水温24-28℃，弱酸性软水', 

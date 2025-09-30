@@ -1,7 +1,7 @@
 export default {
   id: 'hongxianniunaideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红线牛奶灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/红线牛奶灯.jpg',
     desc: '红线牛奶灯',
     info: {
       habitat: '产自秘鲁纳内流域 (Rio Nanay)，适宜温度24-28℃，弱酸性软水', 

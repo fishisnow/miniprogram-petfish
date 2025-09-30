@@ -1,7 +1,7 @@
 export default {
   id: 'wuliyase',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/乌利亚瑟灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/乌利亚瑟灯.jpg',
     desc: '乌利亚瑟灯',
     info: {
       habitat: '南美黑水流域 → 建议水温24-28℃，弱酸性软水', 

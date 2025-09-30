@@ -1,7 +1,7 @@
 export default {
   id: 'huabaodeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/花豹灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/花豹灯.jpg',
     desc: '花豹灯',
     info: {
       habitat: '哥伦比亚西部的Rio San Juan（圣胡安河）流域，溪流环境，水温22-26℃，水质清澈', 

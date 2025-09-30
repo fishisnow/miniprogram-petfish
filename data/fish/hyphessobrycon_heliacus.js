@@ -1,7 +1,7 @@
 export default {
   id: 'kaidideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/凯蒂灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/凯蒂灯.jpg',
     desc: '凯蒂灯',
     info: {
       habitat: '巴西塔巴荷斯上游支流特利斯皮里斯 → 温度24-28℃/弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'xuehongludeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/血红露比灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/血红露比灯.jpg',
     desc: '血红露比灯',
     info: {
       habitat: '哥伦比亚梅塔上游流域，水温24-28℃，弱酸性软水', 

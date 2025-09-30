@@ -1,7 +1,7 @@
 export default {
   id: 'baichigongzhudeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/白翅公主灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/白翅公主灯.jpg',
     desc: '白翅公主灯',
     info: {
       habitat: '巴西投肯亭流域（Rio Tocantins），适宜水温24-28℃，弱酸性软水', 

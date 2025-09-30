@@ -1,7 +1,7 @@
 export default {
   id: 'gaofanyinqi',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/高帆银旗.jpg',
+    url: 'http://img.fishisnow.xyz/fish/高帆银旗.jpg',
     desc: '高帆银旗',
     info: {
       habitat: '巴西圣塔伦地区塔巴荷斯流域（Rio Tapajos）及内格罗流域（Rio Negro）→ 温度24-28℃/弱酸性软水', 

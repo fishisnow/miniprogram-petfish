@@ -1,7 +1,7 @@
 export default {
   id: 'jiuhongqianbideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/酒红铅笔灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/酒红铅笔灯.jpg',
     desc: '酒红铅笔灯',
     info: {
       habitat: '东南亚养殖鱼种，水温24-28℃，弱酸性软水', 

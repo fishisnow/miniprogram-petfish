@@ -1,7 +1,7 @@
 export default {
   id: 'jurenzilanliulideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/巨人紫蓝琉璃灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/巨人紫蓝琉璃灯.jpg',
     desc: '巨人紫蓝琉璃灯',
     info: {
       habitat: '产自厄瓜多尔的纳普河上游 Rio Arajuno → 适宜温度24-28℃，弱酸性软水', 

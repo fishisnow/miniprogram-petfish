@@ -1,7 +1,7 @@
 export default {
   id: 'hongsijinxianheideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红丝金线黑灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/红丝金线黑灯.jpg',
     desc: '红丝金线黑灯',
     info: {
       habitat: '南美Aripuana流域 → 水温24-28℃/弱酸性软水', 

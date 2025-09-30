@@ -1,7 +1,7 @@
 export default {
   id: 'yinyangdeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/阴阳灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/阴阳灯.jpg',
     desc: '阴阳灯',
     info: {
       habitat: '巴西、哥伦比亚及秘鲁等地 → 24-28℃弱酸性软水', 

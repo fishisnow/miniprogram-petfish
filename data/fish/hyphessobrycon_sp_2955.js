@@ -1,7 +1,7 @@
 export default {
   id: 'chixiadeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/赤霞灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/赤霞灯.jpg',
     desc: '赤霞灯',
     info: {
       habitat: '南美流域 → 水温24-28℃，弱酸性软水(pH 5.5-6.5)', 

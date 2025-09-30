@@ -1,7 +1,7 @@
 export default {
   id: 'hongqibingpodeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红鳍冰魄灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/红鳍冰魄灯.jpg',
     desc: '红鳍冰魄灯',
     info: {
       habitat: '阿里普阿南河支流 Rio juma → 温度24-28℃/弱酸性软水', 

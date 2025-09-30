@@ -1,7 +1,7 @@
 export default {
   id: 'hongdengguan',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红灯管.jpg',
+    url: 'http://img.fishisnow.xyz/fish/红灯管.jpg',
     desc: '红灯管',
     info: {
       habitat: '南美洲圭亚那地区 → 水温22-26℃/弱酸性软水(pH6-6.5)', 

@@ -1,7 +1,7 @@
 export default {
   id: 'yinhudeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/银绿灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/银绿灯.jpg',
     desc: '银绿灯',
     info: {
       habitat: '原产自秘鲁，适宜温度24-28℃，弱酸性软水', 

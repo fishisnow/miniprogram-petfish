@@ -1,7 +1,7 @@
 export default {
   id: 'ziyingfeicuikekadeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/紫影翡翠可卡灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/紫影翡翠可卡灯.jpg',
     desc: '紫影翡翠可卡灯',
     info: {
       habitat: '库鲁亚河支流 Rio Treze de Maio 流经 Serra do Cachimbo 的区域，水温建议22-28℃，水质清澈且流速急遽的浅水溪流', 

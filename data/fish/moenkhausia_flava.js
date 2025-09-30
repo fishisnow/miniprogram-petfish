@@ -1,7 +1,7 @@
 export default {
   id: 'weierdewangzideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/韦尔德王子灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/韦尔德王子灯.jpg',
     desc: '韦尔德王子灯',
     info: {
       habitat: '巴西南部 Rio Verde，Mato Grosso → 温度24-28℃，弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'wudianqianbideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/五点铅笔灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/五点铅笔灯.jpg',
     desc: '五点铅笔灯',
     info: {
       habitat: '南美北部法属奎内亚马札鲁尼水系 → 温度24-28℃/弱酸性软水', 

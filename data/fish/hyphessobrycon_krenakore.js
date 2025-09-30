@@ -1,7 +1,7 @@
 export default {
   id: 'hongchiheidoudeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红翅黑豆灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/红翅黑豆灯.jpg',
     desc: '红翅黑豆灯',
     info: {
       habitat: '申古盆地之内的 Rio Curua → 水温24-28℃，弱酸性软水', 

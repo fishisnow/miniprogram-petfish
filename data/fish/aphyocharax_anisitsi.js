@@ -1,7 +1,7 @@
 export default {
   id: 'hongchihongdudeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红翅红肚灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/红翅红肚灯.jpg',
     desc: '红翅红肚灯',
     info: {
       habitat: '巴拉那河流域（巴西、巴拉圭、阿根廷）→ 温度24-28℃/弱酸性软水', 

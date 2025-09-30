@@ -1,7 +1,7 @@
 export default {
   id: 'damuleiyandeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/大目泪眼钻石灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/大目泪眼钻石灯.jpg',
     desc: '大目泪眼钻石灯',
     info: {
       habitat: '南美亚马逊流域 → 温度24-28℃/弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'landideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/蓝帝灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/蓝帝灯.jpg',
     desc: '蓝帝灯',
     info: {
       habitat: '巴西塔巴赫斯上游支流茹鲁埃纳河（Rio Juruena）→ 温度24-28℃，弱酸性软水', 

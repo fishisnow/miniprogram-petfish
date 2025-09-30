@@ -1,7 +1,7 @@
 export default {
   id: 'huangqigongzhudeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/黄鳍公主灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/黄鳍公主灯.jpg',
     desc: '黄鳍公主灯',
     info: {
       habitat: '秘鲁 → 水温24-28℃/弱酸性软水', 

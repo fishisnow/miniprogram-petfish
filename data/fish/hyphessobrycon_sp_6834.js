@@ -1,7 +1,7 @@
 export default {
   id: 'jumuxianqingdeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/橘目青线灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/橘目青线灯.jpg',
     desc: '橘目青线灯',
     info: {
       habitat: '奥利诺科水系，水温24-28℃，弱酸性软水', 

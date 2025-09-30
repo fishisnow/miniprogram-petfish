@@ -1,7 +1,7 @@
 export default {
   id: 'shenfengdeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/神风灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/神风灯.jpg',
     desc: '神风灯',
     info: {
       habitat: '南美洲多支流域 → 水温24-28℃，弱酸性软水', 

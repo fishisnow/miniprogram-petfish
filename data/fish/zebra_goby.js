@@ -1,7 +1,7 @@
 export default {
   id: 'banmatiaoyu',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/斑马跳鲈.jpg',
+    url: 'http://img.fishisnow.xyz/fish/斑马跳鲈.jpg',
     desc: '斑马跳鲈',
     info: {
       habitat: '中南美洲及非洲，适宜温度24-28℃，弱酸性软水', 

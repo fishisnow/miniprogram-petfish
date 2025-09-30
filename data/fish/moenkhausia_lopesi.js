@@ -1,7 +1,7 @@
 export default {
   id: 'lubisideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/卢比斯灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/卢比斯灯.jpg',
     desc: '卢比斯灯',
     info: {
       habitat: 'Rio Paraguai流域，Mato Grosso其他流域 → 温度24-28℃，弱酸性软水', 

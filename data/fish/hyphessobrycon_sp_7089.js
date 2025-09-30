@@ -1,7 +1,7 @@
 export default {
   id: 'mochashuangsedeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/抺茶双色灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/抺茶双色灯.jpg',
     desc: '抺茶双色灯',
     info: {
       habitat: '产自玻利维亚 → 适宜温度24-28℃，弱酸性软水', 

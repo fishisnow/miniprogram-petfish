@@ -1,7 +1,7 @@
 export default {
   id: 'suomusanjiaodengyu',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/索姆三角灯鱼.jpg',
+    url: 'http://img.fishisnow.xyz/fish/索姆三角灯鱼.jpg',
     desc: '索姆三角灯鱼',
     info: {
       habitat: '东南亚热带水域 → 水温22-26℃/弱酸性软水', 

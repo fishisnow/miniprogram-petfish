@@ -1,7 +1,7 @@
 export default {
   id: 'zebra_danio',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/斑马鱼.jpeg',
+    url: 'http://img.fishisnow.xyz/fish/斑马鱼.jpeg',
     desc: '斑马鱼',
     info: {
       habitat: '冷水鱼，适宜水温18-24℃',

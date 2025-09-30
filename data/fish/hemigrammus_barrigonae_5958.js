@@ -1,7 +1,7 @@
 export default {
   id:'boligongzhudeng',
   card:{
-    url:'http://sw5i1glrc.hn-bkt.clouddn.com/fish/玻璃公主灯.jpg',
+    url:'http://img.fishisnow.xyz/fish/玻璃公主灯.jpg',
     desc:'玻璃公主灯',
     info:{
       habitat:'潘塔纳尔湿地 → 水温25-29℃/中性偏酸水质',

@@ -1,7 +1,7 @@
 export default {
   id: 'sulinanjingangdeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/苏里南金刚灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/苏里南金刚灯.jpg',
     desc: '苏里南金刚灯',
     info: {
       habitat: '南美洲苏里南流域 → 水温24-28℃，弱酸性软水', 

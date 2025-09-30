@@ -1,7 +1,7 @@
 export default {
   id: 'shenguyoulingdeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/申古幽灵灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/申古幽灵灯.jpg',
     desc: '申古幽灵灯',
     info: {
       habitat: '南美热带水域 → 温度24-28℃/弱酸性软水', 

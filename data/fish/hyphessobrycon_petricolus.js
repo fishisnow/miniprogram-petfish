@@ -1,7 +1,7 @@
 export default {
   id: 'luosifuljindaideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/罗斯福金带灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/罗斯福金带灯.jpg',
     desc: '罗斯福金带灯',
     info: {
       habitat: '栖息地位于罗斯福河（Rio Roosevelt），是玛德拉流域的其中一支流 → 温度24-28℃，弱酸性软水', 

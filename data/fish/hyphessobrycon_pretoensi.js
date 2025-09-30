@@ -1,7 +1,7 @@
 export default {
   id: 'hongjianyanzhideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红箭胭脂灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/红箭胭脂灯.jpg',
     desc: '红箭胭脂灯',
     info: {
       habitat: '内格罗河上游支流茹塔伊河 → 温度24-28℃/弱酸性软水', 

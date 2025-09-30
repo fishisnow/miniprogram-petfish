@@ -1,7 +1,7 @@
 export default {
   id: 'cuilvwangzideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/翠绿王子灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/翠绿王子灯.jpg',
     desc: '翠绿王子灯',
     info: {
       habitat: '巴西北部阿马帕州的 Rio Ariramba → 温度24-28℃/弱酸性软水', 

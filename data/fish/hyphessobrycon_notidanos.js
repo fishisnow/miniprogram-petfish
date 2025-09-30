@@ -1,7 +1,7 @@
 export default {
   id: 'chaojihongmoguideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/超级红魔鬼灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/超级红魔鬼灯.jpg',
     desc: '超级红魔鬼灯',
     info: {
       habitat: '茹鲁埃纳河支流清澈沙石底床浅水 → 24-28℃弱酸性软水', 

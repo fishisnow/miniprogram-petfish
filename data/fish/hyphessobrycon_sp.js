@@ -1,7 +1,7 @@
 export default {
   id: 'landandeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/蓝带灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/蓝带灯.jpg',
     desc: '蓝带灯',
     info: {
       habitat: '申古流域（Rio Xingu）→ 水温24-28℃，弱酸性软水', 

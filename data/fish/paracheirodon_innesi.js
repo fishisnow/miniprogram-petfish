@@ -1,7 +1,7 @@
 export default {
   id: 'honglvdeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红绿灯鱼.jpg',
+    url: 'http://img.fishisnow.xyz/fish/红绿灯鱼.jpg',
     desc: '红绿灯鱼',
     info: {
       habitat: '亚马逊河上游支流 → 水温20-26℃/pH5-7/软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'hongdaiyinghuochongdeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/虹带萤火虫灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/虹带萤火虫灯.jpg',
     desc: '虹带萤火虫灯',
     info: {
       habitat: '巴西圣塔伦地区（Santarem Uruara）→ 温度24-28℃/弱酸性软水', 

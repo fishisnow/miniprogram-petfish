@@ -1,7 +1,7 @@
 export default {
   id: 'weihadayoulingdeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/维哈达幽灵灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/维哈达幽灵灯.jpg',
     desc: '维哈达幽灵灯',
     info: {
       habitat: '哥伦比亚 Vichada 省 → 温度24-28℃/弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'baoliandeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/宝莲灯鱼.jpg',
+    url: 'http://img.fishisnow.xyz/fish/宝莲灯鱼.jpg',
     desc: '宝莲灯鱼',
     info: {
       habitat: '南美洲亚马逊河中下游 → 水温22-24℃/偏酸性软水', 

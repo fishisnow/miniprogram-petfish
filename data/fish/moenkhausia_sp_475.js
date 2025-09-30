@@ -1,7 +1,7 @@
 export default {
   id: 'jindaipeiluo',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/金带裴洛灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/金带裴洛灯.jpg',
     desc: '金带裴洛灯',
     info: {
       habitat: '巴西 Mato Grosso → 温度24-28℃/弱酸性软水', 

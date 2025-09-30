@@ -1,7 +1,7 @@
 export default {
   id: 'lvlian',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/绿莲灯鱼.jpg',
+    url: 'http://img.fishisnow.xyz/fish/绿莲灯鱼.jpg',
     desc: '绿莲灯鱼',
     info: {
       habitat: '拉丁美洲巴西境内的尼格罗河流域上游与奥里诺科河流域一带，适宜在24-28℃的水温中生长，在PH值为5.5-5.6的酸性软水中则可更加健康的成长', 

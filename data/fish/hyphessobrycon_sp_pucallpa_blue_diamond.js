@@ -1,7 +1,7 @@
 export default {
   id: 'pukapalandandeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/普卡帕蓝钻灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/普卡帕蓝钻灯.jpg',
     desc: '普卡帕蓝钻灯',
     info: {
       habitat: '秘鲁Pucallpa地区 → 水温24-28℃，弱酸性软水', 

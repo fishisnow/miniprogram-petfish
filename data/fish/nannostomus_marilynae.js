@@ -1,7 +1,7 @@
 export default {
   id: 'lvxianqianbiandeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/绿线铅笔灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/绿线铅笔灯.jpg',
     desc: '绿线铅笔灯',
     info: {
       habitat: '哥伦比亚线流域 → 水温24-28℃，弱酸性软水', 

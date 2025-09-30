@@ -1,7 +1,7 @@
 export default {
   id: 'zhenzhudeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/珍珠灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/珍珠灯.jpg',
     desc: '珍珠灯',
     info: {
       habitat: '南美洲北部（内格罗河上游/奥利诺科/秘鲁）→ 温度24-28℃/弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'hongweilandeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红尾蓝带灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/红尾蓝带灯.jpg',
     desc: '红尾蓝带灯',
     info: {
       habitat: '亚马逊河上游厄瓜多尔地区，水温22-26℃', 

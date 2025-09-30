@@ -1,7 +1,7 @@
 export default {
   id: 'hongtailangdeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红太狼灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/红太狼灯.jpg',
     desc: '红太狼灯',
     info: {
       habitat: '阿拉瓜亚河上游 → 水温24-28℃，弱酸性软水', 

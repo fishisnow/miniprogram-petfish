@@ -1,7 +1,7 @@
 export default {
   id: 'bolimenghuanqi',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/玻璃梦幻旗.jpg',
+    url: 'http://img.fishisnow.xyz/fish/玻璃梦幻旗.jpg',
     desc: '玻璃梦幻旗',
     info: {
       habitat: '人工培育品种，适宜温度24-28℃，弱酸性软水', 

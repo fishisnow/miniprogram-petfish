@@ -1,7 +1,7 @@
 export default {
   id: 'chimuchixianheidianweideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/赤目赤线黑点尾灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/赤目赤线黑点尾灯.jpg',
     desc: '赤目赤线黑点尾灯',
     info: {
       habitat: '哥伦比亚阿塔巴波流域及巴西内格罗上游流域 → 温度24-28℃/弱酸性软水', 

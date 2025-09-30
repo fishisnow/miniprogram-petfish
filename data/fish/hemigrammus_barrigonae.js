@@ -1,7 +1,7 @@
 export default {
   id: 'lvxianwangzideng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/绿线王子灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/绿线王子灯.jpg',
     desc: '绿线王子灯',
     info: {
       habitat: '原产地哥伦比亚 Rio Meta 的 Barrigona → 温度24-28℃/弱酸性软水', 

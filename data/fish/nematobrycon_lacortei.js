@@ -1,7 +1,7 @@
 export default {
   id: 'caihongdiwangdeng',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/彩虹帝王灯.jpg',
+    url: 'http://img.fishisnow.xyz/fish/彩虹帝王灯.jpg',
     desc: '彩虹帝王灯',
     info: {
       habitat: '哥伦比亚西部流域 → 温度24-28℃/弱酸性软水', 

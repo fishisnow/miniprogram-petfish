@@ -1,7 +1,7 @@
 export default {
   id: 'hongweiyingou',
   card: {
-    url: 'http://sw5i1glrc.hn-bkt.clouddn.com/fish/红尾银钩.jpg',
+    url: 'http://img.fishisnow.xyz/fish/红尾银钩.jpg',
     desc: '红尾银钩',
     info: {
       habitat: '采集于巴西阿拉瓜雅流域（Rio Araguaia），适宜温度24-28℃，弱酸性软水', 
