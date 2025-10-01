@@ -5,6 +5,7 @@
   <image class="nav-bg" src="/static/bg_navbar.png" />
   <view class="my-info">
     <t-cell-group t-class="minimal-card">
+      <!-- 暂时注释掉用户信息展示，因为后端登录功能暂未开放
       <t-cell wx:if="{{isLoad}}" bordered="{{false}}">
         <t-avatar image="{{personalInfo.image}}" slot="left-icon" size="large" />
         <view class="my-info__person" slot="description">
@@ -16,6 +17,9 @@
         </view>
         <t-icon slot="right-icon" name="edit" size="40rpx" color="#000000e6" bindtap="onNavigateTo" />
       </t-cell>
+      -->
+      
+      <!-- 暂时注释掉登录入口，个人开发者账号无法使用手机号登录功能
       <t-cell
         wx:if="{{!isLoad}}"
         title="请先登录/注册"
@@ -26,6 +30,21 @@
         bindtap="onLogin"
       >
         <t-avatar slot="left-icon" icon="user" size="128rpx" />
+      </t-cell>
+      -->
+      
+      <!-- 游客模式：显示默认头像和提示 -->
+      <t-cell
+        title="游客模式"
+        bordered="{{false}}"
+        t-class-title="cell-class-title login-title"
+        t-class-center="cell-class-center"
+        t-class="login-cell"
+      >
+        <t-avatar slot="left-icon" icon="user" size="128rpx" />
+        <view slot="description" style="color: #999; font-size: 24rpx; margin-top: 8rpx;">
+          收藏和测试结果保存在本地
+        </view>
       </t-cell>
     </t-cell-group>
     <t-divider t-class="divider-class" />
