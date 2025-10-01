@@ -1,7 +1,7 @@
 export default {
   id: 'hongyanzuluyadeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/红眼祖鲁亚灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/红眼祖鲁亚灯.jpg',
     desc: '红眼祖鲁亚灯',
     info: {
       habitat: '哥伦比亚的雅普拉河及秘鲁的乌卡亚利河 → 水温28℃以下，弱酸性软水', 

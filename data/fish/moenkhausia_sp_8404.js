@@ -1,7 +1,7 @@
 export default {
   id: 'bai-jin-ban-wei-deng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/白金斑尾灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/白金斑尾灯.jpg',
     desc: '白金斑尾灯',
     info: {
       habitat: '哥伦比亚奥利诺科流域 → 水温24-28℃/弱酸性软水', 

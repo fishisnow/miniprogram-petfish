@@ -1,7 +1,7 @@
 export default {
   id: 'monikadeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/莫妮卡灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/莫妮卡灯.jpg',
     desc: '莫妮卡灯',
     info: {
       habitat: 'Rio juruena支流Rio papagaio → 温度24-28℃/弱酸性软水', 

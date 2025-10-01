@@ -1,7 +1,7 @@
 export default {
   id: 'baiyucuilvdeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/白玉翠绿灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/白玉翠绿灯.jpg',
     desc: '白玉翠绿灯',
     info: {
       habitat: '南美多支水系 → 24-28℃弱酸性软水', 

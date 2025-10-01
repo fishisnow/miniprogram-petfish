@@ -1,7 +1,7 @@
 export default {
   id: 'mickey_mouse_platy',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/米奇鱼.jpeg',
+    url: 'https://img.fishisnow.xyz/fish/米奇鱼.jpeg',
     desc: '米奇鱼',
     info: {
       habitat: '热带鱼，适宜水温20-26℃',

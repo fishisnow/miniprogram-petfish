@@ -1,7 +1,7 @@
 export default {
   id: 'chimulvxianhongdianweideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/赤目绿线红点尾灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/赤目绿线红点尾灯.jpg',
     desc: '赤目绿线红点尾灯',
     info: {
       habitat: '南美洲热带水域 → 适宜温度24-28℃，弱酸性软水', 

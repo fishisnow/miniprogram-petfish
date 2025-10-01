@@ -1,7 +1,7 @@
 export default {
   id: 'sansechiyuqi',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/三色赤玉旗.jpg',
+    url: 'https://img.fishisnow.xyz/fish/三色赤玉旗.jpg',
     desc: '三色赤玉旗',
     info: {
       habitat: '哥伦比亚水域 → 温度24-28℃/弱酸性软水', 

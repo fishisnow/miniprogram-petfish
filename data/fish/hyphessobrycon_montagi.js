@@ -1,7 +1,7 @@
 export default {
   id: 'hongweifeicuideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/红尾翡翠灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/红尾翡翠灯.jpg',
     desc: '红尾翡翠灯',
     info: {
       habitat: '巴西阿鲁亚流域 → 水温24-28℃/弱酸性软水', 

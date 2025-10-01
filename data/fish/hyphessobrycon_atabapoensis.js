@@ -1,7 +1,7 @@
 export default {
   id: 'atabapo',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/阿塔巴波幽灵灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/阿塔巴波幽灵灯.jpg',
     desc: '阿塔巴波幽灵灯',
     info: {
       habitat: '哥伦比亚的阿塔巴波河，水温24-28℃，弱酸性软水', 

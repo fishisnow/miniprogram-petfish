@@ -1,7 +1,7 @@
 export default {
   id: 'kuluaxixianlanliulideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/库鲁阿细线蓝琉璃灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/库鲁阿细线蓝琉璃灯.jpg',
     desc: '库鲁阿细线蓝琉璃灯',
     info: {
       habitat: '亚马逊河的库鲁阿流域（Rio Curua）→ 水温24-28℃，弱酸性软水', 

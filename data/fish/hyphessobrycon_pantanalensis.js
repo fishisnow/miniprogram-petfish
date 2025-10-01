@@ -1,7 +1,7 @@
 export default {
   id: 'pantanawangzideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/潘塔纳尔王子灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/潘塔纳尔王子灯.jpg',
     desc: '潘塔纳尔王子灯',
     info: {
       habitat: '南美潘塔纳尔湿地水域，适宜温度24-28℃，弱酸性软水', 

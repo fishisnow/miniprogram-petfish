@@ -1,7 +1,7 @@
 export default {
   id: 'hongyanfeifengdeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/红眼飞凤灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/红眼飞凤灯.jpg',
     desc: '红眼飞凤灯',
     info: {
       habitat: 'Rio Santiago周边水域 → 温度24-28℃/弱酸性软水', 

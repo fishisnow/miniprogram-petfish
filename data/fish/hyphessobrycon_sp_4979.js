@@ -1,7 +1,7 @@
 export default {
   id: 'juhoujinxiandeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/橘喉金线灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/橘喉金线灯.jpg',
     desc: '橘喉金线灯',
     info: {
       habitat: 'Rio Arinos，茹鲁埃纳河上游 → 温度24-28℃，弱酸性软水', 

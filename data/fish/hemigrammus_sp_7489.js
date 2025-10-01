@@ -1,7 +1,7 @@
 export default {
   id: 'tiancaicuilvdeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/天才翠绿灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/天才翠绿灯.jpg',
     desc: '天才翠绿灯',
     info: {
       habitat: '巴西塔巴赫斯河流域，哥伦比亚境内 → 温度24-28℃，弱酸性软水', 

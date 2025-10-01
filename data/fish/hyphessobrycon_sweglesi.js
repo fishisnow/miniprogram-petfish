@@ -1,7 +1,7 @@
 export default {
   id: 'hongyimenghuanqi',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/红衣梦幻旗.jpg',
+    url: 'https://img.fishisnow.xyz/fish/红衣梦幻旗.jpg',
     desc: '红衣梦幻旗',
     info: {
       habitat: '奥利诺科水系（Rio Orinoco）内的 Rio Meta 及 Rio Muco，衍生出几个不同色彩表现的近似种', 

@@ -1,7 +1,7 @@
 export default {
   id: 'ziluolanheweideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/紫罗兰黑尾灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/紫罗兰黑尾灯.jpg',
     desc: '紫罗兰黑尾灯',
     info: {
       habitat: '秘鲁乌卡亚利流域 → 水温24-28℃/弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'xiaosanjiaodengyu',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/小三角灯鱼.jpg',
+    url: 'https://img.fishisnow.xyz/fish/小三角灯鱼.jpg',
     desc: '小三角灯鱼',
     info: {
       habitat: '东南亚的泰国、马来西亚以及印度尼西亚等地境内，适宜水温23~28℃，pH6.0~7.0，硬度5~12°dH', 

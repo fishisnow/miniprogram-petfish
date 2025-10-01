@@ -1,7 +1,7 @@
 export default {
   id: 'lanyancuilvemoguideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/蓝眼翠绿魔鬼灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/蓝眼翠绿魔鬼灯.jpg',
     desc: '蓝眼翠绿魔鬼灯',
     info: {
       habitat: '巴西塔巴赫斯流域 → 水温24-28℃/弱酸性软水', 

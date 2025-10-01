@@ -1,7 +1,7 @@
 export default {
   id: 'tianxinningmengdeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/甜心柠檬灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/甜心柠檬灯.jpg',
     desc: '甜心柠檬灯',
     info: {
       habitat: '茹鲁埃纳流域（Rio Juruena）→ 温度24-28℃/弱酸性软水', 

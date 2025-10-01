@@ -1,7 +1,7 @@
 export default {
   id: 'hongweifalalideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/红尾法拉利灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/红尾法拉利灯.jpg',
     desc: '红尾法拉利灯',
     info: {
       habitat: '秘鲁Moyabamba的亚马逊上游支流（Rio Huallaga）→ 温度24-28℃/弱酸性软水', 

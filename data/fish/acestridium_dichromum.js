@@ -1,7 +1,7 @@
 export default {
   id: 'nanmeitingzhuangnian',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/南美蜓状鲶.jpg',
+    url: 'https://img.fishisnow.xyz/fish/南美蜓状鲶.jpg',
     desc: '南美蜓状鲶',
     info: {
       habitat: '产自委内瑞拉 Casiquiare drainage，适合温度24-28℃，弱酸性软水', 

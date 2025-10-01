@@ -1,7 +1,7 @@
 export default {
   id: 'saitubakekadeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/赛图巴可卡灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/赛图巴可卡灯.jpg',
     desc: '赛图巴可卡灯',
     info: {
       habitat: '南美流域 → 温度24-28℃/弱酸性软水', 

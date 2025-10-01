@@ -1,7 +1,7 @@
 export default {
   id: 'hongxiudeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/红袖灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/红袖灯.jpg',
     desc: '红袖灯',
     info: {
       habitat: '秘鲁泰加流域 → 水温24-28℃，弱酸性软水', 

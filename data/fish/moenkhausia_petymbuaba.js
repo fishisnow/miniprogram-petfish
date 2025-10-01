@@ -1,7 +1,7 @@
 export default {
   id: 'huangzuan_caihong_kekadeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/黄钻彩虹可卡灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/黄钻彩虹可卡灯.jpg',
     desc: '黄钻彩虹可卡灯',
     info: {
       habitat: '申古水系库鲁亚流域上游，湍急水流区域 → 建议水温24-28℃，弱酸性软水', 

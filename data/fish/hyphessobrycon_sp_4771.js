@@ -1,7 +1,7 @@
 export default {
   id: 'tangguowangzideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/糖果王子灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/糖果王子灯.jpg',
     desc: '糖果王子灯',
     info: {
       habitat: '玻利维亚 → 水温24-28℃/弱酸性软水', 

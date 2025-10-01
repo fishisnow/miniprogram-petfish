@@ -1,7 +1,7 @@
 export default {
   id: 'caihongkekadeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/彩虹可卡灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/彩虹可卡灯.jpg',
     desc: '彩虹可卡灯',
     info: {
       habitat: '茹鲁埃塞纳流域上游 → 24-28℃弱酸性软水', 

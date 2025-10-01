@@ -1,7 +1,7 @@
 export default {
   id: 'hongxianmeitadeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/红线梅塔灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/红线梅塔灯.jpg',
     desc: '红线梅塔灯',
     info: {
       habitat: '哥伦比亚沃佩斯流域 → 24-28℃弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'heiyanweideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/黑尾火焰灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/黑尾火焰灯.jpg',
     desc: '黑尾火焰灯',
     info: {
       habitat: '南美洲秘鲁流域 → 适宜水温24-28℃，弱酸性软水', 

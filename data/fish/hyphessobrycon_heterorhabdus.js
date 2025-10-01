@@ -1,7 +1,7 @@
 export default {
   id: 'leiyansansedeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/泪眼三色灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/泪眼三色灯.jpg',
     desc: '泪眼三色灯',
     info: {
       habitat: '秘鲁乌卡雅利流域 → 24-28℃/弱酸性软水', 

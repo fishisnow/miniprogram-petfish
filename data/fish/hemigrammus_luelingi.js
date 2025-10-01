@@ -1,7 +1,7 @@
 export default {
   id: 'meiyanjinxiandeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/媚眼金线灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/媚眼金线灯.jpg',
     desc: '媚眼金线灯',
     info: {
       habitat: '秘鲁 → 温度24-28℃/弱酸性软水', 

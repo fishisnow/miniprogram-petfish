@@ -1,7 +1,7 @@
 export default {
   id: 'baoshicuigumoguideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/宝石翠绿魔鬼灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/宝石翠绿魔鬼灯.jpg',
     desc: '宝石翠绿魔鬼灯',
     info: {
       habitat: '巴西茹鲁埃纳上游支流 Rio Mutum → 温度24-28℃/弱酸性软水', 

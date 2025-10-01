@@ -1,7 +1,7 @@
 export default {
   id: 'zuanshideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/钻石灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/钻石灯.jpg',
     desc: '钻石灯',
     info: {
       habitat: '委内瑞拉华伦西亚湖及支流 → 温度24-28℃/弱酸性软水', 

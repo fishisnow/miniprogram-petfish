@@ -1,7 +1,7 @@
 export default {
   id: 'feicuishenfengdeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/翡翠神风灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/翡翠神风灯.jpg',
     desc: '翡翠神风灯',
     info: {
       habitat: '南美洲大陆主要流域 → 温度24-28℃/弱酸性软水', 

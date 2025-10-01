@@ -1,7 +1,7 @@
 export default {
   id: 'ningmenglandideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/柠檬蓝帝灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/柠檬蓝帝灯.jpg',
     desc: '柠檬蓝帝灯',
     info: {
       habitat: '巴西 Rio Aripunana → 温度24-28℃/弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'lanyuekekadeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/蓝月可卡灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/蓝月可卡灯.jpg',
     desc: '蓝月可卡灯',
     info: {
       habitat: '塔巴荷斯支流 Rio Juruena → 温度24-28℃/弱酸性软水', 

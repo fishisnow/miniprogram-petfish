@@ -1,7 +1,7 @@
 export default {
   id: 'wopeisihongxianyinghuodeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/沃佩斯红线萤火虫灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/沃佩斯红线萤火虫灯.jpg',
     desc: '沃佩斯红线萤火虫灯',
     info: {
       habitat: '哥伦比亚沃佩斯流域 → 水温24-28℃/弱酸性软水', 

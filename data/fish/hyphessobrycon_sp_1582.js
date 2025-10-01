@@ -1,7 +1,7 @@
 export default {
   id: 'lanxianjindeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/蓝线金灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/蓝线金灯.jpg',
     desc: '蓝线金灯',
     info: {
       habitat: '哥伦比亚奥利诺科流域 → 水温24-28℃，弱酸性软水', 

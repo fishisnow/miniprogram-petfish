@@ -1,7 +1,7 @@
 export default {
   id: 'chaojiningmengdeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/超级柠檬灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/超级柠檬灯.jpg',
     desc: '超级柠檬灯',
     info: {
       habitat: '塔巴赫斯流域支流 → 水温24-28℃，弱酸性软水', 

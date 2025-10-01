@@ -1,7 +1,7 @@
 export default {
   id: 'nihongyanzi',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/霓虹燕子.jpg',
+    url: 'https://img.fishisnow.xyz/fish/霓虹燕子.jpg',
     desc: '霓虹燕子',
     info: {
       habitat: '新几内亚岛东南部清澈溪流，水温24-27℃，pH7.0-8.0', 

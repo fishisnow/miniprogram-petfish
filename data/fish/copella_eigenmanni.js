@@ -1,7 +1,7 @@
 export default {
   id: 'baijinhuangchengheidaijianshuiyu',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/白金黄橙黑带溅水鱼.jpg',
+    url: 'https://img.fishisnow.xyz/fish/白金黄橙黑带溅水鱼.jpg',
     desc: '白金黄橙黑带溅水鱼',
     info: {
       habitat: '南美流域 → 水温24-28℃/弱酸性软水', 

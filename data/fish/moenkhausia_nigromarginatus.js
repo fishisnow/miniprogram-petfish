@@ -1,7 +1,7 @@
 export default {
   id: 'fenhongzuanshikekadeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/粉红钻石可卡灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/粉红钻石可卡灯.jpg',
     desc: '粉红钻石可卡灯',
     info: {
       habitat: '塔巴荷斯水系→ 温度24-28℃/弱酸性软水', 

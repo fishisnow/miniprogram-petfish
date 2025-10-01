@@ -1,7 +1,7 @@
 export default {
   id: 'sulinanlvxianbanweideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/苏里南绿线斑尾灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/苏里南绿线斑尾灯.jpg',
     desc: '苏里南绿线斑尾灯',
     info: {
       habitat: '产自苏里南地区 → 适宜温度24-28℃，弱酸性软水(pH 5.5-6.5)', 

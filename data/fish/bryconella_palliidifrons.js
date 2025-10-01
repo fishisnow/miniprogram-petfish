@@ -1,7 +1,7 @@
 export default {
   id: 'gantanhaodeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/感叹号灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/感叹号灯.jpg',
     desc: '感叹号灯',
     info: {
       habitat: '秘鲁 → 温度24-28℃/弱酸性软水', 

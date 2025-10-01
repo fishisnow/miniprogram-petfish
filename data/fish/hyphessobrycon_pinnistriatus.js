@@ -1,7 +1,7 @@
 export default {
   id: 'taoningmengdeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/桃柠檬灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/桃柠檬灯.jpg',
     desc: '桃柠檬灯',
     info: {
       habitat: '塔巴荷斯上游支流 Rio Teles Pires → 温度24-28℃/弱酸性软水', 

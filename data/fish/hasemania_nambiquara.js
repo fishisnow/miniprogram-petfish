@@ -1,7 +1,7 @@
 export default {
   id: 'heileiguideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/黑雷鬼灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/黑雷鬼灯.jpg',
     desc: '黑雷鬼灯',
     info: {
       habitat: '茹鲁埃纳流域上游的清澈支流 → 温度24-28℃/弱酸性软水', 

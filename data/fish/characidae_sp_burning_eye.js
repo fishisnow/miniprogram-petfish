@@ -1,7 +1,7 @@
 export default {
   id: 'hongmugongzhudeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/红目公主灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/红目公主灯.jpg',
     desc: '红目公主灯',
     info: {
       habitat: '秘鲁流域 → 温度24-28℃/弱酸性软水', 

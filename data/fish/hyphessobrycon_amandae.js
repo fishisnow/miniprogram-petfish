@@ -1,7 +1,7 @@
 export default {
   id: 'penhuodeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/喷火灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/喷火灯.jpg',
     desc: '喷火灯',
     info: {
       habitat: '南美洲阿拉瓜亚河流域 → 水温24-29℃/弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'lanyanshankelinkadeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/蓝眼闪鳞可卡灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/蓝眼闪鳞可卡灯.jpg',
     desc: '蓝眼闪鳞可卡灯',
     info: {
       habitat: 'Rio Teles Pires → 水温24-28℃，弱酸性软水', 

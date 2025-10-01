@@ -1,7 +1,7 @@
 export default {
   id: 'youcaikekadeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/油彩可卡灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/油彩可卡灯.jpg',
     desc: '油彩可卡灯',
     info: {
       habitat: 'Rio Juruena上游支流 → 水温24-28℃/弱酸性软水', 

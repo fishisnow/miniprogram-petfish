@@ -1,7 +1,7 @@
 export default {
   id: 'hongyanxingzideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/红眼杏子灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/红眼杏子灯.jpg',
     desc: '红眼杏子灯',
     info: {
       habitat: '南美热带水域 → 温度24-28℃/弱酸性软水', 

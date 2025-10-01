@@ -1,7 +1,7 @@
 export default {
   id: 'languowangdeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/蓝国王灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/蓝国王灯.jpg',
     desc: '蓝国王灯',
     info: {
       habitat: '巴西玛迪拉河上游森林小溪 → 24-28℃/pH 5.0-6.5', 

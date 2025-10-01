@@ -1,7 +1,7 @@
 export default {
   id: 'akesaihongweideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/阿克塞红尾灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/阿克塞红尾灯.jpg',
     desc: '阿克塞红尾灯',
     info: {
       habitat: '采集自委内瑞拉 Rio Guarapiche，适宜温度24-28℃，弱酸性软水', 

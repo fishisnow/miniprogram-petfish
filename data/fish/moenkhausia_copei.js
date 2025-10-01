@@ -1,7 +1,7 @@
 export default {
   id: 'kepeicuilvdeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/科佩伊翠绿灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/科佩伊翠绿灯.jpg',
     desc: '科佩伊翠绿灯',
     info: {
       habitat: '哥伦比亚的奥利诺科及巴西的圣塔伦等处 → 温度24-28℃，弱酸性软水', 

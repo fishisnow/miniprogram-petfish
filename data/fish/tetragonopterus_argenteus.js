@@ -1,7 +1,7 @@
 export default {
   id: 'dayanhongqiyinbandeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/大眼红鳍银板灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/大眼红鳍银板灯.jpg',
     desc: '大眼红鳍银板灯',
     info: {
       habitat: '弱酸至中性水质，温度24-28℃', 

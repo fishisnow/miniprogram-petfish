@@ -1,7 +1,7 @@
 export default {
   id: 'pantanal_hongqi',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/潘塔纳尔红旗.jpg',
+    url: 'https://img.fishisnow.xyz/fish/潘塔纳尔红旗.jpg',
     desc: '潘塔纳尔红旗',
     info: {
       habitat: '巴拉圭河上游的潘塔纳尔湿地，水温24-28℃，弱酸性软水', 

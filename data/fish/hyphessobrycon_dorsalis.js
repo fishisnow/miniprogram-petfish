@@ -1,7 +1,7 @@
 export default {
   id: 'bolixueqideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/玻璃血鳍灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/玻璃血鳍灯.jpg',
     desc: '玻璃血鳍灯',
     info: {
       habitat: '南美洲地区，秘鲁的 Rio Jurua ，巴西的 Rio Negro 、 Rio Tapajos 和 Rio Orinoco 等流域 → 温度24-28℃，弱酸性软水', 

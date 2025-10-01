@@ -1,7 +1,7 @@
 export default {
   id: 'diwangdeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/帝王灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/帝王灯.jpg',
     desc: '帝王灯',
     info: {
       habitat: '原产自哥伦比亚的San Juan River basin及Atrato River basin，适合温度24-28℃，弱酸性软水', 

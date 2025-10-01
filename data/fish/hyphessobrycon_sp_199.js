@@ -1,7 +1,7 @@
 export default {
   id: 'lanyigongzhudeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/蓝衣公主灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/蓝衣公主灯.jpg',
     desc: '蓝衣公主灯',
     info: {
       habitat: '秘鲁 → 24-28℃/弱酸性软水', 

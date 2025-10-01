@@ -1,7 +1,7 @@
 export default {
   id: 'banbaijin',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/半白金灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/半白金灯.jpg',
     desc: '半白金灯',
     info: {
       habitat: '南美流域 → 温度24-28℃/弱酸性软水', 

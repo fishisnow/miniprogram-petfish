@@ -1,7 +1,7 @@
 export default {
   id: 'sansejuweideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/三色橘尾灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/三色橘尾灯.jpg',
     desc: '三色橘尾灯',
     info: {
       habitat: 'Rio Miranda, Bonito, Rio Paraguay basin, Mato Grosso du Sul → 24-28℃弱酸性软水', 

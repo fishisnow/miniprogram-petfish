@@ -1,7 +1,7 @@
 export default {
   id: 'bohexuancaideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/薄荷炫彩灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/薄荷炫彩灯.jpg',
     desc: '薄荷炫彩灯',
     info: {
       habitat: '采集地为 Mato Grosso → 温度24-28℃/弱酸性软水', 

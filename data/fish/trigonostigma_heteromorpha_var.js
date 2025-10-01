@@ -1,7 +1,7 @@
 export default {
   id: 'ziyansanjiaodeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/紫艳三角灯鱼.jpg',
+    url: 'https://img.fishisnow.xyz/fish/紫艳三角灯鱼.jpg',
     desc: '紫艳三角灯鱼',
     info: {
       habitat: '东南亚热带水域 → 水温22-28℃/弱酸性软水', 

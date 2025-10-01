@@ -1,7 +1,7 @@
 export default {
   id: 'caihongqingtingdeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/彩虹蜻蜓灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/彩虹蜻蜓灯.jpg',
     desc: '彩虹蜻蜓灯',
     info: {
       habitat: '南美洲热带水域 → 温度24-28℃/弱酸性软水', 

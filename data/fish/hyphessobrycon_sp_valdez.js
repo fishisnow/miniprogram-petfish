@@ -1,7 +1,7 @@
 export default {
   id: 'feicuihongxindeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/翡翠红心灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/翡翠红心灯.jpg',
     desc: '翡翠红心灯',
     info: {
       habitat: '秘鲁 Rio huallaga → 温度24-28℃/弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'baiyumaodeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/白羽毛灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/白羽毛灯.jpg',
     desc: '白羽毛灯',
     info: {
       habitat: '中美洲至南美洲北部 → 适宜温度24-28℃，弱酸性软水', 

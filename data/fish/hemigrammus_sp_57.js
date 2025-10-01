@@ -1,7 +1,7 @@
 export default {
   id: 'youlinglvdeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/幽灵绿线灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/幽灵绿线灯.jpg',
     desc: '幽灵绿线灯',
     info: {
       habitat: '内格罗流域 → 温度24-28℃/弱酸性软水', 

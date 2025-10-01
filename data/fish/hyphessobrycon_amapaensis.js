@@ -1,7 +1,7 @@
 export default {
   id: 'amapasansedeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/阿玛帕三色灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/阿玛帕三色灯.jpg',
     desc: '阿玛帕三色灯',
     info: {
       habitat: '巴西阿玛帕省的 Rio Preto/Rio Marca 流域，水温24-28℃，弱酸性软水', 

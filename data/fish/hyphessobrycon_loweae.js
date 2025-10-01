@@ -1,7 +1,7 @@
 export default {
   id: 'diwangkaidideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/帝王凯蒂灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/帝王凯蒂灯.jpg',
     desc: '帝王凯蒂灯',
     info: {
       habitat: '巴西申古上游的ribeirão Xavante及雅拉瓜亚上游的Rio das Mortes → 温度24-28℃/弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'hongyantianqingmoguiden',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/红眼天青魔鬼灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/红眼天青魔鬼灯.jpg',
     desc: '红眼天青魔鬼灯',
     info: {
       habitat: '南美Rio Cachimbo流域 → 温度24-28℃/弱酸性软水', 

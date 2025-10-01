@@ -21,7 +21,7 @@
                 webp="{{false}}"
                 binderror="imageError" 
                 data-index="{{index}}"
-                lazy-load="{{true}}"></image>
+                lazy-load="{{false}}"></image>
         </view>
       </swiper-item>
     </swiper>

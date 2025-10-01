@@ -1,7 +1,7 @@
 export default {
   id: 'bolalalayu',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/玻璃拉拉鱼.jpg',
+    url: 'https://img.fishisnow.xyz/fish/玻璃拉拉鱼.jpg',
     desc: '玻璃拉拉鱼',
     info: {
       habitat: '南亚印度河流域，水温20-26℃，pH 7.0-7.5', 

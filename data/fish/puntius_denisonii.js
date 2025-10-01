@@ -1,7 +1,7 @@
 export default {
   id: 'yimeidaoren',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/一眉道人.jpg',
+    url: 'https://img.fishisnow.xyz/fish/一眉道人.jpg',
     desc: '一眉道人',
     info: {
       habitat: '印度西部溪流 → 水温15-25℃/pH6.8-7.8/硬度5-25°dH', 

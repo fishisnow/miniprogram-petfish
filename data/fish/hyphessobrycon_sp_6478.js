@@ -1,7 +1,7 @@
 export default {
   id: 'lanbaodeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/蓝宝灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/蓝宝灯.jpg',
     desc: '蓝宝灯',
     info: {
       habitat: '南美洲哥伦比亚流域 → 水温24-28℃，弱酸性软水', 

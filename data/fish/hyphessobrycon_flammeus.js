@@ -1,7 +1,7 @@
 export default {
   id: 'huoyandeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/火焰灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/火焰灯.jpg',
     desc: '火焰灯',
     info: {
       habitat: '巴西里约热内卢及圣保罗 → 温度24-28℃/弱酸性软水', 

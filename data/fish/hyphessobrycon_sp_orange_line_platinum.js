@@ -1,7 +1,7 @@
 export default {
   id: 'chengxianjindeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/橙线金灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/橙线金灯.jpg',
     desc: '橙线金灯',
     info: {
       habitat: '奥利诺科流域（Rio Orinoco）→ 温度24-28℃，弱酸性软水', 

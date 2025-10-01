@@ -1,7 +1,7 @@
 export default {
   id: 'mihuanlanyanden',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/迷幻蓝眼灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/迷幻蓝眼灯.jpg',
     desc: '迷幻蓝眼灯',
     info: {
       habitat: '哥伦比亚境内的 Rio San Juan 及其中一支流 Rio Condoto → 水温24-28℃，弱酸性软水', 

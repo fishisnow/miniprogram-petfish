@@ -1,7 +1,7 @@
 export default {
   id: 'aimadeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/艾玛灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/艾玛灯.jpg',
     desc: '艾玛灯',
     info: {
       habitat: '塔巴荷斯上游支流茹鲁埃纳流域（Rio Juruena）→ 温度24-28℃/弱酸性软水', 

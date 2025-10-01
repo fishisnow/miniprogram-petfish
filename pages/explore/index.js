@@ -7,12 +7,12 @@ Page({
     banners: [
       {
         id: 'fish-personality',
-        image: 'http://img.fishisnow.xyz/fish/banner-fish-test.png',
+        image: 'https://img.fishisnow.xyz/fish/banner-fish-test.png',
         testId: 'fish-personality'
       },
       {
         id: 'landscaping-score',
-        image: 'http://img.fishisnow.xyz/fish/landscaping.png',
+        image: 'https://img.fishisnow.xyz/fish/landscaping.png',
         testId: 'landscaping-score'
       }
       // 后续可添加更多轮播广告
@@ -23,7 +23,7 @@ Page({
         id: 'fish-personality',
         title: '六维养鱼性格测试',
         subtitle: '猜猜你适合养什么鱼？',
-        image: 'http://img.fishisnow.xyz/fish/banner-fish-test.png',
+        image: 'https://img.fishisnow.xyz/fish/banner-fish-test.png',
         count: 2341,
         url: '/pages/personality-test/index'
       },
@@ -31,7 +31,7 @@ Page({
         id: 'landscaping-score',
         title: '为你的鱼缸造景打分',
         subtitle: '专业水族师帮你评估鱼缸造景',
-        image: 'http://img.fishisnow.xyz/fish/landscaping.png',
+        image: 'https://img.fishisnow.xyz/fish/landscaping.png',
         count: 836,
         url: '/pages/landscaping-score/index'
       }

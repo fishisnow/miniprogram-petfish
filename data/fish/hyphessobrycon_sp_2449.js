@@ -1,7 +1,7 @@
 export default {
   id: 'toukeningsiheidian',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/投肯廷斯黑点灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/投肯廷斯黑点灯.jpg',
     desc: '投肯廷斯黑点灯',
     info: {
       habitat: '南美流域→ 温度24-28℃/弱酸性软水', 

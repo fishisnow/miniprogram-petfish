@@ -1,7 +1,7 @@
 export default {
   id: 'lanzuanhongmeideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/蓝钻红梅灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/蓝钻红梅灯.jpg',
     desc: '蓝钻红梅灯',
     info: {
       habitat: '塔巴赫斯流域 Rio do sangue 支流 → 温度24-28℃/弱酸性软水', 

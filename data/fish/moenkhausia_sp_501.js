@@ -1,7 +1,7 @@
 export default {
   id: 'chimulvxianshizideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/赤目绿线十字灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/赤目绿线十字灯.jpg',
     desc: '赤目绿线十字灯',
     info: {
       habitat: 'Rio Arua流域 → 温度24-28℃/弱酸性软水', 

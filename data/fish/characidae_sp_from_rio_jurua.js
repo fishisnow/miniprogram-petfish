@@ -1,7 +1,7 @@
 export default {
   id: 'jingangyanzhi',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/金刚胭脂灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/金刚胭脂灯.jpg',
     desc: '金刚胭脂灯',
     info: {
       habitat: '祖鲁亚流域 (Rio Jurua)，水温24-28℃，弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'menghuanxuancaideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/梦幻炫彩灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/梦幻炫彩灯.jpg',
     desc: '梦幻炫彩灯',
     info: {
       habitat: '秘鲁的亚马逊河上游 → 温度24-28℃/弱酸性软水', 

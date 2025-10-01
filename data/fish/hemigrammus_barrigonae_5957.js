@@ -1,7 +1,7 @@
 export default {
   id: 'lvxianwangzideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/绿线王子灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/绿线王子灯.jpg',
     desc: '绿线王子灯',
     info: {
       habitat: '奥利诺科流域 → 水温24-28℃/弱酸性软水',

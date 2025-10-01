@@ -1,7 +1,7 @@
 export default {
   id: 'yinghuochongdeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/萤火虫灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/萤火虫灯.jpg',
     desc: '萤火虫灯',
     info: {
       habitat: '南美亚马逊流域 → 水温24-28℃，弱酸性软水', 

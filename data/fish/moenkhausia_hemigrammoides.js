@@ -1,7 +1,7 @@
 export default {
   id: 'xinhaodeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/信号灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/信号灯.jpg',
     desc: '信号灯',
     info: {
       habitat: '南美亚马逊流域 → 适宜水温24-28℃，弱酸性软水', 

@@ -1,7 +1,7 @@
 export default {
   id: 'hongyiheidiankekadeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/红翼黑点可卡灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/红翼黑点可卡灯.jpg',
     desc: '红翼黑点可卡灯',
     info: {
       habitat: '南美亚马逊流域 → 水温24-28℃，弱酸性软水', 

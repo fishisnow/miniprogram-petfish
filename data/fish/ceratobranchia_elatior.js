@@ -1,7 +1,7 @@
 export default {
   id: 'huojuxuancaideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/火炬炫彩灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/火炬炫彩灯.jpg',
     desc: '火炬炫彩灯',
     info: {
       habitat: 'Rio Santiago周边水域 → 适宜温度24-28℃，弱酸性软水', 

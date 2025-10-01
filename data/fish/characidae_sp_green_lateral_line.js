@@ -1,7 +1,7 @@
 export default {
   id: 'qingmuqingxiandeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/青目青线灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/青目青线灯.jpg',
     desc: '青目青线灯',
     info: {
       habitat: '南美流域 → 温度24-28℃/弱酸性软水', 

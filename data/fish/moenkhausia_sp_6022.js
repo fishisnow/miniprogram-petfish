@@ -1,7 +1,7 @@
 export default {
   id: 'toukenjinsgangdeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/投肯廷斯金刚灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/投肯廷斯金刚灯.jpg',
     desc: '投肯廷斯金刚灯',
     info: {
       habitat: '南美流域 → 温度24-28℃/弱酸性软水', 

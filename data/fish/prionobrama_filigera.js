@@ -1,7 +1,7 @@
 export default {
   id: 'hongweiboli',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/红尾玻璃鱼.jpg',
+    url: 'https://img.fishisnow.xyz/fish/红尾玻璃鱼.jpg',
     desc: '红尾玻璃鱼',
     info: {
       habitat: '南美洲的巴西、圭亚那等地区，适宜温度22～30℃的弱酸性软水', 

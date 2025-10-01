@@ -1,7 +1,7 @@
 export default {
   id: 'tianshenheideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/天神黑灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/天神黑灯.jpg',
     desc: '天神黑灯',
     info: {
       habitat: '申古河上游 Rio Iriri → 温度24-28℃/弱酸性软水', 

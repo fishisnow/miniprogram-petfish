@@ -1,7 +1,7 @@
 export default {
   id: 'jinmujinxian',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/金目金线灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/金目金线灯.jpg',
     desc: '金目金线灯',
     info: {
       habitat: '南美流域 → 适宜温度24-28℃，弱酸性软水', 

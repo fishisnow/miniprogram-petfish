@@ -1,7 +1,7 @@
 export default {
   id: 'hongchunkekadeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/红唇可卡灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/红唇可卡灯.jpg',
     desc: '红唇可卡灯',
     info: {
       habitat: '巴西 Mato Grosso 的 Rio Juba, Rio Juruena 及 Rio Papagaio 流域 → 温度24-28℃/弱酸性软水', 

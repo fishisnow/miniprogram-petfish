@@ -1,7 +1,7 @@
 export default {
   id: 'lanfalaliden',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/蓝法拉利灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/蓝法拉利灯.jpg',
     desc: '蓝法拉利灯',
     info: {
       habitat: '产自秘鲁乌卡利亚河，喜欢流动且清澈的水质，水温24-28℃，pH 6.0-7.0', 

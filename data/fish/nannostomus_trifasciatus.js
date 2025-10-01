@@ -1,7 +1,7 @@
 export default {
   id: 'sanxianduanbideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/三线短笔灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/三线短笔灯.jpg',
     desc: '三线短笔灯',
     info: {
       habitat: '非洲刚果民主共和国 → 水温24-28℃/弱酸性软水', 

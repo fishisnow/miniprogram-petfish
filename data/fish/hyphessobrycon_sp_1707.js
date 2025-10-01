@@ -1,7 +1,7 @@
 export default {
   id: 'dianguangduyaodeng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/电光毒药灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/电光毒药灯.jpg',
     desc: '电光毒药灯',
     info: {
       habitat: '巴西阿里普雅纳流域（Rio Aripuana）→ 温度24-28℃/弱酸性软水', 

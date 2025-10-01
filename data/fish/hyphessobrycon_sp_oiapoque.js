@@ -1,7 +1,7 @@
 export default {
   id: 'aoyabojihongqi',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/奥亚波基旗.jpg',
+    url: 'https://img.fishisnow.xyz/fish/奥亚波基旗.jpg',
     desc: '奥亚波基旗',
     info: {
       habitat: '巴西与法属奎内亚之间的奥亚波基河流域 → 水温24-28℃，弱酸性软水', 

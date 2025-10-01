@@ -1,7 +1,7 @@
 export default {
   id: 'hongmushuangdaiwangzideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/红目双带王子灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/红目双带王子灯.jpg',
     desc: '红目双带王子灯',
     info: {
       habitat: '哥伦比亚，水温24-28℃，弱酸性软水', 

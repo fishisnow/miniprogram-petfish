@@ -1,7 +1,7 @@
 export default {
   id: 'fenhuanghudiekaitideng',
   card: {
-    url: 'http://img.fishisnow.xyz/fish/粉黄蝴蝶凯蒂灯.jpg',
+    url: 'https://img.fishisnow.xyz/fish/粉黄蝴蝶凯蒂灯.jpg',
     desc: '粉黄蝴蝶凯蒂灯',
     info: {
       habitat: '阿里普雅纳流域（Rio Aripuana）→ 温度24-28℃/弱酸性软水', 
