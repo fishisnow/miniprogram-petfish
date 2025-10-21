@@ -8,6 +8,9 @@
   <img width="375" alt="image" src="https://img.fishisnow.xyz/fish/petfish-qr-code.jpg">
 </div>
 
+### 主页
+<img width="375" alt="image" src="https://img.fishisnow.xyz/fish/petfish-homepage.jpg">
+
 ### 养鱼性格测试
 
 <img width="375" alt="image" src="https://img.fishisnow.xyz/fish/banner-fish-test.png">
